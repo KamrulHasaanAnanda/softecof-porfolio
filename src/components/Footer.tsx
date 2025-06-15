@@ -98,9 +98,12 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {/* Company Info */}
                     <motion.div variants={itemVariants} className="space-y-6">
-                        <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
-                            Softecof
-                        </h3>
+                        <div className="flex items-center space-x-2">
+                            <img src="/softecof.svg" alt="Softecof Logo" className="h-8 w-8" />
+                            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
+                                Softecof
+                            </h3>
+                        </div>
                         <p className="text-gray-300">
                             Transforming ideas into digital reality with cutting-edge technology solutions.
                         </p>

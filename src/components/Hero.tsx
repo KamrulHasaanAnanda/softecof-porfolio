@@ -83,7 +83,7 @@ const Hero = () => {
                 animate="visible"
             >
                 <motion.div
-                    className="flex items-center justify-center mb-12 space-x-4"
+                    className="flex items-center justify-center mb-12 space-x-2 "
                     variants={itemVariants}
                 >
                     <motion.div
@@ -99,7 +99,7 @@ const Hero = () => {
                     >
                         <div className="relative">
                             <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-xl animate-pulse" />
-                            <Code className="h-12 w-12 text-blue-400 relative z-10" />
+                            <img src="/softecof.svg" alt="Softecof" className="h-12 w-12 text-blue-400 relative z-10" />
                         </div>
                     </motion.div>
                     <span className="text-5xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400">
@@ -134,17 +134,27 @@ const Hero = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-12 py-6 rounded-xl text-lg font-semibold shadow-xl shadow-blue-500/20 transition-all duration-300">
-                            View Our Solutions
-                            <ArrowRight className="ml-2 h-5 w-5" />
+                        <Button size="lg" className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-700 hover:via-indigo-700 hover:to-purple-700 text-white px-12 py-6 rounded-xl text-lg font-semibold shadow-xl shadow-blue-500/20 transition-all duration-300 group relative overflow-hidden">
+                            <span className="relative z-10 flex items-center">
+                                View Our Solutions
+                                <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                            </span>
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-indigo-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </Button>
                     </motion.div>
                     <motion.div
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        <Button variant="outline" size="lg" className="border-2 border-blue-400/50 text-blue-300 hover:bg-blue-600/20 hover:text-white px-12 py-6 rounded-xl text-lg font-semibold backdrop-blur-sm transition-all duration-300">
-                            Schedule Consultation
+                        <Button variant="outline" size="lg" className="relative group bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 hover:from-blue-500/20 hover:via-indigo-500/20 hover:to-purple-500/20 text-blue-300 hover:text-white px-12 py-6 rounded-xl text-lg font-semibold backdrop-blur-sm transition-all duration-300 overflow-hidden border border-blue-400/30 hover:border-blue-400/50">
+                            <span className="relative z-10 flex items-center gap-2">
+                                Schedule Consultation
+                                <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 12H16M16 12L12 8M16 12L12 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </span>
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/10 group-hover:via-indigo-500/10 group-hover:to-purple-500/10 transition-all duration-300" />
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-indigo-500/0 to-purple-500/0 group-hover:from-blue-500/5 group-hover:via-indigo-500/5 group-hover:to-purple-500/5 transition-all duration-300 translate-y-full group-hover:translate-y-0" />
                         </Button>
                     </motion.div>
                 </motion.div>
