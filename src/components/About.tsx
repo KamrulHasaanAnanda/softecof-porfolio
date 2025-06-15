@@ -43,31 +43,31 @@ const About = () => {
                 viewport={{ once: true }}
             >
                 {/* Hero Section */}
-                <div className="grid lg:grid-cols-2 gap-16 items-center mb-32">
+                <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center mb-16 md:mb-32">
                     <motion.div
-                        className="space-y-8"
+                        className="space-y-4 md:space-y-8"
                         variants={itemVariants}
                     >
-                        <h1 className="text-6xl md:text-7xl font-bold leading-tight">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                             Transforming Ideas into
                             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
                                 Digital Reality
                             </span>
                         </h1>
-                        <p className="text-xl text-gray-300 leading-relaxed">
+                        <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                             We're not just developers; we're digital architects crafting the future of enterprise technology.
                         </p>
                     </motion.div>
                     <motion.div
-                        className="relative"
+                        className="relative mt-8 lg:mt-0"
                         variants={itemVariants}
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-2xl blur-xl"></div>
-                        <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                        <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-8 border border-white/10">
                             <img
                                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
                                 alt="Team collaboration"
-                                className="w-full h-[400px] object-cover rounded-xl"
+                                className="w-full h-[300px] md:h-[400px] object-cover rounded-xl"
                             />
                         </div>
                     </motion.div>
@@ -75,7 +75,7 @@ const About = () => {
 
                 {/* Stats Section */}
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-32"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-16 md:mb-32"
                     variants={containerVariants}
                 >
                     {stats.map((stat, index) => (
@@ -86,12 +86,12 @@ const About = () => {
                             transition={{ duration: 0.2 }}
                         >
                             <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
-                                <CardContent className="p-8">
-                                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${stat.color} flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300`}>
-                                        <stat.icon className="h-8 w-8 text-white" />
+                                <CardContent className="p-4 md:p-8">
+                                    <div className={`w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-r ${stat.color} flex items-center justify-center mb-4 md:mb-6 transform group-hover:scale-110 transition-transform duration-300`}>
+                                        <stat.icon className="h-6 w-6 md:h-8 md:w-8 text-white" />
                                     </div>
-                                    <h3 className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">{stat.value}</h3>
-                                    <p className="text-gray-300 font-medium">{stat.label}</p>
+                                    <h3 className="text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">{stat.value}</h3>
+                                    <p className="text-sm md:text-base text-gray-300 font-medium">{stat.label}</p>
                                 </CardContent>
                             </Card>
                         </motion.div>
@@ -104,19 +104,19 @@ const About = () => {
                     variants={itemVariants}
                 >
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-3xl blur-xl"></div>
-                    <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-12 border border-white/10">
-                        <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-6 md:p-12 border border-white/10">
+                        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
                             <motion.div
-                                className="space-y-8"
+                                className="space-y-6 md:space-y-8"
                                 variants={containerVariants}
                             >
-                                <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
                                     Our Mission
                                 </h2>
-                                <p className="text-xl text-gray-300 leading-relaxed">
+                                <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                                     At Softecof, we're not just building software; we're crafting digital experiences that transform businesses and empower people.
                                 </p>
-                                <div className="space-y-6">
+                                <div className="space-y-4 md:space-y-6">
                                     {[
                                         "Strategic technology consulting and roadmap development",
                                         "Enterprise-grade software architecture and development",
@@ -131,13 +131,13 @@ const About = () => {
                                             transition={{ duration: 0.2 }}
                                         >
                                             <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full mr-4 transform group-hover:scale-150 transition-transform duration-300"></div>
-                                            <span className="text-gray-300 font-medium text-lg group-hover:text-white transition-colors duration-300">{item}</span>
+                                            <span className="text-base md:text-lg text-gray-300 font-medium group-hover:text-white transition-colors duration-300">{item}</span>
                                         </motion.div>
                                     ))}
                                 </div>
                             </motion.div>
                             <motion.div
-                                className="relative"
+                                className="relative mt-8 lg:mt-0"
                                 variants={itemVariants}
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.2 }}
@@ -147,7 +147,7 @@ const About = () => {
                                     <img
                                         src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
                                         alt="Team collaboration"
-                                        className="w-full h-[400px] object-cover rounded-xl"
+                                        className="w-full h-[300px] md:h-[400px] object-cover rounded-xl"
                                     />
                                 </div>
                             </motion.div>
