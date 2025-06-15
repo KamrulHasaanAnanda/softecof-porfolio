@@ -22,13 +22,13 @@ const Background = ({ children, className }: BackgroundProps) => {
                 <motion.div
                     className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full filter blur-[100px]"
                     animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.5, 0.3],
-                        x: [0, 50, 0],
-                        y: [0, 30, 0],
+                        scale: [1, 1.1, 1],
+                        opacity: [0.3, 0.4, 0.3],
+                        x: [0, 20, 0],
+                        y: [0, 15, 0],
                     }}
                     transition={{
-                        duration: 10,
+                        duration: 15,
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
@@ -36,13 +36,13 @@ const Background = ({ children, className }: BackgroundProps) => {
                 <motion.div
                     className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-r from-indigo-600/30 to-purple-600/30 rounded-full filter blur-[100px]"
                     animate={{
-                        scale: [1.2, 1, 1.2],
-                        opacity: [0.5, 0.3, 0.5],
-                        x: [0, -50, 0],
-                        y: [0, -30, 0],
+                        scale: [1.1, 1, 1.1],
+                        opacity: [0.4, 0.3, 0.4],
+                        x: [0, -20, 0],
+                        y: [0, -15, 0],
                     }}
                     transition={{
-                        duration: 10,
+                        duration: 15,
                         repeat: Infinity,
                         ease: "easeInOut",
                         delay: 1,
