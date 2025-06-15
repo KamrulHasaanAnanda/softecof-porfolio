@@ -55,7 +55,7 @@ const About = () => {
                             </span>
                         </h1>
                         <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                            We're not just developers; we're digital architects crafting the future of enterprise technology.
+                            We&apos;re not just developers; we&apos;re digital architects crafting the future of enterprise technology.
                         </p>
                     </motion.div>
                     <motion.div
@@ -114,7 +114,7 @@ const About = () => {
                                     Our Mission
                                 </h2>
                                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    At Softecof, we're not just building software; we're crafting digital experiences that transform businesses and empower people.
+                                    At Softecof, we&apos;re not just building software; we&apos;re crafting digital experiences that transform businesses and empower people.
                                 </p>
                                 <div className="space-y-4 md:space-y-6">
                                     {[

@@ -125,7 +125,7 @@ const Portfolio = () => {
                         Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Portfolio</span>
                     </h2>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">
-                        Discover how we've helped leading organizations across industries
+                        Discover how we&apos;ve helped leading organizations across industries
                         achieve their digital transformation objectives through innovative software solutions.
                     </p>
                 </motion.div>
