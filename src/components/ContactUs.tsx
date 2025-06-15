@@ -1,5 +1,5 @@
 "use client"
-import { Building2, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Building2, Clock, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";

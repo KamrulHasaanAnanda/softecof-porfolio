@@ -1,5 +1,5 @@
 "use client"
-import { Award, Users, Lightbulb, Rocket, Target } from "lucide-react";
+import { Award, Users, Rocket, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
