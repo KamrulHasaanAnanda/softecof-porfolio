@@ -1,49 +1,53 @@
 "use client"
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, MapPin, Award, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
 const Team = () => {
     const teamMembers = [
         {
-            name: "Michael Thompson",
-            role: "Chief Executive Officer",
+            name: "আহমেদ রহমান",
+            role: "প্রধান নির্বাহী কর্মকর্তা",
             image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-            bio: "Strategic technology leader with 15+ years driving digital transformation initiatives for Fortune 500 companies.",
-            credentials: "MBA, MIT • Former McKinsey Consultant",
+            bio: "১৫+ বছরের অভিজ্ঞতা নিয়ে বাংলাদেশের প্রযুক্তি খাতের অগ্রগতির জন্য কাজ করছেন।",
+            credentials: "এমবিএ, বুয়েট • সাবেক ম্যাককিনসি পরামর্শক",
+            location: "ঢাকা, বাংলাদেশ",
             social: {
                 linkedin: "#",
                 email: "#"
             }
         },
         {
-            name: "Dr. Sarah Chen",
-            role: "Chief Technology Officer",
+            name: "ড. ফাতেমা খান",
+            role: "প্রধান প্রযুক্তি কর্মকর্তা",
             image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
-            bio: "Technical architect specializing in enterprise-scale systems and emerging technologies with proven track record.",
-            credentials: "PhD Computer Science, Stanford • AWS Solutions Architect",
+            bio: "এন্টারপ্রাইজ-স্কেল সিস্টেম এবং নতুন প্রযুক্তিতে বিশেষজ্ঞ প্রযুক্তি স্থপতি।",
+            credentials: "পিএইচডি কম্পিউটার সায়েন্স, বুয়েট • AWS সমাধান স্থপতি",
+            location: "চট্টগ্রাম, বাংলাদেশ",
             social: {
                 linkedin: "#",
                 email: "#"
             }
         },
         {
-            name: "David Rodriguez",
-            role: "VP of Engineering",
+            name: "রাজীব আহমেদ",
+            role: "উপ-সভাপতি প্রকৌশল",
             image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-            bio: "Full-stack engineering leader passionate about scalable architecture and high-performance development teams.",
-            credentials: "MS Software Engineering • Certified Scrum Master",
+            bio: "স্কেলেবল আর্কিটেকচার এবং উচ্চ-কর্মক্ষমতা উন্নয়ন দলের জন্য আবেগী প্রকৌশল নেতা।",
+            credentials: "এমএস সফটওয়্যার প্রকৌশল • সার্টিফাইড স্ক্রাম মাস্টার",
+            location: "সিলেট, বাংলাদেশ",
             social: {
                 linkedin: "#",
                 email: "#"
             }
         },
         {
-            name: "Jennifer Liu",
-            role: "VP of Client Success",
+            name: "নুসরাত জাহান",
+            role: "উপ-সভাপতি ক্লায়েন্ট সাফল্য",
             image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-            bio: "Client success strategist focused on delivering exceptional outcomes and long-term partnership value.",
-            credentials: "MBA Operations • Six Sigma Black Belt",
+            bio: "ব্যতিক্রমী ফলাফল এবং দীর্ঘমেয়াদী অংশীদারিত্ব মূল্য প্রদানের জন্য ক্লায়েন্ট সাফল্য কৌশলবিদ।",
+            credentials: "এমবিএ অপারেশনস • সিক্স সিগমা ব্ল্যাক বেল্ট",
+            location: "খুলনা, বাংলাদেশ",
             social: {
                 linkedin: "#",
                 email: "#"
@@ -74,7 +78,9 @@ const Team = () => {
     };
 
     return (
-        <section className="min-h-screen relative overflow-hidden py-32">
+        <section className="min-h-screen relative overflow-hidden py-32 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+            <div className="absolute inset-0 bd-pattern opacity-10"></div>
+
             <motion.div
                 className="container mx-auto px-6 relative z-10"
                 variants={containerVariants}
@@ -86,13 +92,47 @@ const Team = () => {
                     className="text-center mb-16"
                     variants={itemVariants}
                 >
-                    <h2 className="text-5xl md:text-6xl font-bold mb-8">
-                        Leadership <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Team</span>
+                    <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white">
+                        আমাদের <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-500 to-red-400">দল</span>
                     </h2>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">
-                        Our experienced leadership team combines deep technical expertise with strategic
-                        business acumen to deliver exceptional results for our clients.
+                        আমাদের অভিজ্ঞ নেতৃত্ব দল গভীর প্রযুক্তিগত দক্ষতা এবং কৌশলগত ব্যবসায়িক বুদ্ধিমত্তা
+                        একত্রিত করে আমাদের ক্লায়েন্টদের জন্য ব্যতিক্রমী ফলাফল প্রদান করে।
                     </p>
+                </motion.div>
+
+                {/* Team Stats */}
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+                    variants={containerVariants}
+                >
+                    <motion.div
+                        className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10"
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.02 }}
+                    >
+                        <Users className="h-12 w-12 text-green-400 mx-auto mb-4" />
+                        <h3 className="text-2xl font-bold text-white mb-2">২৫+</h3>
+                        <p className="text-gray-300">দক্ষ ডেভেলপার</p>
+                    </motion.div>
+                    <motion.div
+                        className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10"
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.02 }}
+                    >
+                        <Award className="h-12 w-12 text-red-400 mx-auto mb-4" />
+                        <h3 className="text-2xl font-bold text-white mb-2">৮+</h3>
+                        <p className="text-gray-300">বছরের অভিজ্ঞতা</p>
+                    </motion.div>
+                    <motion.div
+                        className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10"
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.02 }}
+                    >
+                        <MapPin className="h-12 w-12 text-green-400 mx-auto mb-4" />
+                        <h3 className="text-2xl font-bold text-white mb-2">৬</h3>
+                        <p className="text-gray-300">বিভাগীয় শহর</p>
+                    </motion.div>
                 </motion.div>
 
                 <motion.div
@@ -112,7 +152,7 @@ const Team = () => {
                                         className="relative inline-block mb-6"
                                         whileHover={{ scale: 1.05 }}
                                     >
-                                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full blur-xl"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-r from-green-600/30 to-red-600/30 rounded-full blur-xl"></div>
                                         <img
                                             src={member.image}
                                             alt={member.name}
@@ -125,7 +165,11 @@ const Team = () => {
                                     >
                                         {member.name}
                                     </motion.h3>
-                                    <p className="text-blue-400 font-semibold mb-2">{member.role}</p>
+                                    <p className="text-green-400 font-semibold mb-2">{member.role}</p>
+                                    <div className="flex items-center justify-center mb-2 text-sm text-gray-400">
+                                        <MapPin className="h-4 w-4 text-red-400 mr-1" />
+                                        <span>{member.location}</span>
+                                    </div>
                                     <p className="text-sm text-gray-400 mb-4 font-medium">{member.credentials}</p>
                                     <p className="text-gray-300 text-sm mb-6 leading-relaxed">{member.bio}</p>
                                     <motion.div
@@ -134,14 +178,14 @@ const Team = () => {
                                     >
                                         <motion.a
                                             href={member.social.linkedin}
-                                            className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                                            className="text-gray-400 hover:text-green-400 transition-colors duration-300"
                                             whileHover={{ scale: 1.2 }}
                                         >
                                             <Linkedin className="h-5 w-5" />
                                         </motion.a>
                                         <motion.a
                                             href={member.social.email}
-                                            className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                                            className="text-gray-400 hover:text-red-400 transition-colors duration-300"
                                             whileHover={{ scale: 1.2 }}
                                         >
                                             <Mail className="h-5 w-5" />
@@ -151,6 +195,29 @@ const Team = () => {
                             </Card>
                         </motion.div>
                     ))}
+                </motion.div>
+
+                {/* Join Our Team CTA */}
+                <motion.div
+                    className="text-center mt-16"
+                    variants={itemVariants}
+                >
+                    <div className="bg-gradient-to-r from-green-600/20 to-red-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                            আমাদের দলে যোগ দিন
+                        </h3>
+                        <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                            বাংলাদেশের প্রযুক্তি খাতের ভবিষ্যৎ গড়তে আমাদের সাথে কাজ করুন।
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">
+                                কর্মসংস্থান দেখুন
+                            </button>
+                            <button className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">
+                                ইন্টার্নশিপ
+                            </button>
+                        </div>
+                    </div>
                 </motion.div>
             </motion.div>
         </section>

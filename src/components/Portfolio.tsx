@@ -1,5 +1,5 @@
 "use client"
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, MapPin, Users, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -7,46 +7,58 @@ import { motion } from "framer-motion";
 const Portfolio = () => {
     const projects = [
         {
-            title: "Enterprise ERP System",
-            description: "Comprehensive enterprise resource planning solution with advanced analytics and multi-tenant architecture.",
+            title: "বাংলাদেশ ব্যাংক ম্যানেজমেন্ট সিস্টেম",
+            description: "বাংলাদেশের ব্যাংকিং খাতের জন্য উন্নত ব্যাংক ম্যানেজমেন্ট সিস্টেম।",
             image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
             tags: ["React", "Node.js", "PostgreSQL", "AWS"],
-            category: "Enterprise Software"
+            category: "ব্যাংকিং সফটওয়্যার",
+            location: "ঢাকা, বাংলাদেশ",
+            clients: "৫০+ ব্যাংক"
         },
         {
-            title: "Healthcare Management Platform",
-            description: "HIPAA-compliant healthcare management system with patient portal and clinical workflow optimization.",
+            title: "স্বাস্থ্য সেবা ব্যবস্থাপনা প্ল্যাটফর্ম",
+            description: "বাংলাদেশের হাসপাতাল ও ক্লিনিকের জন্য স্বাস্থ্য সেবা ব্যবস্থাপনা সিস্টেম।",
             image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
             tags: ["Vue.js", "Python", "PostgreSQL", "Docker"],
-            category: "Healthcare Technology"
+            category: "স্বাস্থ্য প্রযুক্তি",
+            location: "চট্টগ্রাম, বাংলাদেশ",
+            clients: "১০০+ হাসপাতাল"
         },
         {
-            title: "Financial Analytics Dashboard",
-            description: "Real-time financial analytics platform with advanced reporting and regulatory compliance features.",
+            title: "কৃষি ডিজিটাল প্ল্যাটফর্ম",
+            description: "বাংলাদেশের কৃষকদের জন্য ডিজিটাল কৃষি ব্যবস্থাপনা ও বাজার সংযোগ প্ল্যাটফর্ম।",
             image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
             tags: ["Angular", "TypeScript", "D3.js", "AWS"],
-            category: "Financial Services"
+            category: "কৃষি প্রযুক্তি",
+            location: "রাজশাহী, বাংলাদেশ",
+            clients: "১০,০০০+ কৃষক"
         },
         {
-            title: "Supply Chain Management",
-            description: "End-to-end supply chain visibility platform with predictive analytics and automation capabilities.",
+            title: "ই-কমার্স সাপ্লাই চেইন ম্যানেজমেন্ট",
+            description: "বাংলাদেশের ই-কমার্স ব্যবসার জন্য সাপ্লাই চেইন ব্যবস্থাপনা সিস্টেম।",
             image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop",
             tags: ["React", "Python", "MongoDB", "Azure"],
-            category: "Logistics & Supply Chain"
+            category: "ই-কমার্স",
+            location: "সিলেট, বাংলাদেশ",
+            clients: "৫০০+ দোকান"
         },
         {
-            title: "Learning Management System",
-            description: "Corporate learning platform with personalized learning paths and advanced progress tracking.",
+            title: "শিক্ষা ব্যবস্থাপনা সিস্টেম",
+            description: "বাংলাদেশের স্কুল ও কলেজের জন্য ডিজিটাল শিক্ষা ব্যবস্থাপনা প্ল্যাটফর্ম।",
             image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
             tags: ["Next.js", "Express", "MySQL", "WebRTC"],
-            category: "Education Technology"
+            category: "শিক্ষা প্রযুক্তি",
+            location: "খুলনা, বাংলাদেশ",
+            clients: "২০০+ শিক্ষা প্রতিষ্ঠান"
         },
         {
-            title: "Customer Experience Platform",
-            description: "Omnichannel customer experience platform with AI-powered insights and automation.",
+            title: "গ্রাহক সেবা প্ল্যাটফর্ম",
+            description: "বাংলাদেশের ব্যবসায়িক প্রতিষ্ঠানের জন্য গ্রাহক সেবা ও যোগাযোগ প্ল্যাটফর্ম।",
             image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop",
             tags: ["React", "Node.js", "Redis", "Elasticsearch"],
-            category: "Customer Experience"
+            category: "গ্রাহক সেবা",
+            location: "বরিশাল, বাংলাদেশ",
+            clients: "১০০০+ ব্যবসা"
         }
     ];
 
@@ -73,7 +85,8 @@ const Portfolio = () => {
     };
 
     return (
-        <section className="min-h-screen  text-white relative overflow-hidden py-32">
+        <section className="min-h-screen text-white relative overflow-hidden py-32 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+            <div className="absolute inset-0 bd-pattern opacity-10"></div>
 
             <motion.div
                 className="container mx-auto px-6 relative z-10"
@@ -87,11 +100,11 @@ const Portfolio = () => {
                     variants={itemVariants}
                 >
                     <h2 className="text-5xl md:text-6xl font-bold mb-8">
-                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Portfolio</span>
+                        আমাদের <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-500 to-red-400">প্রকল্পসমূহ</span>
                     </h2>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">
-                        Discover how we&apos;ve helped leading organizations across industries
-                        achieve their digital transformation objectives through innovative software solutions.
+                        দেখুন আমরা কীভাবে বাংলাদেশের বিভিন্ন খাতের প্রতিষ্ঠানগুলিকে
+                        ডিজিটাল রূপান্তরের মাধ্যমে তাদের লক্ষ্য অর্জনে সহায়তা করছি।
                     </p>
                 </motion.div>
 
@@ -109,7 +122,7 @@ const Portfolio = () => {
                             <Card className="overflow-hidden group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
                                 <div className="relative overflow-hidden">
                                     <motion.div
-                                        className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        className="absolute inset-0 bg-gradient-to-r from-green-600/30 to-red-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                         whileHover={{ scale: 1.1 }}
                                     />
                                     <motion.img
@@ -124,7 +137,7 @@ const Portfolio = () => {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: index * 0.1 }}
                                     >
-                                        <span className="px-3 py-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full text-xs font-semibold">
+                                        <span className="px-3 py-1 bg-gradient-to-r from-green-600 to-red-600 text-white rounded-full text-xs font-semibold">
                                             {project.category}
                                         </span>
                                     </motion.div>
@@ -137,6 +150,19 @@ const Portfolio = () => {
                                         {project.title}
                                     </motion.h3>
                                     <p className="text-gray-300 mb-4 font-light leading-relaxed">{project.description}</p>
+
+                                    {/* Project Details */}
+                                    <div className="flex items-center justify-between mb-4 text-sm text-gray-400">
+                                        <div className="flex items-center space-x-2">
+                                            <MapPin className="h-4 w-4 text-green-400" />
+                                            <span>{project.location}</span>
+                                        </div>
+                                        <div className="flex items-center space-x-2">
+                                            <Users className="h-4 w-4 text-red-400" />
+                                            <span>{project.clients}</span>
+                                        </div>
+                                    </div>
+
                                     <div className="flex flex-wrap gap-2 mb-4">
                                         {project.tags.map((tag, tagIndex) => (
                                             <motion.span
@@ -155,16 +181,34 @@ const Portfolio = () => {
                                     >
                                         <Button
                                             size="sm"
-                                            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0"
+                                            className="bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white border-0"
                                         >
                                             <ExternalLink className="h-4 w-4 mr-2" />
-                                            View Case Study
+                                            বিস্তারিত দেখুন
                                         </Button>
                                     </motion.div>
                                 </CardContent>
                             </Card>
                         </motion.div>
                     ))}
+                </motion.div>
+
+                {/* Call to Action */}
+                <motion.div
+                    className="text-center mt-16"
+                    variants={itemVariants}
+                >
+                    <div className="bg-gradient-to-r from-green-600/20 to-red-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                            আপনার প্রকল্প শুরু করুন
+                        </h3>
+                        <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                            বাংলাদেশের ব্যবসায়িক পরিবেশ বুঝে আপনার ডিজিটাল রূপান্তরের যাত্রা শুরু করুন।
+                        </p>
+                        <Button size="lg" className="bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white px-8 py-4 rounded-xl text-lg font-semibold">
+                            আজই যোগাযোগ করুন
+                        </Button>
+                    </div>
                 </motion.div>
             </motion.div>
         </section>

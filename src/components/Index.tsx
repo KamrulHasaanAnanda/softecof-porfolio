@@ -5,6 +5,7 @@ import Portfolio from "@/components/Portfolio";
 import Team from "@/components/Team";
 import Contact from "@/components/ContactUs";
 import Footer from "@/components/Footer";
+import FloatingLanguageSwitcher from "./FloatingLanguageSwitcher";
 
 const Index = () => {
     return (
@@ -15,6 +16,7 @@ const Index = () => {
             <Team />
             <Contact />
             <Footer />
+            <FloatingLanguageSwitcher />
         </div>
     );
 };

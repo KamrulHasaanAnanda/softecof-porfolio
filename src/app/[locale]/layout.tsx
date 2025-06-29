@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { locales } from '@/i18n/config';
+import { notFound } from 'next/navigation';
+import "../globals.css";
 import Background from "@/components/ui/background";
 
 const geistSans = Geist({
@@ -32,17 +36,31 @@ export const metadata: Metadata = {
     },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
-}: Readonly<{
+    params
+}: {
     children: React.ReactNode;
-}>) {
+    params: Promise<{ locale: string }>;
+}) {
+    const { locale } = await params;
+
+    // Validate that the incoming `locale` parameter is valid
+    if (!locales.includes(locale as any)) {
+        notFound();
+    }
+
+    // Providing all messages to the client
+    const messages = await getMessages();
+
     return (
-        <html lang="en">
+        <html lang={locale}>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <Background className="min-h-screen  text-white">
-                    {children}
-                </Background>
+                <NextIntlClientProvider messages={messages}>
+                    <Background className="min-h-screen text-white">
+                        {children}
+                    </Background>
+                </NextIntlClientProvider>
             </body>
         </html>
     );
