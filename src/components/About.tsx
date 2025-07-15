@@ -5,17 +5,17 @@ import { motion } from "framer-motion";
 
 const About = () => {
     const stats = [
-        { icon: Users, label: "সন্তুষ্ট ক্লায়েন্ট", value: "৫০+", color: "from-green-400 to-green-600" },
-        { icon: Rocket, label: "সম্পন্ন প্রকল্প", value: "২০০+", color: "from-red-400 to-red-600" },
-        { icon: Award, label: "বছরের অভিজ্ঞতা", value: "৮+", color: "from-green-400 to-green-600" },
-        { icon: Target, label: "সাফল্যের হার", value: "৯৮%", color: "from-red-400 to-red-600" },
+        { icon: Users, label: "Satisfied Clients", value: "50+", color: "from-green-400 to-green-600" },
+        { icon: Rocket, label: "Completed Projects", value: "200+", color: "from-red-400 to-red-600" },
+        { icon: Award, label: "Years of Experience", value: "8+", color: "from-green-400 to-green-600" },
+        { icon: Target, label: "Success Rate", value: "98%", color: "from-red-400 to-red-600" },
     ];
 
     const features = [
-        { icon: Globe, title: "বিশ্বব্যাপী সেবা", description: "বাংলাদেশ থেকে বিশ্বব্যাপী ক্লায়েন্টদের সেবা প্রদান" },
-        { icon: Heart, title: "স্থানীয় সমর্থন", description: "বাংলাদেশের ব্যবসায়িক পরিবেশ বুঝে সেবা প্রদান" },
-        { icon: Shield, title: "নিরাপত্তা নিশ্চিত", description: "আন্তর্জাতিক মানের নিরাপত্তা ও গোপনীয়তা" },
-        { icon: Zap, title: "দ্রুত সেবা", description: "আধুনিক প্রযুক্তি ব্যবহারে দ্রুত ও দক্ষ সেবা" },
+        { icon: Globe, title: "Global Services", description: "Serving clients worldwide from our base in Bangladesh" },
+        { icon: Heart, title: "Local Expertise", description: "Deep understanding of local and global business environments" },
+        { icon: Shield, title: "Security Assured", description: "International standards of security and privacy" },
+        { icon: Zap, title: "Rapid Delivery", description: "Fast and efficient service using cutting-edge technology" },
     ];
 
     const containerVariants = {
@@ -59,18 +59,19 @@ const About = () => {
                     >
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-500 to-green-600">
-                                ডিজিটাল বাংলাদেশ
+                                Bridging Local
                             </span>
                             <br />
-                            <span className="text-white">গড়ার স্বপ্ন</span>
+                            <span className="text-white">Expertise with</span>
                             <br />
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
-                                বাস্তবায়ন করি
+                                Global Standards
                             </span>
                         </h1>
                         <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                            আমরা শুধু ডেভেলপার নই, আমরা ডিজিটাল বাংলাদেশের স্বপ্ন বাস্তবায়নের জন্য
-                            আধুনিক প্রযুক্তির স্থপতি। বাংলাদেশের ব্যবসায়িক পরিবেশ বুঝে বিশ্বমানের সেবা প্রদান করি।
+                            We're not just developers; we're architects of digital transformation.
+                            Based in Bangladesh, we serve the world with cutting-edge technology solutions
+                            that understand both local business needs and global market demands.
                         </p>
                     </motion.div>
                     <motion.div
@@ -89,7 +90,7 @@ const About = () => {
                 </div>
 
                 {/* Stats Section */}
-                <motion.div
+                {/* <motion.div
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-16 md:mb-32"
                     variants={containerVariants}
                 >
@@ -111,7 +112,7 @@ const About = () => {
                             </Card>
                         </motion.div>
                     ))}
-                </motion.div>
+                </motion.div> */}
 
                 {/* Features Grid */}
                 <motion.div
@@ -151,18 +152,18 @@ const About = () => {
                                 variants={containerVariants}
                             >
                                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-green-400 via-green-500 to-red-400 bg-clip-text text-transparent">
-                                    আমাদের লক্ষ্য
+                                    Our Mission
                                 </h2>
                                 <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    সফটকোফে আমরা শুধু সফটওয়্যার তৈরি করি না, আমরা এমন ডিজিটাল অভিজ্ঞতা তৈরি করি
-                                    যা ব্যবসাকে পরিবর্তন করে এবং মানুষকে ক্ষমতায়ন করে।
+                                    At Softecof, we don't just build software; we create digital experiences
+                                    that transform businesses and empower people across the globe.
                                 </p>
                                 <div className="space-y-4 md:space-y-6">
                                     {[
-                                        "কৌশলগত প্রযুক্তি পরামর্শ এবং রোডম্যাপ উন্নয়ন",
-                                        "এন্টারপ্রাইজ-গ্রেড সফটওয়্যার আর্কিটেকচার এবং উন্নয়ন",
-                                        "স্বচ্ছ যোগাযোগ সহ অ্যাজাইল ডেলিভারি পদ্ধতি",
-                                        "ডেপ্লয়মেন্ট পরবর্তী সহায়তা এবং অবিচ্ছিন্ন অপটিমাইজেশন"
+                                        "Strategic technology consulting and roadmap development",
+                                        "Enterprise-grade software architecture and development",
+                                        "Agile delivery methodology with transparent communication",
+                                        "Post-deployment support and continuous optimization"
                                     ].map((item, index) => (
                                         <motion.div
                                             key={index}

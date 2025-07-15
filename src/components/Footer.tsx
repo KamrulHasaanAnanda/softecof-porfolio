@@ -33,27 +33,26 @@ const Footer = () => {
     ];
 
     const quickLinks = [
-        { label: "আমাদের সম্পর্কে", href: "#" },
-        { label: "সেবাসমূহ", href: "#" },
-        { label: "প্রকল্পসমূহ", href: "#" },
-        { label: "আমাদের দল", href: "#" },
-        { label: "যোগাযোগ", href: "#" },
-        { label: "কর্মসংস্থান", href: "#" },
+        { label: "About Us", href: "#" },
+        { label: "Services", href: "#" },
+        { label: "Portfolio", href: "#" },
+        { label: "Our Team", href: "#" },
+        { label: "Contact", href: "#" },
+        { label: "Careers", href: "#" },
     ];
 
     const services = [
-        "এন্টারপ্রাইজ সফটওয়্যার উন্নয়ন",
-        "ক্লাউড সমাধান",
-        "এআই ও মেশিন লার্নিং",
-        "মোবাইল অ্যাপ উন্নয়ন",
-        "ইউআই/ইউএক্স ডিজাইন",
-        "ডেভঅপস ও ইনফ্রাস্ট্রাকচার",
+        "Enterprise Software Development",
+        "Cloud Solutions",
+        "AI & Machine Learning",
+        "Mobile App Development",
+        "UI/UX Design",
+        "DevOps & Infrastructure",
     ];
 
     const locations = [
-        { city: "ঢাকা", address: "ধানমন্ডি, ঢাকা-১২০৯" },
-        { city: "চট্টগ্রাম", address: "আগ্রাবাদ, চট্টগ্রাম-৪১০০" },
-        { city: "সিলেট", address: "জিন্দাবাজার, সিলেট-৩১০০" },
+        { city: "Chittagong", address: "GEC, Gorib Ullah Shah Mazar, Chittagong" },
+        { city: "Dhaka", address: "Dhanmondi, Dhaka-1209" },
     ];
 
     return (
@@ -107,12 +106,12 @@ const Footer = () => {
                                 <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-500 to-red-400">
                                     Softecof
                                 </h3>
-                                <p className="text-xs text-gray-400">সফটওয়্যার সমাধান</p>
+                                <p className="text-xs text-gray-400">Global Software Solutions</p>
                             </div>
                         </div>
                         <p className="text-sm md:text-base text-gray-300">
-                            ডিজিটাল বাংলাদেশের স্বপ্ন বাস্তবায়নের জন্য আধুনিক প্রযুক্তি ব্যবহার করে
-                            বিশ্বমানের সফটওয়্যার সমাধান প্রদান করি।
+                            We deliver cutting-edge software solutions that bridge local expertise with global standards.
+                            From Bangladesh to the world, we help businesses thrive in the digital age.
                         </p>
                         <div className="space-y-3 md:space-y-4">
                             <motion.div
@@ -120,28 +119,28 @@ const Footer = () => {
                                 whileHover={{ x: 5 }}
                             >
                                 <MapPin className="h-4 w-4 md:h-5 md:w-5 text-green-400" />
-                                <span className="text-sm md:text-base">হাউস #১২৩, রোড #৮, ধানমন্ডি, ঢাকা-১২০৯</span>
+                                <span className="text-sm md:text-base">GEC, Gorib Ullah Shah Mazar, Chittagong, Bangladesh</span>
                             </motion.div>
                             <motion.div
                                 className="flex items-center space-x-3 text-gray-300"
                                 whileHover={{ x: 5 }}
                             >
                                 <Phone className="h-4 w-4 md:h-5 md:w-5 text-green-400" />
-                                <span className="text-sm md:text-base">+৮৮০ ১২৩৪-৫৬৭৮৯০</span>
+                                <span className="text-sm md:text-base">+8801626889072</span>
                             </motion.div>
                             <motion.div
                                 className="flex items-center space-x-3 text-gray-300"
                                 whileHover={{ x: 5 }}
                             >
                                 <Mail className="h-4 w-4 md:h-5 md:w-5 text-green-400" />
-                                <span className="text-sm md:text-base">info@softecof.com</span>
+                                <span className="text-sm md:text-base">contact@softecof.com</span>
                             </motion.div>
                         </div>
                     </motion.div>
 
                     {/* Quick Links */}
                     <motion.div variants={itemVariants} className="space-y-4 md:space-y-6">
-                        <h3 className="text-lg md:text-xl font-semibold text-white">দ্রুত লিংক</h3>
+                        <h3 className="text-lg md:text-xl font-semibold text-white">Quick Links</h3>
                         <ul className="grid grid-cols-2 gap-2 md:space-y-4">
                             {quickLinks.map((link, index) => (
                                 <motion.li
@@ -161,7 +160,7 @@ const Footer = () => {
 
                     {/* Services */}
                     <motion.div variants={itemVariants} className="space-y-4 md:space-y-6">
-                        <h3 className="text-lg md:text-xl font-semibold text-white">আমাদের সেবা</h3>
+                        <h3 className="text-lg md:text-xl font-semibold text-white">Our Services</h3>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 md:space-y-4">
                             {services.map((service, index) => (
                                 <motion.li
@@ -178,7 +177,7 @@ const Footer = () => {
 
                     {/* Social Links & Newsletter */}
                     <motion.div variants={itemVariants} className="space-y-4 md:space-y-6">
-                        <h3 className="text-lg md:text-xl font-semibold text-white">আমাদের সাথে যোগাযোগ</h3>
+                        <h3 className="text-lg md:text-xl font-semibold text-white">Connect With Us</h3>
                         <div className="flex flex-wrap gap-3 md:space-x-4">
                             {socialLinks.map((social, index) => (
                                 <motion.a
@@ -194,11 +193,11 @@ const Footer = () => {
                             ))}
                         </div>
                         <div className="pt-4 md:pt-6">
-                            <h4 className="text-base md:text-lg font-semibold text-white mb-3 md:mb-4">নিউজলেটার সাবস্ক্রাইব করুন</h4>
+                            <h4 className="text-base md:text-lg font-semibold text-white mb-3 md:mb-4">Subscribe to Newsletter</h4>
                             <div className="flex flex-col sm:flex-row gap-2">
                                 <input
                                     type="email"
-                                    placeholder="আপনার ইমেইল দিন"
+                                    placeholder="Enter your email"
                                     className="w-full bg-white/5 border border-white/10 rounded-md px-4 py-2 text-sm md:text-base text-white placeholder-gray-400 focus:outline-none focus:border-green-400"
                                 />
                                 <motion.button
@@ -206,33 +205,14 @@ const Footer = () => {
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
-                                    সাবস্ক্রাইব
+                                    Subscribe
                                 </motion.button>
                             </div>
                         </div>
                     </motion.div>
                 </div>
 
-                {/* Office Locations */}
-                <motion.div
-                    variants={itemVariants}
-                    className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-white/10"
-                >
-                    <h3 className="text-lg md:text-xl font-semibold text-white mb-4 text-center">আমাদের অফিস</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {locations.map((location, index) => (
-                            <motion.div
-                                key={index}
-                                className="text-center bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10"
-                                whileHover={{ scale: 1.02 }}
-                            >
-                                <Globe className="h-6 w-6 text-green-400 mx-auto mb-2" />
-                                <h4 className="text-sm font-semibold text-white mb-1">{location.city}</h4>
-                                <p className="text-xs text-gray-300">{location.address}</p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
+
 
                 {/* Copyright */}
                 <motion.div
@@ -240,9 +220,9 @@ const Footer = () => {
                     className="border-t border-white/10 mt-8 md:mt-12 pt-6 md:pt-8 text-center text-gray-400"
                 >
                     <p className="text-sm md:text-base">
-                        © {new Date().getFullYear()} Softecof. সর্বস্বত্ব সংরক্ষিত।
+                        © {new Date().getFullYear()} Softecof. All rights reserved.
                         <span className="flex items-center justify-center mt-2 text-xs">
-                            Made with <Heart className="h-3 w-3 text-red-400 mx-1" /> in Bangladesh
+                            Made with <Heart className="h-3 w-3 text-red-400 mx-1" /> in Bangladesh for the World
                         </span>
                     </p>
                 </motion.div>

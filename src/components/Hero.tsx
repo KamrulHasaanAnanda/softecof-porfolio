@@ -1,5 +1,5 @@
 "use client"
-import { ArrowRight, Zap, Sparkles, MapPin, Phone, Mail } from "lucide-react";
+import { ArrowRight, Zap, Sparkles, MapPin, Phone, Mail, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
@@ -28,7 +28,7 @@ const Hero = () => {
 
     return (
         <section className="min-h-screen flex items-center justify-center text-white relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-            {/* Bangladeshi Pattern Background */}
+            {/* Global Pattern Background */}
             <div className="absolute inset-0 bd-pattern opacity-20"></div>
 
             {/* Floating Elements */}
@@ -64,7 +64,7 @@ const Hero = () => {
             </div>
 
             <motion.div
-                className="container mx-auto px-6 text-center relative z-10"
+                className="container mx-auto px-6 text-center relative z-10 pb-10"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
@@ -75,8 +75,8 @@ const Hero = () => {
                     variants={itemVariants}
                 >
                     <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
-                        <MapPin className="h-4 w-4 text-green-400" />
-                        <span className="text-sm font-medium">Dhaka, Bangladesh</span>
+                        <Globe className="h-4 w-4 text-green-400" />
+                        <span className="text-sm font-medium">Dhaka, Bangladesh • Global Services</span>
                     </div>
                 </motion.div>
 
@@ -105,7 +105,7 @@ const Hero = () => {
                         <span className="text-3xl md:text-5xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-green-600">
                             SOFTECOF
                         </span>
-                        <p className="text-sm md:text-base text-gray-300 mt-1">সফটওয়্যার সমাধান</p>
+                        <p className="text-sm md:text-base text-gray-300 mt-1">Global Software Solutions</p>
                     </div>
                 </motion.div>
 
@@ -115,13 +115,13 @@ const Hero = () => {
                     variants={itemVariants}
                 >
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-500 to-green-600">
-                        বিশ্বমানের
+                        World-Class
                     </span>
                     <br />
-                    <span className="text-white">সফটওয়্যার সমাধান</span>
+                    <span className="text-white">Software Solutions</span>
                     <br />
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
-                        Enterprise Solutions
+                        for Global Markets
                     </span>
                 </motion.h1>
 
@@ -130,8 +130,8 @@ const Hero = () => {
                     className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 text-gray-300 max-w-4xl mx-auto leading-relaxed font-light px-4"
                     variants={itemVariants}
                 >
-                    আমরা ডিজিটাল বাংলাদেশের স্বপ্ন বাস্তবায়নের জন্য আধুনিক প্রযুক্তি ব্যবহার করে
-                    বিশ্বমানের সফটওয়্যার সমাধান প্রদান করি।
+                    We deliver cutting-edge software solutions that bridge local expertise with global standards.
+                    From Bangladesh to the world, we help businesses thrive in the digital age.
                 </motion.p>
 
                 {/* CTA Buttons */}
@@ -144,9 +144,18 @@ const Hero = () => {
                         whileTap={{ scale: 0.95 }}
                         className="w-full sm:w-auto"
                     >
-                        <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-green-600 via-green-700 to-green-800 hover:from-green-700 hover:via-green-800 hover:to-green-900 text-white px-8 sm:px-12 py-6 rounded-xl text-base sm:text-lg font-semibold shadow-xl shadow-green-500/20 transition-all duration-300 group relative overflow-hidden">
+                        <Button
+                            size="lg"
+                            className="w-full sm:w-auto bg-gradient-to-r from-green-600 via-green-700 to-green-800 hover:from-green-700 hover:via-green-800 hover:to-green-900 text-white px-8 sm:px-12 py-6 rounded-xl text-base sm:text-lg font-semibold shadow-xl shadow-green-500/20 transition-all duration-300 group relative overflow-hidden"
+                            onClick={() => {
+                                const servicesSection = document.getElementById('services');
+                                if (servicesSection) {
+                                    servicesSection.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
+                        >
                             <span className="relative z-10 flex items-center justify-center">
-                                আমাদের সেবা দেখুন
+                                Explore Our Services
                                 <ArrowRight className="ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform duration-300" />
                             </span>
                             <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 via-green-500/20 to-green-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -159,7 +168,7 @@ const Hero = () => {
                     >
                         <Button variant="outline" size="lg" className="w-full sm:w-auto relative group bg-gradient-to-r from-red-500/10 via-red-600/10 to-red-700/10 hover:from-red-500/20 hover:via-red-600/20 hover:to-red-700/20 text-red-300 hover:text-white px-8 sm:px-12 py-6 rounded-xl text-base sm:text-lg font-semibold backdrop-blur-sm transition-all duration-300 overflow-hidden border border-red-400/30 hover:border-red-400/50">
                             <span className="relative z-10 flex items-center justify-center gap-2">
-                                পরামর্শ নিন
+                                Get Consultation
                                 <Phone className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-300" />
                             </span>
                         </Button>
@@ -184,7 +193,7 @@ const Hero = () => {
                             <div className="absolute inset-0 bg-green-500/20 rounded-full blur-md animate-pulse-bd" />
                             <Zap className="h-6 w-6 text-green-400 relative z-10" />
                         </div>
-                        <span className="font-medium text-base">দ্রুত উন্নয়ন</span>
+                        <span className="font-medium text-base">Rapid Development</span>
                     </motion.div>
                     <motion.div
                         className="w-full sm:w-auto flex items-center justify-center sm:justify-start space-x-3 bg-white/5 backdrop-blur-sm rounded-xl px-6 sm:px-8 py-4 border border-white/10"
@@ -199,7 +208,7 @@ const Hero = () => {
                             <div className="absolute inset-0 bg-red-500/20 rounded-full blur-md animate-pulse-bd" />
                             <Sparkles className="h-6 w-6 text-red-400 relative z-10" />
                         </div>
-                        <span className="font-medium text-base">বিশ্বমানের মান</span>
+                        <span className="font-medium text-base">World-Class Quality</span>
                     </motion.div>
                 </motion.div>
 

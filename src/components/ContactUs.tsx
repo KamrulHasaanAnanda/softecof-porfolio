@@ -46,11 +46,11 @@ const ContactUs = () => {
                     variants={itemVariants}
                 >
                     <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white">
-                        আমাদের সাথে <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-500 to-red-400">যোগাযোগ করুন</span>
+                        Get in <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-500 to-red-400">Touch</span>
                     </h2>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">
-                        আপনার পরবর্তী প্রকল্প শুরু করার জন্য প্রস্তুত? আমাদের দলের সাথে যোগাযোগ করুন
-                        এবং দেখুন আমরা কীভাবে আপনার স্বপ্ন বাস্তবায়নে সহায়তা করতে পারি।
+                        Ready to start your next project? Connect with our team and discover
+                        how we can help bring your vision to life with world-class solutions.
                     </p>
                 </motion.div>
 
@@ -64,7 +64,7 @@ const ContactUs = () => {
                             whileHover={{ scale: 1.02, y: -5 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <h3 className="text-2xl font-bold mb-6 text-white">যোগাযোগের তথ্য</h3>
+                            <h3 className="text-2xl font-bold mb-6 text-white">Contact Information</h3>
                             <div className="space-y-6">
                                 <motion.div
                                     className="flex items-start space-x-4"
@@ -72,8 +72,8 @@ const ContactUs = () => {
                                 >
                                     <Building2 className="h-6 w-6 text-green-400 mt-1" />
                                     <div>
-                                        <h4 className="font-semibold text-white">সদর দপ্তর</h4>
-                                        <p className="text-gray-300">হাউস #১২৩, রোড #৮, ধানমন্ডি, ঢাকা-১২০৯</p>
+                                        <h4 className="font-semibold text-white">Headquarters</h4>
+                                        <p className="text-gray-300">GEC, Gorib Ullah Shah Mazar, Chittagong, Bangladesh</p>
                                     </div>
                                 </motion.div>
                                 <motion.div
@@ -82,8 +82,8 @@ const ContactUs = () => {
                                 >
                                     <Phone className="h-6 w-6 text-green-400 mt-1" />
                                     <div>
-                                        <h4 className="font-semibold text-white">ফোন</h4>
-                                        <p className="text-gray-300">+৮৮০ ১২৩৪-৫৬৭৮৯০</p>
+                                        <h4 className="font-semibold text-white">Phone</h4>
+                                        <p className="text-gray-300">+8801626889072</p>
                                     </div>
                                 </motion.div>
                                 <motion.div
@@ -92,8 +92,8 @@ const ContactUs = () => {
                                 >
                                     <Mail className="h-6 w-6 text-green-400 mt-1" />
                                     <div>
-                                        <h4 className="font-semibold text-white">ইমেইল</h4>
-                                        <p className="text-gray-300">info@softecof.com</p>
+                                        <h4 className="font-semibold text-white">Email</h4>
+                                        <p className="text-gray-300">contact@softecof.com</p>
                                     </div>
                                 </motion.div>
                                 <motion.div
@@ -102,8 +102,8 @@ const ContactUs = () => {
                                 >
                                     <Clock className="h-6 w-6 text-green-400 mt-1" />
                                     <div>
-                                        <h4 className="font-semibold text-white">কর্মঘণ্টা</h4>
-                                        <p className="text-gray-300">রবিবার - বৃহস্পতিবার: সকাল ৯টা - বিকাল ৬টা</p>
+                                        <h4 className="font-semibold text-white">Business Hours</h4>
+                                        <p className="text-gray-300">Sunday - Thursday: 9:00 AM - 6:00 PM (GMT+6)</p>
                                     </div>
                                 </motion.div>
                                 <motion.div
@@ -112,7 +112,7 @@ const ContactUs = () => {
                                 >
                                     <Globe className="h-6 w-6 text-green-400 mt-1" />
                                     <div>
-                                        <h4 className="font-semibold text-white">ওয়েবসাইট</h4>
+                                        <h4 className="font-semibold text-white">Website</h4>
                                         <p className="text-gray-300">www.softecof.com</p>
                                     </div>
                                 </motion.div>
@@ -125,24 +125,28 @@ const ContactUs = () => {
                             whileHover={{ scale: 1.02, y: -5 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <h3 className="text-xl font-bold mb-6 text-white">দ্রুত যোগাযোগ</h3>
+                            <h3 className="text-xl font-bold mb-6 text-white">Quick Contact</h3>
                             <div className="space-y-4">
-                                <motion.button
+                                <motion.a
+                                    href="tel:+8801626889072"
                                     className="w-full flex items-center justify-center space-x-3 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg transition-all duration-300"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
                                     <Phone className="h-5 w-5" />
-                                    <span>ফোনে কল করুন</span>
-                                </motion.button>
-                                <motion.button
+                                    <span>Call Now</span>
+                                </motion.a>
+                                <motion.a
+                                    href="https://wa.me/8801626889072"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-full flex items-center justify-center space-x-3 bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-all duration-300"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
                                     <MessageCircle className="h-5 w-5" />
-                                    <span>হোয়াটসঅ্যাপে মেসেজ</span>
-                                </motion.button>
+                                    <span>WhatsApp Message</span>
+                                </motion.a>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -151,29 +155,29 @@ const ContactUs = () => {
                         variants={itemVariants}
                         className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-8"
                     >
-                        <h3 className="text-2xl font-bold mb-6 text-white">আমাদের কাছে বার্তা পাঠান</h3>
+                        <h3 className="text-2xl font-bold mb-6 text-white">Send Us a Message</h3>
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <motion.div
                                     whileHover={{ scale: 1.02 }}
                                     transition={{ duration: 0.2 }}
                                 >
-                                    <Label htmlFor="firstName" className="text-gray-300">নাম</Label>
+                                    <Label htmlFor="firstName" className="text-gray-300 mb-2 block">First Name</Label>
                                     <Input
                                         id="firstName"
                                         className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-green-400"
-                                        placeholder="আপনার নাম"
+                                        placeholder="Your first name"
                                     />
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.02 }}
                                     transition={{ duration: 0.2 }}
                                 >
-                                    <Label htmlFor="lastName" className="text-gray-300">পদবী</Label>
+                                    <Label htmlFor="lastName" className="text-gray-300 mb-2 block">Last Name</Label>
                                     <Input
                                         id="lastName"
                                         className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-green-400"
-                                        placeholder="আপনার পদবী"
+                                        placeholder="Your last name"
                                     />
                                 </motion.div>
                             </div>
@@ -181,7 +185,7 @@ const ContactUs = () => {
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.2 }}
                             >
-                                <Label htmlFor="email" className="text-gray-300">ইমেইল ঠিকানা</Label>
+                                <Label htmlFor="email" className="text-gray-300 mb-2 block">Email Address</Label>
                                 <Input
                                     id="email"
                                     type="email"
@@ -193,29 +197,29 @@ const ContactUs = () => {
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.2 }}
                             >
-                                <Label htmlFor="company" className="text-gray-300">প্রতিষ্ঠানের নাম</Label>
+                                <Label htmlFor="company" className="text-gray-300 mb-2 block">Company Name</Label>
                                 <Input
                                     id="company"
                                     className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-green-400"
-                                    placeholder="আপনার প্রতিষ্ঠানের নাম"
+                                    placeholder="Your company name"
                                 />
                             </motion.div>
                             <motion.div
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.2 }}
                             >
-                                <Label htmlFor="projectType" className="text-gray-300">প্রকল্পের ধরন</Label>
+                                <Label htmlFor="projectType" className="text-gray-300 mb-2 block">Project Type</Label>
                                 <Select>
                                     <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                                        <SelectValue placeholder="প্রকল্পের ধরন নির্বাচন করুন" />
+                                        <SelectValue placeholder="Select project type" />
                                     </SelectTrigger>
                                     <SelectContent className="bg-slate-800 border-white/20">
-                                        <SelectItem value="web">ওয়েব ডেভেলপমেন্ট</SelectItem>
-                                        <SelectItem value="mobile">মোবাইল অ্যাপ</SelectItem>
-                                        <SelectItem value="ai">এআই/এমএল সমাধান</SelectItem>
-                                        <SelectItem value="cloud">ক্লাউড সেবা</SelectItem>
-                                        <SelectItem value="erp">ইআরপি সিস্টেম</SelectItem>
-                                        <SelectItem value="other">অন্যান্য</SelectItem>
+                                        <SelectItem value="web">Web Development</SelectItem>
+                                        <SelectItem value="mobile">Mobile App</SelectItem>
+                                        <SelectItem value="ai">AI/ML Solutions</SelectItem>
+                                        <SelectItem value="cloud">Cloud Services</SelectItem>
+                                        <SelectItem value="erp">ERP System</SelectItem>
+                                        <SelectItem value="other">Other</SelectItem>
                                     </SelectContent>
                                 </Select>
                             </motion.div>
@@ -223,23 +227,23 @@ const ContactUs = () => {
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.2 }}
                             >
-                                <Label htmlFor="message" className="text-gray-300">প্রকল্পের বিবরণ</Label>
+                                <Label htmlFor="message" className="text-gray-300 mb-2 block">Project Description</Label>
                                 <Textarea
                                     id="message"
                                     className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-green-400 min-h-[150px]"
-                                    placeholder="আপনার প্রকল্প সম্পর্কে আমাদের জানান..."
+                                    placeholder="Tell us about your project..."
                                 />
                             </motion.div>
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <Button
-                                    className="w-full bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white"
-                                    size="lg"
+                                <a
+                                    href="mailto:contact@softecof.com?subject=Project Inquiry from Portfolio Website&body=Hello,%0D%0A%0D%0AI would like to discuss a project with your team.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0ABest regards,"
+                                    className="w-full flex items-center justify-center bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white py-3 px-6 rounded-lg transition-all duration-300"
                                 >
-                                    বার্তা পাঠান
-                                </Button>
+                                    Send Message
+                                </a>
                             </motion.div>
                         </form>
                     </motion.div>

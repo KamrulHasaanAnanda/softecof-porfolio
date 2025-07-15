@@ -1,5 +1,5 @@
 "use client"
-import { ExternalLink, MapPin, Users, Calendar } from "lucide-react";
+import { ExternalLink, MapPin, Users, Calendar, Globe } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -7,58 +7,48 @@ import { motion } from "framer-motion";
 const Portfolio = () => {
     const projects = [
         {
-            title: "বাংলাদেশ ব্যাংক ম্যানেজমেন্ট সিস্টেম",
-            description: "বাংলাদেশের ব্যাংকিং খাতের জন্য উন্নত ব্যাংক ম্যানেজমেন্ট সিস্টেম।",
+            title: "Checkbox.live",
+            description: "A reseller platform for selling digital products.",
+            image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop",
+            tags: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
+            category: "Productivity Tools"
+        },
+        {
+            title: "SkinsDojo",
+            description: "Gaming skins marketplace and trading platform for gamers worldwide.",
+            image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop",
+            tags: ["Next.js", "Node.js", "MongoDB", "WebSocket"],
+            category: "Gaming Platform"
+        },
+        {
+            title: "Tarulata",
+            description: "A platform for selling agricultural products.",
             image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-            tags: ["React", "Node.js", "PostgreSQL", "AWS"],
-            category: "ব্যাংকিং সফটওয়্যার",
-            location: "ঢাকা, বাংলাদেশ",
-            clients: "৫০+ ব্যাংক"
+            tags: ["Vue.js", "Python", "PostgreSQL", "AWS S3"],
+            category: "Creative Platform"
         },
+
         {
-            title: "স্বাস্থ্য সেবা ব্যবস্থাপনা প্ল্যাটফর্ম",
-            description: "বাংলাদেশের হাসপাতাল ও ক্লিনিকের জন্য স্বাস্থ্য সেবা ব্যবস্থাপনা সিস্টেম।",
-            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
+            title: "Healthcare Management Platform",
+            description: "Comprehensive healthcare management system for hospitals and clinics worldwide.",
+            image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop",
             tags: ["Vue.js", "Python", "PostgreSQL", "Docker"],
-            category: "স্বাস্থ্য প্রযুক্তি",
-            location: "চট্টগ্রাম, বাংলাদেশ",
-            clients: "১০০+ হাসপাতাল"
+            category: "Healthcare Tech"
         },
+
         {
-            title: "কৃষি ডিজিটাল প্ল্যাটফর্ম",
-            description: "বাংলাদেশের কৃষকদের জন্য ডিজিটাল কৃষি ব্যবস্থাপনা ও বাজার সংযোগ প্ল্যাটফর্ম।",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-            tags: ["Angular", "TypeScript", "D3.js", "AWS"],
-            category: "কৃষি প্রযুক্তি",
-            location: "রাজশাহী, বাংলাদেশ",
-            clients: "১০,০০০+ কৃষক"
-        },
-        {
-            title: "ই-কমার্স সাপ্লাই চেইন ম্যানেজমেন্ট",
-            description: "বাংলাদেশের ই-কমার্স ব্যবসার জন্য সাপ্লাই চেইন ব্যবস্থাপনা সিস্টেম।",
-            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop",
-            tags: ["React", "Python", "MongoDB", "Azure"],
-            category: "ই-কমার্স",
-            location: "সিলেট, বাংলাদেশ",
-            clients: "৫০০+ দোকান"
-        },
-        {
-            title: "শিক্ষা ব্যবস্থাপনা সিস্টেম",
-            description: "বাংলাদেশের স্কুল ও কলেজের জন্য ডিজিটাল শিক্ষা ব্যবস্থাপনা প্ল্যাটফর্ম।",
+            title: "Education Management System",
+            description: "Digital education management platform for schools and colleges worldwide.",
             image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
             tags: ["Next.js", "Express", "MySQL", "WebRTC"],
-            category: "শিক্ষা প্রযুক্তি",
-            location: "খুলনা, বাংলাদেশ",
-            clients: "২০০+ শিক্ষা প্রতিষ্ঠান"
+            category: "EdTech"
         },
         {
-            title: "গ্রাহক সেবা প্ল্যাটফর্ম",
-            description: "বাংলাদেশের ব্যবসায়িক প্রতিষ্ঠানের জন্য গ্রাহক সেবা ও যোগাযোগ প্ল্যাটফর্ম।",
+            title: "Customer Service Platform",
+            description: "Advanced customer service and communication platform for businesses globally.",
             image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop",
             tags: ["React", "Node.js", "Redis", "Elasticsearch"],
-            category: "গ্রাহক সেবা",
-            location: "বরিশাল, বাংলাদেশ",
-            clients: "১০০০+ ব্যবসা"
+            category: "Customer Service"
         }
     ];
 
@@ -85,8 +75,15 @@ const Portfolio = () => {
     };
 
     return (
-        <section className="min-h-screen text-white relative overflow-hidden py-32 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-            <div className="absolute inset-0 bd-pattern opacity-10"></div>
+        <section className="min-h-screen text-white relative overflow-hidden py-32 bg-gradient-to-br from-slate-900 via-slate-800 via-purple-900/20 to-slate-900">
+            {/* Animated background elements */}
+            <div className="absolute inset-0">
+                <div className="absolute top-20 left-10 w-72 h-72 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-green-400/5 to-red-400/5 rounded-full blur-3xl animate-spin-slow"></div>
+            </div>
+
+            <div className="absolute inset-0 bd-pattern opacity-5"></div>
 
             <motion.div
                 className="container mx-auto px-6 relative z-10"
@@ -96,40 +93,47 @@ const Portfolio = () => {
                 viewport={{ once: true }}
             >
                 <motion.div
-                    className="text-center mb-16"
+                    className="text-center mb-20"
                     variants={itemVariants}
                 >
-                    <h2 className="text-5xl md:text-6xl font-bold mb-8">
-                        আমাদের <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-500 to-red-400">প্রকল্পসমূহ</span>
+                    <motion.div
+                        className="inline-block mb-6"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
+                        <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-red-400 mx-auto rounded-full mb-8"></div>
+                    </motion.div>
+                    <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
+                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-500 to-red-400 animate-gradient">Portfolio</span>
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">
-                        দেখুন আমরা কীভাবে বাংলাদেশের বিভিন্ন খাতের প্রতিষ্ঠানগুলিকে
-                        ডিজিটাল রূপান্তরের মাধ্যমে তাদের লক্ষ্য অর্জনে সহায়তা করছি।
+                    <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-light leading-relaxed">
+                        Discover how we help organizations across various sectors achieve their goals
+                        through digital transformation, serving both local and global markets.
                     </p>
                 </motion.div>
 
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
                     variants={containerVariants}
                 >
                     {projects.map((project, index) => (
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            whileHover={{ scale: 1.02, y: -5 }}
-                            transition={{ duration: 0.2 }}
+                            whileHover={{ scale: 1.03, y: -8 }}
+                            transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
                         >
-                            <Card className="overflow-hidden group bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300">
+                            <Card className="overflow-hidden group bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-500 shadow-2xl hover:shadow-green-500/20">
                                 <div className="relative overflow-hidden">
                                     <motion.div
-                                        className="absolute inset-0 bg-gradient-to-r from-green-600/30 to-red-600/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        className="absolute inset-0 bg-gradient-to-r from-green-600/40 to-red-600/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                         whileHover={{ scale: 1.1 }}
                                     />
                                     <motion.img
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                                        whileHover={{ scale: 1.05 }}
+                                        className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+                                        whileHover={{ scale: 1.08 }}
                                     />
                                     <motion.div
                                         className="absolute top-4 left-4"
@@ -137,56 +141,36 @@ const Portfolio = () => {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: index * 0.1 }}
                                     >
-                                        <span className="px-3 py-1 bg-gradient-to-r from-green-600 to-red-600 text-white rounded-full text-xs font-semibold">
+                                        <span className="px-4 py-2 bg-gradient-to-r from-green-600 to-red-600 text-white rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm">
                                             {project.category}
                                         </span>
                                     </motion.div>
+                                    <motion.div
+                                        className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                    />
                                 </div>
-                                <CardContent className="p-6">
+                                <CardContent className="p-8">
                                     <motion.h3
-                                        className="text-xl font-bold mb-3 text-white"
+                                        className="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors duration-300"
                                         whileHover={{ x: 5 }}
                                     >
                                         {project.title}
                                     </motion.h3>
-                                    <p className="text-gray-300 mb-4 font-light leading-relaxed">{project.description}</p>
+                                    <p className="text-gray-300 mb-6 font-light leading-relaxed text-lg">{project.description}</p>
 
-                                    {/* Project Details */}
-                                    <div className="flex items-center justify-between mb-4 text-sm text-gray-400">
-                                        <div className="flex items-center space-x-2">
-                                            <MapPin className="h-4 w-4 text-green-400" />
-                                            <span>{project.location}</span>
-                                        </div>
-                                        <div className="flex items-center space-x-2">
-                                            <Users className="h-4 w-4 text-red-400" />
-                                            <span>{project.clients}</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex flex-wrap gap-2 mb-4">
+                                    <div className="flex flex-wrap gap-3 mb-6">
                                         {project.tags.map((tag, tagIndex) => (
                                             <motion.span
                                                 key={tagIndex}
-                                                className="px-3 py-1 bg-white/5 text-gray-300 rounded-md text-sm font-medium border border-white/10"
-                                                whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+                                                className="px-4 py-2 bg-gradient-to-r from-green-600/20 to-red-600/20 text-gray-200 rounded-lg text-sm font-medium border border-green-500/20 backdrop-blur-sm"
+                                                whileHover={{ scale: 1.05, backgroundColor: "rgba(34, 197, 94, 0.3)" }}
                                                 transition={{ duration: 0.2 }}
                                             >
                                                 {tag}
                                             </motion.span>
                                         ))}
                                     </div>
-                                    <motion.div
-                                        className="flex space-x-3"
-                                        whileHover={{ x: 5 }}
-                                    >
-                                        <Button
-                                            size="sm"
-                                            className="bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white border-0"
-                                        >
-                                            <ExternalLink className="h-4 w-4 mr-2" />
-                                            বিস্তারিত দেখুন
-                                        </Button>
-                                    </motion.div>
+
                                 </CardContent>
                             </Card>
                         </motion.div>
@@ -195,19 +179,31 @@ const Portfolio = () => {
 
                 {/* Call to Action */}
                 <motion.div
-                    className="text-center mt-16"
+                    className="text-center mt-20"
                     variants={itemVariants}
                 >
-                    <div className="bg-gradient-to-r from-green-600/20 to-red-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-                            আপনার প্রকল্প শুরু করুন
-                        </h3>
-                        <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-                            বাংলাদেশের ব্যবসায়িক পরিবেশ বুঝে আপনার ডিজিটাল রূপান্তরের যাত্রা শুরু করুন।
-                        </p>
-                        <Button size="lg" className="bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white px-8 py-4 rounded-xl text-lg font-semibold">
-                            আজই যোগাযোগ করুন
-                        </Button>
+                    <div className="bg-gradient-to-r from-green-600/20 to-red-600/20 backdrop-blur-md rounded-3xl p-12 border border-white/20 shadow-2xl relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-red-500/10 animate-pulse"></div>
+                        <div className="relative z-10">
+                            <motion.h3
+                                className="text-3xl md:text-4xl font-bold mb-6 text-white"
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
+                                Start Your Project Today
+                            </motion.h3>
+                            <p className="text-gray-300 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
+                                Begin your digital transformation journey with our global expertise and local understanding.
+                            </p>
+                            <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <Button size="lg" className="bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white px-10 py-6 rounded-2xl text-xl font-semibold shadow-2xl hover:shadow-green-500/25 transition-all duration-300">
+                                    Contact Us Now
+                                </Button>
+                            </motion.div>
+                        </div>
                     </div>
                 </motion.div>
             </motion.div>
