@@ -1,6 +1,5 @@
 "use client"
-import { Building2, Clock, Mail, Phone, MapPin, MessageCircle, Globe } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Building2, Clock, Mail, Phone, MessageCircle, Globe } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";

@@ -1,16 +1,9 @@
 "use client"
-import { Award, Users, Rocket, Target, Globe, Heart, Shield, Zap } from "lucide-react";
+import { Globe, Heart, Shield, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
 const About = () => {
-    const stats = [
-        { icon: Users, label: "Satisfied Clients", value: "50+", color: "from-green-400 to-green-600" },
-        { icon: Rocket, label: "Completed Projects", value: "200+", color: "from-red-400 to-red-600" },
-        { icon: Award, label: "Years of Experience", value: "8+", color: "from-green-400 to-green-600" },
-        { icon: Target, label: "Success Rate", value: "98%", color: "from-red-400 to-red-600" },
-    ];
-
     const features = [
         { icon: Globe, title: "Global Services", description: "Serving clients worldwide from our base in Bangladesh" },
         { icon: Heart, title: "Local Expertise", description: "Deep understanding of local and global business environments" },
@@ -69,7 +62,7 @@ const About = () => {
                             </span>
                         </h1>
                         <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
-                            We're not just developers; we're architects of digital transformation.
+                            We&apos;re not just developers; we&apos;re architects of digital transformation.
                             Based in Bangladesh, we serve the world with cutting-edge technology solutions
                             that understand both local business needs and global market demands.
                         </p>
@@ -155,7 +148,7 @@ const About = () => {
                                     Our Mission
                                 </h2>
                                 <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
-                                    At Softecof, we don't just build software; we create digital experiences
+                                    At Softecof, we don&apos;t just build software; we create digital experiences
                                     that transform businesses and empower people across the globe.
                                 </p>
                                 <div className="space-y-3 sm:space-y-4 md:space-y-6">

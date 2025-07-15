@@ -1,5 +1,5 @@
 "use client"
-import { ArrowRight, Zap, Sparkles, MapPin, Phone, Mail, Globe } from "lucide-react";
+import { ArrowRight, Zap, Sparkles, Phone, Mail, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 

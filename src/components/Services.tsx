@@ -1,5 +1,5 @@
 "use client"
-import { Globe, Smartphone, ShoppingCart, Building, Users, BarChart3, Shield, Zap, Database, Palette, Code, Cloud, Monitor, FileText, Settings, Smartphone as Mobile } from "lucide-react";
+import { Globe, Building, Users, Shield, Zap, Code, Cloud, Monitor, FileText, Smartphone as Mobile } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 

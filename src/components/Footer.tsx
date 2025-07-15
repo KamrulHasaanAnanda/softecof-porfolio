@@ -1,5 +1,5 @@
 "use client"
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Globe, Heart } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -48,11 +48,6 @@ const Footer = () => {
         "Mobile App Development",
         "UI/UX Design",
         "DevOps & Infrastructure",
-    ];
-
-    const locations = [
-        { city: "Chittagong", address: "GEC, Gorib Ullah Shah Mazar, Chittagong" },
-        { city: "Dhaka", address: "Dhanmondi, Dhaka-1209" },
     ];
 
     return (
