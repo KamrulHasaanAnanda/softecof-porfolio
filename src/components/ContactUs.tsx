@@ -240,7 +240,7 @@ const ContactUs = () => {
                             >
                                 <a
                                     href="mailto:contact@softecof.com?subject=Project Inquiry from Portfolio Website&body=Hello,%0D%0A%0D%0AI would like to discuss a project with your team.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0ABest regards,"
-                                    className="w-full flex items-center justify-center bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white py-3 px-6 rounded-lg transition-all duration-300"
+                                    className="w-full flex items-center justify-center bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white py-6 px-10 rounded-lg transition-all duration-300 text-xl font-bold"
                                 >
                                     Send Message
                                 </a>
