@@ -101,11 +101,11 @@ const Services = () => {
     };
 
     return (
-        <section id="services" className="min-h-screen relative overflow-hidden py-32 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+        <section id="services" className="min-h-screen relative overflow-hidden py-16 sm:py-24 md:py-32 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
             <div className="absolute inset-0 bd-pattern opacity-10"></div>
 
             <motion.div
-                className="container mx-auto px-6 relative z-10"
+                className="container mx-auto px-4 sm:px-6 relative z-10"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -113,13 +113,13 @@ const Services = () => {
             >
                 {/* Header */}
                 <motion.div
-                    className="text-center mb-16 md:mb-24"
+                    className="text-center mb-12 sm:mb-16 md:mb-24"
                     variants={itemVariants}
                 >
-                    <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-white">
                         What We <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-500 to-red-400">Build</span>
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-4xl mx-auto font-light">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-4xl mx-auto font-light px-4">
                         We specialize in creating custom software solutions that solve real business problems
                         and drive growth for our clients across various industries.
                     </p>
@@ -127,7 +127,7 @@ const Services = () => {
 
                 {/* Stats */}
                 <motion.div
-                    className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-16 md:mb-24"
+                    className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-8 mb-12 sm:mb-16 md:mb-24"
                     variants={containerVariants}
                 >
                     {stats.map((stat, index) => (
@@ -138,12 +138,12 @@ const Services = () => {
                             transition={{ duration: 0.2 }}
                         >
                             <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300">
-                                <CardContent className="p-4 md:p-6 text-center">
-                                    <div className={`w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-r ${stat.color} flex items-center justify-center mb-4 mx-auto transform group-hover:scale-110 transition-transform duration-300`}>
-                                        <stat.icon className="h-6 w-6 md:h-8 md:w-8 text-white" />
+                                <CardContent className="p-3 sm:p-4 md:p-6 text-center">
+                                    <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-r ${stat.color} flex items-center justify-center mb-3 sm:mb-4 mx-auto transform group-hover:scale-110 transition-transform duration-300`}>
+                                        <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-white" />
                                     </div>
-                                    <h3 className="text-2xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-green-400 to-red-400 bg-clip-text text-transparent">{stat.value}</h3>
-                                    <p className="text-sm md:text-base text-gray-300 font-medium">{stat.label}</p>
+                                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 bg-gradient-to-r from-green-400 to-red-400 bg-clip-text text-transparent">{stat.value}</h3>
+                                    <p className="text-xs sm:text-sm md:text-base text-gray-300 font-medium">{stat.label}</p>
                                 </CardContent>
                             </Card>
                         </motion.div>
@@ -152,7 +152,7 @@ const Services = () => {
 
                 {/* Services Grid */}
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
                     variants={containerVariants}
                 >
                     {services.map((service, index) => (
@@ -163,22 +163,22 @@ const Services = () => {
                             transition={{ duration: 0.2 }}
                         >
                             <Card className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:border-white/20 transition-all duration-300 h-full">
-                                <CardContent className="p-6 md:p-8">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
-                                            <service.icon className="h-8 w-8 text-white" />
+                                <CardContent className="p-4 sm:p-6 md:p-8">
+                                    <div className="flex items-center justify-between mb-3 sm:mb-4">
+                                        <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
+                                            <service.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
                                         </div>
-                                        <span className="text-xs font-medium text-gray-400 bg-white/10 px-3 py-1 rounded-full">
+                                        <span className="text-xs font-medium text-gray-400 bg-white/10 px-2 sm:px-3 py-1 rounded-full">
                                             {service.category}
                                         </span>
                                     </div>
-                                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">{service.title}</h3>
-                                    <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6">{service.description}</p>
-                                    <div className="space-y-2">
+                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-white">{service.title}</h3>
+                                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">{service.description}</p>
+                                    <div className="space-y-1 sm:space-y-2">
                                         {service.features.map((feature, featureIndex) => (
                                             <div key={featureIndex} className="flex items-center">
-                                                <div className="w-2 h-2 bg-gradient-to-r from-green-400 to-red-400 rounded-full mr-3"></div>
-                                                <span className="text-sm text-gray-300">{feature}</span>
+                                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-green-400 to-red-400 rounded-full mr-2 sm:mr-3"></div>
+                                                <span className="text-xs sm:text-sm text-gray-300">{feature}</span>
                                             </div>
                                         ))}
                                     </div>
