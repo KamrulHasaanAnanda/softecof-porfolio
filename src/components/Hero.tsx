@@ -98,7 +98,7 @@ const Hero = () => {
                     >
                         <div className="relative">
                             <div className="absolute inset-0 bg-green-500/30 rounded-full blur-xl animate-pulse-bd" />
-                            <img src="/softecof.svg" alt="Softecof" className="h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14 text-green-400 relative z-10" />
+                            <img src="/softecof.png" alt="Softecof" className="h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14 text-green-400 relative z-10" />
                         </div>
                     </motion.div>
                     <div className="text-center">

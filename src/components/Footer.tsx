@@ -96,7 +96,7 @@ const Footer = () => {
                     {/* Company Info */}
                     <motion.div variants={itemVariants} className="space-y-4 md:space-y-6">
                         <div className="flex items-center space-x-2">
-                            <img src="/softecof.svg" alt="Softecof Logo" className="h-6 w-6 md:h-8 md:w-8" />
+                            <img src="/softecof.png" alt="Softecof Logo" className="h-6 w-6 md:h-8 md:w-8" />
                             <div>
                                 <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-500 to-red-400">
                                     Softecof
