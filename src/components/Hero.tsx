@@ -29,12 +29,12 @@ const Hero = () => {
     return (
         <section id="home" className="min-h-screen flex items-center justify-center text-gray-900 relative overflow-hidden bg-white">
             {/* Global Pattern Background */}
-            <div className="absolute inset-0 softecof-pattern opacity-20"></div>
+            <div className="absolute inset-0 softecof-pattern opacity-5"></div>
 
             {/* Floating Elements */}
             <div className="absolute inset-0">
                 <motion.div
-                    className="absolute top-1/4 left-1/4 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] rounded-full bg-gradient-to-r from-green-50/30 to-green-100/30 filter blur-[80px] sm:blur-[100px]"
+                    className="absolute top-1/4 left-1/4 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] rounded-full bg-gradient-to-r from-gray-50/30 to-gray-100/30 filter blur-[80px] sm:blur-[100px]"
                     animate={{
                         scale: [1, 1.1, 1],
                         opacity: [0.2, 0.3, 0.2],
@@ -48,7 +48,7 @@ const Hero = () => {
                     }}
                 />
                 <motion.div
-                    className="absolute bottom-1/4 right-1/4 w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] rounded-full bg-gradient-to-r from-green-100/20 to-green-200/20 filter blur-[60px] sm:blur-[80px]"
+                    className="absolute bottom-1/4 right-1/4 w-[150px] h-[150px] sm:w-[250px] sm:h-[250px] rounded-full bg-gradient-to-r from-gray-100/20 to-gray-200/20 filter blur-[60px] sm:blur-[80px]"
                     animate={{
                         scale: [1, 1.05, 1],
                         opacity: [0.15, 0.25, 0.15],
@@ -70,15 +70,7 @@ const Hero = () => {
                 animate="visible"
             >
                 {/* Location Badge */}
-                <motion.div
-                    className="flex items-center justify-center mb-4 sm:mb-6"
-                    variants={itemVariants}
-                >
-                    <div className="flex items-center space-x-2 bg-green-50 backdrop-blur-sm rounded-full px-3 py-2 sm:px-4 sm:py-2 border border-green-200">
-                        <Globe className="h-3 w-3 sm:h-4 sm:w-4 text-green-600" />
-                        <span className="text-xs sm:text-sm font-medium text-gray-700">Dhaka, Bangladesh • Global Services</span>
-                    </div>
-                </motion.div>
+
 
                 {/* Logo and Company Name */}
                 <motion.div

@@ -104,7 +104,7 @@ const Team = () => {
 
     return (
         <section id="team" className="min-h-screen relative overflow-hidden py-32 bg-white">
-            <div className="absolute inset-0 softecof-pattern opacity-15"></div>
+            <div className="absolute inset-0 softecof-pattern opacity-4"></div>
 
             <motion.div
                 className="container mx-auto px-6 relative z-10"
@@ -178,7 +178,7 @@ const Team = () => {
                                         className="relative inline-block mb-6"
                                         whileHover={{ scale: 1.05 }}
                                     >
-                                        <div className="absolute inset-0 bg-gradient-to-r from-green-100/30 to-green-200/30 rounded-full blur-xl"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-r from-gray-100/15 to-gray-200/15 rounded-full blur-xl"></div>
                                         <img
                                             src={member.image}
                                             alt={member.name}

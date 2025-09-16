@@ -35,7 +35,7 @@ const About = () => {
 
     return (
         <section id="about" className="min-h-screen relative overflow-hidden bg-white">
-            <div className="absolute inset-0 softecof-pattern opacity-15"></div>
+            <div className="absolute inset-0 softecof-pattern opacity-4"></div>
 
             <motion.div
                 className="container mx-auto px-4 sm:px-6 relative z-10 py-16 sm:py-24 md:py-32"
@@ -71,7 +71,7 @@ const About = () => {
                         className="relative mt-8 lg:mt-0"
                         variants={itemVariants}
                     >
-                        <div className="absolute inset-0 bg-gradient-to-r from-green-100/30 to-green-200/30 rounded-2xl blur-xl"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-100/15 to-gray-200/15 rounded-2xl blur-xl"></div>
                         <div className="relative bg-white rounded-2xl p-3 sm:p-4 md:p-8 border border-green-200 shadow-lg">
                             <img
                                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
@@ -177,7 +177,7 @@ const About = () => {
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.2 }}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-r from-green-100/30 to-green-200/30 rounded-2xl blur-xl"></div>
+                                <div className="absolute inset-0 bg-gradient-to-r from-gray-100/15 to-gray-200/15 rounded-2xl blur-xl"></div>
                                 <div className="relative bg-white rounded-2xl p-3 sm:p-4 border border-green-200 shadow-lg">
                                     <img
                                         src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"

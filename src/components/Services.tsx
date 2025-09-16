@@ -102,7 +102,7 @@ const Services = () => {
 
     return (
         <section id="services" className="min-h-screen relative overflow-hidden py-16 sm:py-24 md:py-32 bg-white">
-            <div className="absolute inset-0 softecof-pattern opacity-15"></div>
+            <div className="absolute inset-0 softecof-pattern opacity-4"></div>
 
             <motion.div
                 className="container mx-auto px-4 sm:px-6 relative z-10"

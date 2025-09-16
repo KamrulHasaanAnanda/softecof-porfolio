@@ -16,7 +16,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 142 76% 36%;
+    --primary: 238 100% 67%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
@@ -25,7 +25,7 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 142 76% 36%;
+    --accent: 238 100% 67%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -33,33 +33,33 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 142 76% 36%;
+    --ring: 238 100% 67%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 142 76% 36%;
+    --sidebar-primary: 238 100% 67%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 142 76% 36%;
+    --sidebar-ring: 238 100% 67%;
 
     /* Softecof Brand Colors */
-    --softecof-green: 142 76% 36%;
-    --softecof-green-light: 142 76% 46%;
-    --softecof-green-dark: 142 76% 26%;
-    --softecof-green-50: 142 76% 96%;
-    --softecof-green-100: 142 76% 86%;
-    --softecof-green-200: 142 76% 76%;
-    --softecof-green-300: 142 76% 66%;
-    --softecof-green-400: 142 76% 56%;
-    --softecof-green-500: 142 76% 36%;
-    --softecof-green-600: 142 76% 26%;
-    --softecof-green-700: 142 76% 16%;
-    --softecof-green-800: 142 76% 6%;
-    --softecof-green-900: 142 76% 2%;
+    --softecof-indigo: 238 100% 67%;
+    --softecof-indigo-light: 238 100% 77%;
+    --softecof-indigo-dark: 238 100% 57%;
+    --softecof-indigo-50: 238 100% 97%;
+    --softecof-indigo-100: 238 100% 87%;
+    --softecof-indigo-200: 238 100% 77%;
+    --softecof-indigo-300: 238 100% 67%;
+    --softecof-indigo-400: 238 100% 57%;
+    --softecof-indigo-500: 238 100% 47%;
+    --softecof-indigo-600: 238 100% 37%;
+    --softecof-indigo-700: 238 100% 27%;
+    --softecof-indigo-800: 238 100% 17%;
+    --softecof-indigo-900: 238 100% 7%;
   }
 
   .dark {
@@ -72,7 +72,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 142 76% 46%;
+    --primary: 238 100% 77%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -81,7 +81,7 @@
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 142 76% 46%;
+    --accent: 238 100% 77%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -89,30 +89,30 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 142 76% 46%;
+    --ring: 238 100% 77%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 142 76% 46%;
+    --sidebar-primary: 238 100% 77%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 142 76% 46%;
+    --sidebar-ring: 238 100% 77%;
 
     /* Softecof Brand Colors for Dark Mode */
-    --softecof-green: 142 76% 46%;
-    --softecof-green-light: 142 76% 56%;
-    --softecof-green-dark: 142 76% 36%;
-    --softecof-green-50: 142 76% 6%;
-    --softecof-green-100: 142 76% 16%;
-    --softecof-green-200: 142 76% 26%;
-    --softecof-green-300: 142 76% 36%;
-    --softecof-green-400: 142 76% 46%;
-    --softecof-green-500: 142 76% 56%;
-    --softecof-green-600: 142 76% 66%;
-    --softecof-green-700: 142 76% 76%;
-    --softecof-green-800: 142 76% 86%;
-    --softecof-green-900: 142 76% 96%;
+    --softecof-indigo: 238 100% 77%;
+    --softecof-indigo-light: 238 100% 87%;
+    --softecof-indigo-dark: 238 100% 67%;
+    --softecof-indigo-50: 238 100% 7%;
+    --softecof-indigo-100: 238 100% 17%;
+    --softecof-indigo-200: 238 100% 27%;
+    --softecof-indigo-300: 238 100% 37%;
+    --softecof-indigo-400: 238 100% 47%;
+    --softecof-indigo-500: 238 100% 57%;
+    --softecof-indigo-600: 238 100% 67%;
+    --softecof-indigo-700: 238 100% 77%;
+    --softecof-indigo-800: 238 100% 87%;
+    --softecof-indigo-900: 238 100% 97%;
   }
 }
 
@@ -281,14 +281,14 @@ html {
 /* Softecof specific styles */
 .softecof-pattern {
   background-image:
-    radial-gradient(circle at 25% 25%, hsl(var(--softecof-green) / 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, hsl(var(--softecof-green) / 0.015) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, hsl(var(--softecof-indigo) / 0.005) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, hsl(var(--softecof-indigo) / 0.003) 0%, transparent 50%);
 }
 
 .softecof-border-gradient {
   border: 2px solid transparent;
   background: linear-gradient(white, white) padding-box,
-    linear-gradient(135deg, hsl(var(--softecof-green)), hsl(var(--softecof-green-dark))) border-box;
+    linear-gradient(135deg, hsl(var(--softecof-indigo)), hsl(var(--softecof-indigo-dark))) border-box;
 }
 
 @theme inline {
@@ -315,17 +315,17 @@ html {
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-softecof-green: var(--softecof-green);
-  --color-softecof-green-light: var(--softecof-green-light);
-  --color-softecof-green-dark: var(--softecof-green-dark);
-  --color-softecof-green-50: var(--softecof-green-50);
-  --color-softecof-green-100: var(--softecof-green-100);
-  --color-softecof-green-200: var(--softecof-green-200);
-  --color-softecof-green-300: var(--softecof-green-300);
-  --color-softecof-green-400: var(--softecof-green-400);
-  --color-softecof-green-500: var(--softecof-green-500);
-  --color-softecof-green-600: var(--softecof-green-600);
-  --color-softecof-green-700: var(--softecof-green-700);
-  --color-softecof-green-800: var(--softecof-green-800);
-  --color-softecof-green-900: var(--softecof-green-900);
+  --color-softecof-indigo: var(--softecof-indigo);
+  --color-softecof-indigo-light: var(--softecof-indigo-light);
+  --color-softecof-indigo-dark: var(--softecof-indigo-dark);
+  --color-softecof-indigo-50: var(--softecof-indigo-50);
+  --color-softecof-indigo-100: var(--softecof-indigo-100);
+  --color-softecof-indigo-200: var(--softecof-indigo-200);
+  --color-softecof-indigo-300: var(--softecof-indigo-300);
+  --color-softecof-indigo-400: var(--softecof-indigo-400);
+  --color-softecof-indigo-500: var(--softecof-indigo-500);
+  --color-softecof-indigo-600: var(--softecof-indigo-600);
+  --color-softecof-indigo-700: var(--softecof-indigo-700);
+  --color-softecof-indigo-800: var(--softecof-indigo-800);
+  --color-softecof-indigo-900: var(--softecof-indigo-900);
 }

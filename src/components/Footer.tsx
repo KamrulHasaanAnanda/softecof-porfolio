@@ -55,7 +55,7 @@ const Footer = () => {
             {/* Background Elements */}
             <div className="absolute inset-0">
                 <motion.div
-                    className="absolute top-1/4 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-r from-green-50/20 to-green-100/20 rounded-full filter blur-[120px]"
+                    className="absolute top-1/4 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-r from-gray-50/20 to-gray-100/20 rounded-full filter blur-[120px]"
                     animate={{
                         scale: [1, 1.1, 1],
                         opacity: [0.2, 0.3, 0.2],
@@ -69,7 +69,7 @@ const Footer = () => {
                     }}
                 />
                 <motion.div
-                    className="absolute bottom-1/4 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-r from-green-100/15 to-green-200/15 rounded-full filter blur-[120px]"
+                    className="absolute bottom-1/4 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-gradient-to-r from-gray-100/15 to-gray-200/15 rounded-full filter blur-[120px]"
                     animate={{
                         scale: [1.1, 1, 1.1],
                         opacity: [0.25, 0.2, 0.25],

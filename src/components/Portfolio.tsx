@@ -77,12 +77,12 @@ const Portfolio = () => {
         <section id="portfolio" className="min-h-screen text-gray-900 relative overflow-hidden py-32 bg-white">
             {/* Animated background elements */}
             <div className="absolute inset-0">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-green-50/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-100/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-green-50/5 to-green-100/5 rounded-full blur-3xl animate-spin-slow"></div>
+                <div className="absolute top-20 left-10 w-72 h-72 bg-gray-50/20 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-20 right-10 w-96 h-96 bg-gray-100/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-gray-50/5 to-gray-100/5 rounded-full blur-3xl animate-spin-slow"></div>
             </div>
 
-            <div className="absolute inset-0 softecof-pattern opacity-10"></div>
+            <div className="absolute inset-0 softecof-pattern opacity-3"></div>
 
             <motion.div
                 className="container mx-auto px-6 relative z-10"
@@ -122,10 +122,10 @@ const Portfolio = () => {
                             whileHover={{ scale: 1.03, y: -8 }}
                             transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
                         >
-                            <Card className="overflow-hidden group bg-white border border-green-200 hover:border-green-300 transition-all duration-500 shadow-lg hover:shadow-xl">
+                            <Card className="overflow-hidden group bg-white border border-gray-200 hover:border-gray-300 transition-all duration-500 shadow-lg hover:shadow-xl">
                                 <div className="relative overflow-hidden">
                                     <motion.div
-                                        className="absolute inset-0 bg-gradient-to-r from-green-50/15 to-green-100/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                        className="absolute inset-0 bg-gradient-to-r from-gray-50/8 to-gray-100/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                         whileHover={{ scale: 1.1 }}
                                     />
                                     <motion.img
@@ -181,8 +181,8 @@ const Portfolio = () => {
                     className="text-center mt-20"
                     variants={itemVariants}
                 >
-                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-3xl p-12 border border-green-200 shadow-xl relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-green-50/20 to-green-100/20 animate-pulse"></div>
+                    <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-3xl p-12 border border-gray-200 shadow-xl relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-r from-gray-50/10 to-gray-100/10 animate-pulse"></div>
                         <div className="relative z-10">
                             <motion.h3
                                 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900"
