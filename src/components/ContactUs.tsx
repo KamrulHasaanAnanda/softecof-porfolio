@@ -30,7 +30,7 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="min-h-screen relative overflow-hidden py-32 bg-white">
+        <section id="contact" className="min-h-screen relative overflow-hidden py-32 bg-white">
             <div className="absolute inset-0 softecof-pattern opacity-15"></div>
 
             <motion.div

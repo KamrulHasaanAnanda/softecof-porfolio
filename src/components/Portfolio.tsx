@@ -74,15 +74,15 @@ const Portfolio = () => {
     };
 
     return (
-        <section className="min-h-screen text-white relative overflow-hidden py-32 bg-gradient-to-br from-slate-900 via-slate-800 via-purple-900/20 to-slate-900">
+        <section id="portfolio" className="min-h-screen text-gray-900 relative overflow-hidden py-32 bg-white">
             {/* Animated background elements */}
             <div className="absolute inset-0">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-green-500/10 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-green-400/5 to-red-400/5 rounded-full blur-3xl animate-spin-slow"></div>
+                <div className="absolute top-20 left-10 w-72 h-72 bg-green-50/20 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-100/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-green-50/5 to-green-100/5 rounded-full blur-3xl animate-spin-slow"></div>
             </div>
 
-            <div className="absolute inset-0 bd-pattern opacity-5"></div>
+            <div className="absolute inset-0 softecof-pattern opacity-10"></div>
 
             <motion.div
                 className="container mx-auto px-6 relative z-10"
@@ -100,12 +100,12 @@ const Portfolio = () => {
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                     >
-                        <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-red-400 mx-auto rounded-full mb-8"></div>
+                        <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-green-700 mx-auto rounded-full mb-8"></div>
                     </motion.div>
                     <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
-                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-emerald-500 to-red-400 animate-gradient">Portfolio</span>
+                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-green-700 to-green-800 animate-gradient">Portfolio</span>
                     </h2>
-                    <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto font-light leading-relaxed">
+                    <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed">
                         Discover how we help organizations across various sectors achieve their goals
                         through digital transformation, serving both local and global markets.
                     </p>
@@ -122,10 +122,10 @@ const Portfolio = () => {
                             whileHover={{ scale: 1.03, y: -8 }}
                             transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
                         >
-                            <Card className="overflow-hidden group bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-500 shadow-2xl hover:shadow-green-500/20">
+                            <Card className="overflow-hidden group bg-white border border-green-200 hover:border-green-300 transition-all duration-500 shadow-lg hover:shadow-xl">
                                 <div className="relative overflow-hidden">
                                     <motion.div
-                                        className="absolute inset-0 bg-gradient-to-r from-green-600/40 to-red-600/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                        className="absolute inset-0 bg-gradient-to-r from-green-50/15 to-green-100/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                         whileHover={{ scale: 1.1 }}
                                     />
                                     <motion.img
@@ -140,29 +140,29 @@ const Portfolio = () => {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: index * 0.1 }}
                                     >
-                                        <span className="px-4 py-2 bg-gradient-to-r from-green-600 to-red-600 text-white rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm">
+                                        <span className="px-4 py-2 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-full text-sm font-semibold shadow-lg">
                                             {project.category}
                                         </span>
                                     </motion.div>
                                     <motion.div
-                                        className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                        className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                     />
                                 </div>
                                 <CardContent className="p-8">
                                     <motion.h3
-                                        className="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors duration-300"
+                                        className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-green-600 transition-colors duration-300"
                                         whileHover={{ x: 5 }}
                                     >
                                         {project.title}
                                     </motion.h3>
-                                    <p className="text-gray-300 mb-6 font-light leading-relaxed text-lg">{project.description}</p>
+                                    <p className="text-gray-600 mb-6 font-light leading-relaxed text-lg">{project.description}</p>
 
                                     <div className="flex flex-wrap gap-3 mb-6">
                                         {project.tags.map((tag, tagIndex) => (
                                             <motion.span
                                                 key={tagIndex}
-                                                className="px-4 py-2 bg-gradient-to-r from-green-600/20 to-red-600/20 text-gray-200 rounded-lg text-sm font-medium border border-green-500/20 backdrop-blur-sm"
-                                                whileHover={{ scale: 1.05, backgroundColor: "rgba(34, 197, 94, 0.3)" }}
+                                                className="px-4 py-2 bg-green-50 text-green-700 rounded-lg text-sm font-medium border border-green-200 hover:bg-green-100 transition-colors duration-200"
+                                                whileHover={{ scale: 1.05 }}
                                                 transition={{ duration: 0.2 }}
                                             >
                                                 {tag}
@@ -181,24 +181,24 @@ const Portfolio = () => {
                     className="text-center mt-20"
                     variants={itemVariants}
                 >
-                    <div className="bg-gradient-to-r from-green-600/20 to-red-600/20 backdrop-blur-md rounded-3xl p-12 border border-white/20 shadow-2xl relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-red-500/10 animate-pulse"></div>
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-3xl p-12 border border-green-200 shadow-xl relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-r from-green-50/20 to-green-100/20 animate-pulse"></div>
                         <div className="relative z-10">
                             <motion.h3
-                                className="text-3xl md:text-4xl font-bold mb-6 text-white"
+                                className="text-3xl md:text-4xl font-bold mb-6 text-gray-900"
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ type: "spring", stiffness: 300 }}
                             >
                                 Start Your Project Today
                             </motion.h3>
-                            <p className="text-gray-300 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
+                            <p className="text-gray-600 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
                                 Begin your digital transformation journey with our global expertise and local understanding.
                             </p>
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <Button size="lg" className="bg-gradient-to-r from-green-600 to-red-600 hover:from-green-700 hover:to-red-700 text-white px-10 py-6 rounded-2xl text-xl font-semibold shadow-2xl hover:shadow-green-500/25 transition-all duration-300">
+                                <Button size="lg" className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-10 py-6 rounded-2xl text-xl font-semibold shadow-xl hover:shadow-green-500/25 transition-all duration-300">
                                     Contact Us Now
                                 </Button>
                             </motion.div>

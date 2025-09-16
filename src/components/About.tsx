@@ -34,7 +34,7 @@ const About = () => {
     };
 
     return (
-        <section className="min-h-screen relative overflow-hidden bg-white">
+        <section id="about" className="min-h-screen relative overflow-hidden bg-white">
             <div className="absolute inset-0 softecof-pattern opacity-15"></div>
 
             <motion.div
