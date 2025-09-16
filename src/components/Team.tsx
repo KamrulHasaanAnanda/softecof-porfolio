@@ -103,8 +103,8 @@ const Team = () => {
     };
 
     return (
-        <section className="min-h-screen relative overflow-hidden py-32 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-            <div className="absolute inset-0 bd-pattern opacity-10"></div>
+        <section className="min-h-screen relative overflow-hidden py-32 bg-white">
+            <div className="absolute inset-0 softecof-pattern opacity-15"></div>
 
             <motion.div
                 className="container mx-auto px-6 relative z-10"
@@ -117,10 +117,10 @@ const Team = () => {
                     className="text-center mb-16"
                     variants={itemVariants}
                 >
-                    <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white">
-                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-500 to-red-400">Team</span>
+                    <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gray-900">
+                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-green-700 to-green-800">Team</span>
                     </h2>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
                         Our experienced leadership team combines deep technical expertise with strategic business intelligence
                         to deliver exceptional results for our global clients.
                     </p>
@@ -132,31 +132,31 @@ const Team = () => {
                     variants={containerVariants}
                 >
                     <motion.div
-                        className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10"
+                        className="text-center bg-white rounded-xl p-6 border border-green-200 shadow-sm hover:shadow-md"
                         variants={itemVariants}
                         whileHover={{ scale: 1.02 }}
                     >
-                        <Users className="h-12 w-12 text-green-400 mx-auto mb-4" />
-                        <h3 className="text-2xl font-bold text-white mb-2">25+</h3>
-                        <p className="text-gray-300">Skilled Developers</p>
+                        <Users className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">25+</h3>
+                        <p className="text-gray-600">Skilled Developers</p>
                     </motion.div>
                     <motion.div
-                        className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10"
+                        className="text-center bg-white rounded-xl p-6 border border-green-200 shadow-sm hover:shadow-md"
                         variants={itemVariants}
                         whileHover={{ scale: 1.02 }}
                     >
-                        <Award className="h-12 w-12 text-red-400 mx-auto mb-4" />
-                        <h3 className="text-2xl font-bold text-white mb-2">8+</h3>
-                        <p className="text-gray-300">Years Experience</p>
+                        <Award className="h-12 w-12 text-green-700 mx-auto mb-4" />
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">8+</h3>
+                        <p className="text-gray-600">Years Experience</p>
                     </motion.div>
                     <motion.div
-                        className="text-center bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10"
+                        className="text-center bg-white rounded-xl p-6 border border-green-200 shadow-sm hover:shadow-md"
                         variants={itemVariants}
                         whileHover={{ scale: 1.02 }}
                     >
-                        <Globe className="h-12 w-12 text-green-400 mx-auto mb-4" />
-                        <h3 className="text-2xl font-bold text-white mb-2">6</h3>
-                        <p className="text-gray-300">Major Cities</p>
+                        <Globe className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">6</h3>
+                        <p className="text-gray-600">Major Cities</p>
                     </motion.div>
                 </motion.div>
 
@@ -172,13 +172,13 @@ const Team = () => {
                             transition={{ duration: 0.2 }}
                             className="h-full"
                         >
-                            <Card className="text-center bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col">
+                            <Card className="text-center bg-white border border-green-200 hover:border-green-300 transition-all duration-300 h-full flex flex-col shadow-sm hover:shadow-md">
                                 <CardContent className="p-8 flex flex-col h-full">
                                     <motion.div
                                         className="relative inline-block mb-6"
                                         whileHover={{ scale: 1.05 }}
                                     >
-                                        <div className="absolute inset-0 bg-gradient-to-r from-green-600/30 to-red-600/30 rounded-full blur-xl"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-r from-green-100/30 to-green-200/30 rounded-full blur-xl"></div>
                                         <img
                                             src={member.image}
                                             alt={member.name}
@@ -186,32 +186,32 @@ const Team = () => {
                                         />
                                     </motion.div>
                                     <motion.h3
-                                        className="text-xl font-bold mb-2 text-white"
+                                        className="text-xl font-bold mb-2 text-gray-900"
                                         whileHover={{ x: 5 }}
                                     >
                                         {member.name}
                                     </motion.h3>
-                                    <p className="text-green-400 font-semibold mb-2">{member.role}</p>
-                                    <div className="flex items-center justify-center mb-2 text-sm text-gray-400">
-                                        <MapPin className="h-4 w-4 text-red-400 mr-1" />
+                                    <p className="text-green-600 font-semibold mb-2">{member.role}</p>
+                                    <div className="flex items-center justify-center mb-2 text-sm text-gray-500">
+                                        <MapPin className="h-4 w-4 text-green-600 mr-1" />
                                         <span>{member.location}</span>
                                     </div>
 
-                                    <p className="text-gray-300 text-sm mb-6 leading-relaxed flex-grow">{member.bio}</p>
+                                    <p className="text-gray-600 text-sm mb-6 leading-relaxed flex-grow">{member.bio}</p>
                                     <motion.div
                                         className="flex justify-center space-x-4 mt-auto"
                                         whileHover={{ scale: 1.1 }}
                                     >
                                         <motion.a
                                             href={member.social.linkedin}
-                                            className="text-gray-400 hover:text-green-400 transition-colors duration-300"
+                                            className="text-gray-500 hover:text-green-600 transition-colors duration-300"
                                             whileHover={{ scale: 1.2 }}
                                         >
                                             <Linkedin className="h-5 w-5" />
                                         </motion.a>
                                         <motion.a
                                             href={member.social.email}
-                                            className="text-gray-400 hover:text-red-400 transition-colors duration-300"
+                                            className="text-gray-500 hover:text-green-700 transition-colors duration-300"
                                             whileHover={{ scale: 1.2 }}
                                         >
                                             <Mail className="h-5 w-5" />
@@ -228,18 +228,18 @@ const Team = () => {
                     className="text-center mt-16"
                     variants={itemVariants}
                 >
-                    <div className="bg-gradient-to-r from-green-600/20 to-red-600/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-8 border border-green-200 shadow-lg">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
                             Join Our Global Team
                         </h3>
-                        <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
                             Work with us to shape the future of technology and help businesses worldwide succeed in the digital age.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">
                                 View Open Positions
                             </button>
-                            <button className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">
+                            <button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300">
                                 Internship Program
                             </button>
                         </div>
