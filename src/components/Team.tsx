@@ -2,6 +2,7 @@
 import { Linkedin, Mail, MapPin, Award, Users, Globe } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Team = () => {
     const teamMembers = [
@@ -57,7 +58,7 @@ const Team = () => {
             name: "Sadat Shahriar Bari",
             role: "Team Lead",
             image: "/sadat.jpeg",
-            bio: "Strategic communication expert driving brand visibility and stakeholder engagement across global markets.",
+            bio: "Hands-on engineering leader focused on delivery excellence, mentoring, and building reliable, scalable products.",
             location: "Dhaka, Bangladesh",
 
             social: {
@@ -69,7 +70,7 @@ const Team = () => {
             name: "Monjurul Alam",
             role: "Head of Project Management",
             image: "/monjur.jpeg",
-            bio: "Financial strategist with expertise in corporate finance, investment management, and business development.",
+            bio: "Program and delivery leader aligning scope, timelines, and stakeholders to ensure predictable execution and client success.",
             location: "Dhaka, Bangladesh",
 
             social: {
@@ -179,9 +180,11 @@ const Team = () => {
                                         whileHover={{ scale: 1.05 }}
                                     >
                                         <div className="absolute inset-0 bg-gradient-to-r from-gray-100/15 to-gray-200/15 rounded-full blur-xl"></div>
-                                        <img
+                                        <Image
                                             src={member.image}
                                             alt={member.name}
+                                            width={128}
+                                            height={128}
                                             className="w-32 h-32 rounded-full mx-auto object-cover shadow-lg relative z-10"
                                         />
                                     </motion.div>

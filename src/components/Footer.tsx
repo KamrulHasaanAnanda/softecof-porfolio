@@ -1,6 +1,7 @@
 "use client"
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Heart } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Footer = () => {
     const containerVariants = {
@@ -96,7 +97,7 @@ const Footer = () => {
                     {/* Company Info */}
                     <motion.div variants={itemVariants} className="space-y-4 md:space-y-6">
                         <div className="flex items-center space-x-2">
-                            <img src="/softecof.png" alt="Softecof Logo" className="h-6 w-6 md:h-8 md:w-8" />
+                            <Image src="/softecof.png" alt="Softecof Logo" width={32} height={32} className="h-6 w-6 md:h-8 md:w-8" />
                             <div>
                                 <h3 className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-green-700 to-green-800">
                                     Softecof

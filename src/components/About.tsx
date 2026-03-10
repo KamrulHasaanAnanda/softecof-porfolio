@@ -2,6 +2,7 @@
 import { Globe, Heart, Shield, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const About = () => {
     const features = [
@@ -73,9 +74,11 @@ const About = () => {
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-gray-100/15 to-gray-200/15 rounded-2xl blur-xl"></div>
                         <div className="relative bg-white rounded-2xl p-3 sm:p-4 md:p-8 border border-green-200 shadow-lg">
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
                                 alt="Team collaboration"
+                                width={600}
+                                height={400}
                                 className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] object-cover rounded-xl"
                             />
                         </div>
@@ -179,9 +182,11 @@ const About = () => {
                             >
                                 <div className="absolute inset-0 bg-gradient-to-r from-gray-100/15 to-gray-200/15 rounded-2xl blur-xl"></div>
                                 <div className="relative bg-white rounded-2xl p-3 sm:p-4 border border-green-200 shadow-lg">
-                                    <img
+                                    <Image
                                         src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
                                         alt="Team collaboration"
+                                        width={600}
+                                        height={400}
                                         className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] object-cover rounded-xl"
                                     />
                                 </div>

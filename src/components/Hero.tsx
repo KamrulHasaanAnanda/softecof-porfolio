@@ -1,7 +1,8 @@
 "use client"
-import { ArrowRight, Zap, Sparkles, Phone, Mail, Globe } from "lucide-react";
+import { ArrowRight, Zap, Sparkles, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Hero = () => {
     const containerVariants = {
@@ -90,7 +91,7 @@ const Hero = () => {
                     >
                         <div className="relative">
                             <div className="absolute inset-0 bg-green-200/50 rounded-full blur-xl animate-pulse-bd" />
-                            <img src="/softecof.png" alt="Softecof" className="h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14 text-green-600 relative z-10" />
+                            <Image src="/softecof.png" alt="Softecof" width={56} height={56} className="h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14 text-indigo-600 relative z-10" />
                         </div>
                     </motion.div>
                     <div className="text-center">

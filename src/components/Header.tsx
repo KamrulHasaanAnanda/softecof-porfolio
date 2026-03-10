@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,9 +61,11 @@ const Header = () => {
                     >
                         <div className="relative">
                             <div className="absolute inset-0 bg-gray-200/20 rounded-full blur-sm"></div>
-                            <img
+                            <Image
                                 src="/softecof.png"
                                 alt="Softecof Logo"
+                                width={40}
+                                height={40}
                                 className="h-8 w-8 md:h-10 md:w-10 relative z-10"
                             />
                         </div>
