@@ -75,14 +75,7 @@ const Portfolio = () => {
 
     return (
         <section id="portfolio" className="min-h-screen text-gray-900 relative overflow-hidden py-32 bg-white">
-            {/* Animated background elements */}
-            <div className="absolute inset-0">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-gray-50/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-20 right-10 w-96 h-96 bg-gray-100/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-gray-50/5 to-gray-100/5 rounded-full blur-3xl animate-spin-slow"></div>
-            </div>
-
-            <div className="absolute inset-0 softecof-pattern opacity-3"></div>
+            <div className="absolute inset-0 softecof-pattern opacity-5"></div>
 
             <motion.div
                 className="container mx-auto px-6 relative z-10"
@@ -100,10 +93,10 @@ const Portfolio = () => {
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                     >
-                        <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-green-700 mx-auto rounded-full mb-8"></div>
+                        <div className="w-24 h-1 bg-[#008A8A] mx-auto rounded-full mb-8"></div>
                     </motion.div>
-                    <h2 className="text-6xl md:text-7xl font-bold mb-8 leading-tight">
-                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-green-700 to-green-800 animate-gradient">Portfolio</span>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#008A8A] via-[#007777] to-[#006666] animate-gradient">Portfolio</span>
                     </h2>
                     <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed">
                         Discover how we help organizations across various sectors achieve their goals
@@ -140,7 +133,7 @@ const Portfolio = () => {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: index * 0.1 }}
                                     >
-                                        <span className="px-4 py-2 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-full text-sm font-semibold shadow-lg">
+                                        <span className="px-4 py-2 bg-[#008A8A] text-white rounded-full text-sm font-semibold shadow-lg">
                                             {project.category}
                                         </span>
                                     </motion.div>
@@ -150,7 +143,7 @@ const Portfolio = () => {
                                 </div>
                                 <CardContent className="p-8">
                                     <motion.h3
-                                        className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-green-600 transition-colors duration-300"
+                                        className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-[#008A8A] transition-colors duration-300"
                                         whileHover={{ x: 5 }}
                                     >
                                         {project.title}
@@ -161,7 +154,7 @@ const Portfolio = () => {
                                         {project.tags.map((tag, tagIndex) => (
                                             <motion.span
                                                 key={tagIndex}
-                                                className="px-4 py-2 bg-green-50 text-green-700 rounded-lg text-sm font-medium border border-green-200 hover:bg-green-100 transition-colors duration-200"
+                                                className="px-4 py-2 bg-[#F0FBFB] text-[#005555] rounded-lg text-sm font-medium border border-[#008A8A]/20 hover:bg-[#E1F7F7] transition-colors duration-200"
                                                 whileHover={{ scale: 1.05 }}
                                                 transition={{ duration: 0.2 }}
                                             >
@@ -198,7 +191,7 @@ const Portfolio = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <Button size="lg" className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-10 py-6 rounded-2xl text-xl font-semibold shadow-xl hover:shadow-green-500/25 transition-all duration-300">
+                                <Button size="lg" className="bg-[#008A8A] hover:bg-[#006666] text-white px-10 py-6 rounded-2xl text-xl font-semibold shadow-xl hover:shadow-[#008A8A]/30 transition-all duration-300">
                                     Contact Us Now
                                 </Button>
                             </motion.div>

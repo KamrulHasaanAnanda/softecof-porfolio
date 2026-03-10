@@ -18,7 +18,7 @@ const Services = () => {
             title: "App Development",
             description: "Native and cross-platform mobile applications that provide seamless user experiences across iOS and Android platforms.",
             features: ["iOS Development", "Android Development", "Cross-platform Apps", "App Store Optimization", "Push Notifications", "Offline Functionality"],
-            color: "from-green-500 to-green-600",
+            color: "from-[#008A8A] to-[#006666]",
             category: "Mobile Development"
         },
         {
@@ -72,7 +72,7 @@ const Services = () => {
     ];
 
     const stats = [
-        { icon: Users, label: "Happy Clients", value: "50+", color: "from-green-400 to-green-600" },
+        { icon: Users, label: "Happy Clients", value: "50+", color: "from-[#33A3A3] to-[#008A8A]" },
         { icon: Zap, label: "Projects Delivered", value: "100+", color: "from-blue-400 to-blue-600" },
         { icon: Shield, label: "Uptime Guarantee", value: "99.9%", color: "from-purple-400 to-purple-600" },
         { icon: Code, label: "Technologies", value: "15+", color: "from-orange-400 to-orange-600" },
@@ -117,7 +117,7 @@ const Services = () => {
                     variants={itemVariants}
                 >
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-gray-900">
-                        What We <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 via-green-700 to-green-800">Build</span>
+                        What We <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#008A8A] via-[#007777] to-[#006666]">Build</span>
                     </h2>
                     <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto font-light px-4">
                         We specialize in creating custom software solutions that solve real business problems
@@ -137,12 +137,12 @@ const Services = () => {
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <Card className="bg-white border border-green-200 rounded-xl overflow-hidden group hover:border-green-300 transition-all duration-300 shadow-sm hover:shadow-md">
+                            <Card className="bg-white border border-[#008A8A]/20 rounded-xl overflow-hidden group hover:border-[#008A8A]/40 transition-all duration-300 shadow-sm hover:shadow-md">
                                 <CardContent className="p-3 sm:p-4 md:p-6 text-center">
                                     <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-r ${stat.color} flex items-center justify-center mb-3 sm:mb-4 mx-auto transform group-hover:scale-110 transition-transform duration-300`}>
                                         <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-white" />
                                     </div>
-                                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 bg-gradient-to-r from-green-600 to-green-800 bg-clip-text text-transparent">{stat.value}</h3>
+                                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 bg-clip-text text-transparent bg-gradient-to-r from-[#008A8A] to-[#006666]">{stat.value}</h3>
                                     <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">{stat.label}</p>
                                 </CardContent>
                             </Card>
@@ -162,13 +162,13 @@ const Services = () => {
                             whileHover={{ scale: 1.02, y: -5 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <Card className="bg-white border border-green-200 rounded-xl overflow-hidden group hover:border-green-300 transition-all duration-300 h-full shadow-sm hover:shadow-md">
+                            <Card className="bg-white border border-[#008A8A]/20 rounded-xl overflow-hidden group hover:border-[#008A8A]/40 transition-all duration-300 h-full shadow-sm hover:shadow-md">
                                 <CardContent className="p-4 sm:p-6 md:p-8">
                                     <div className="flex items-center justify-between mb-3 sm:mb-4">
                                         <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
                                             <service.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
                                         </div>
-                                        <span className="text-xs font-medium text-gray-600 bg-green-50 px-2 sm:px-3 py-1 rounded-full border border-green-200">
+                                        <span className="text-xs font-medium text-gray-600 bg-[#F0FBFB] px-2 sm:px-3 py-1 rounded-full border border-[#008A8A]/20">
                                             {service.category}
                                         </span>
                                     </div>
@@ -177,7 +177,7 @@ const Services = () => {
                                     <div className="space-y-1 sm:space-y-2">
                                         {service.features.map((feature, featureIndex) => (
                                             <div key={featureIndex} className="flex items-center">
-                                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-gradient-to-r from-green-500 to-green-600 rounded-full mr-2 sm:mr-3"></div>
+                                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#008A8A] rounded-full mr-2 sm:mr-3"></div>
                                                 <span className="text-xs sm:text-sm text-gray-600">{feature}</span>
                                             </div>
                                         ))}
