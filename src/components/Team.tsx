@@ -104,9 +104,11 @@ const Team = () => {
     };
 
     return (
-        <section id="team" className="min-h-screen relative overflow-hidden py-32 bg-white">
-            <div className="absolute inset-0 softecof-pattern opacity-4"></div>
-
+        <section id="team" className="min-h-screen relative overflow-hidden py-24 sm:py-28 md:py-32 bg-gray-50">
+            <div className="absolute inset-0">
+                <div className="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-[#008A8A]/10 blur-3xl" />
+                <div className="absolute -bottom-40 -right-40 h-[520px] w-[520px] rounded-full bg-[#008A8A]/8 blur-3xl" />
+            </div>
             <motion.div
                 className="container mx-auto px-6 relative z-10"
                 variants={containerVariants}
@@ -115,25 +117,32 @@ const Team = () => {
                 viewport={{ once: true }}
             >
                 <motion.div
-                    className="text-center mb-16"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end mb-12 sm:mb-16"
                     variants={itemVariants}
                 >
-                    <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gray-900">
-                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#008A8A] via-[#007777] to-[#006666]">Team</span>
-                    </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-                        Our experienced leadership team combines deep technical expertise with strategic business intelligence
-                        to deliver exceptional results for our global clients.
-                    </p>
+                    <div>
+                        <div className="inline-flex items-center gap-2 rounded-full border border-[#008A8A]/25 bg-white/70 px-3 py-1.5 text-sm text-gray-700 backdrop-blur">
+                            <span className="h-2 w-2 rounded-full bg-[#008A8A]" />
+                            Team
+                        </div>
+                        <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                            The people behind Softecof.
+                        </h2>
+                        <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl">
+                            A senior team focused on quality, delivery, and clear communication—end to end.
+                        </p>
+                    </div>
+                    <div className="lg:text-right">
+                        <div className="inline-flex items-center gap-2 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur px-4 py-3 text-sm text-gray-700">
+                            <span className="font-semibold text-gray-900">Hiring:</span> Internship & full-time roles
+                        </div>
+                    </div>
                 </motion.div>
 
                 {/* Team Stats */}
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
-                    variants={containerVariants}
-                >
+                <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 sm:mb-16" variants={containerVariants}>
                     <motion.div
-                        className="text-center bg-white rounded-xl p-6 border border-[#008A8A]/20 shadow-sm hover:shadow-md"
+                        className="text-center bg-white/80 backdrop-blur rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md"
                         variants={itemVariants}
                         whileHover={{ scale: 1.02 }}
                     >
@@ -142,7 +151,7 @@ const Team = () => {
                         <p className="text-gray-600">Skilled Developers</p>
                     </motion.div>
                     <motion.div
-                        className="text-center bg-white rounded-xl p-6 border border-[#008A8A]/20 shadow-sm hover:shadow-md"
+                        className="text-center bg-white/80 backdrop-blur rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md"
                         variants={itemVariants}
                         whileHover={{ scale: 1.02 }}
                     >
@@ -151,7 +160,7 @@ const Team = () => {
                         <p className="text-gray-600">Years Experience</p>
                     </motion.div>
                     <motion.div
-                        className="text-center bg-white rounded-xl p-6 border border-[#008A8A]/20 shadow-sm hover:shadow-md"
+                        className="text-center bg-white/80 backdrop-blur rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md"
                         variants={itemVariants}
                         whileHover={{ scale: 1.02 }}
                     >
@@ -173,13 +182,13 @@ const Team = () => {
                             transition={{ duration: 0.2 }}
                             className="h-full"
                         >
-                            <Card className="text-center bg-white border border-[#008A8A]/20 hover:border-[#008A8A]/40 transition-all duration-300 h-full flex flex-col shadow-sm hover:shadow-md">
+                            <Card className="text-center bg-white/85 backdrop-blur border border-gray-200 hover:border-[#008A8A]/35 transition-all duration-300 h-full flex flex-col shadow-sm hover:shadow-md rounded-2xl">
                                 <CardContent className="p-8 flex flex-col h-full">
                                     <motion.div
                                         className="relative inline-block mb-6"
                                         whileHover={{ scale: 1.05 }}
                                     >
-                                        <div className="absolute inset-0 bg-gradient-to-r from-gray-100/15 to-gray-200/15 rounded-full blur-xl"></div>
+                                        <div className="absolute inset-0 bg-[#008A8A]/10 rounded-full blur-xl"></div>
                                         <Image
                                             src={member.image}
                                             alt={member.name}
@@ -231,7 +240,8 @@ const Team = () => {
                     className="text-center mt-16"
                     variants={itemVariants}
                 >
-                    <div className="bg-white rounded-2xl p-8 border border-[#008A8A]/15 shadow-lg">
+                    <div className="bg-white/85 backdrop-blur rounded-3xl p-8 sm:p-10 border border-gray-200 shadow-lg relative overflow-hidden">
+                        <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#008A8A]/10 blur-3xl" />
                         <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
                             Join Our Global Team
                         </h3>

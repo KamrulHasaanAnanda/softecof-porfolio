@@ -2,6 +2,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const Portfolio = () => {
     const projects = [
@@ -74,9 +75,11 @@ const Portfolio = () => {
     };
 
     return (
-        <section id="portfolio" className="min-h-screen text-gray-900 relative overflow-hidden py-32 bg-white">
-            <div className="absolute inset-0 softecof-pattern opacity-5"></div>
-
+        <section id="portfolio" className="min-h-screen relative overflow-hidden text-gray-900 py-24 sm:py-28 md:py-32 bg-white">
+            <div className="absolute inset-0">
+                <div className="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-[#008A8A]/10 blur-3xl" />
+                <div className="absolute -bottom-40 -right-40 h-[520px] w-[520px] rounded-full bg-[#008A8A]/8 blur-3xl" />
+            </div>
             <motion.div
                 className="container mx-auto px-6 relative z-10"
                 variants={containerVariants}
@@ -85,23 +88,29 @@ const Portfolio = () => {
                 viewport={{ once: true }}
             >
                 <motion.div
-                    className="text-center mb-20"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end mb-12 sm:mb-16"
                     variants={itemVariants}
                 >
-                    <motion.div
-                        className="inline-block mb-6"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                    >
-                        <div className="w-24 h-1 bg-[#008A8A] mx-auto rounded-full mb-8"></div>
-                    </motion.div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                        Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#008A8A] via-[#007777] to-[#006666] animate-gradient">Portfolio</span>
-                    </h2>
-                    <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto font-light leading-relaxed">
-                        Discover how we help organizations across various sectors achieve their goals
-                        through digital transformation, serving both local and global markets.
-                    </p>
+                    <div>
+                        <div className="inline-flex items-center gap-2 rounded-full border border-[#008A8A]/25 bg-white/70 px-3 py-1.5 text-sm text-gray-700 backdrop-blur">
+                            <span className="h-2 w-2 rounded-full bg-[#008A8A]" />
+                            Work
+                        </div>
+                        <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-900">
+                            Selected projects that shipped with confidence.
+                        </h2>
+                        <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl">
+                            A snapshot of products, platforms, and systems we’ve helped teams deliver—across industries and time zones.
+                        </p>
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
+                        <Button variant="outline" className="rounded-xl border-gray-200 bg-white/70 hover:border-[#008A8A]/35">
+                            View all case studies <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                        <Button className="rounded-xl bg-[#008A8A] hover:bg-[#006666] text-white shadow-lg shadow-[#008A8A]/20">
+                            Start a project
+                        </Button>
+                    </div>
                 </motion.div>
 
                 <motion.div
@@ -115,7 +124,7 @@ const Portfolio = () => {
                             whileHover={{ scale: 1.03, y: -8 }}
                             transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
                         >
-                            <Card className="overflow-hidden group bg-white border border-gray-200 hover:border-gray-300 transition-all duration-500 shadow-lg hover:shadow-xl">
+                            <Card className="overflow-hidden group bg-white/85 backdrop-blur border border-gray-200 hover:border-[#008A8A]/35 transition-all duration-500 shadow-lg hover:shadow-xl rounded-2xl">
                                 <div className="relative overflow-hidden">
                                     <motion.div
                                         className="absolute inset-0 bg-gradient-to-r from-gray-50/8 to-gray-100/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -133,7 +142,7 @@ const Portfolio = () => {
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: index * 0.1 }}
                                     >
-                                        <span className="px-4 py-2 bg-[#008A8A] text-white rounded-full text-sm font-semibold shadow-lg">
+                                        <span className="px-4 py-2 bg-[#008A8A] text-white rounded-full text-sm font-semibold shadow-lg shadow-[#008A8A]/20">
                                             {project.category}
                                         </span>
                                     </motion.div>
@@ -141,7 +150,7 @@ const Portfolio = () => {
                                         className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                                     />
                                 </div>
-                                <CardContent className="p-8">
+                                <CardContent className="p-7 sm:p-8">
                                     <motion.h3
                                         className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-[#008A8A] transition-colors duration-300"
                                         whileHover={{ x: 5 }}
@@ -169,32 +178,25 @@ const Portfolio = () => {
                     ))}
                 </motion.div>
 
-                {/* Call to Action */}
-                <motion.div
-                    className="text-center mt-20"
-                    variants={itemVariants}
-                >
-                    <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-3xl p-12 border border-gray-200 shadow-xl relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-gray-50/10 to-gray-100/10 animate-pulse"></div>
-                        <div className="relative z-10">
-                            <motion.h3
-                                className="text-3xl md:text-4xl font-bold mb-6 text-gray-900"
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ type: "spring", stiffness: 300 }}
-                            >
-                                Start Your Project Today
-                            </motion.h3>
-                            <p className="text-gray-600 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
-                                Begin your digital transformation journey with our global expertise and local understanding.
-                            </p>
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <Button size="lg" className="bg-[#008A8A] hover:bg-[#006666] text-white px-10 py-6 rounded-2xl text-xl font-semibold shadow-xl hover:shadow-[#008A8A]/30 transition-all duration-300">
-                                    Contact Us Now
+                <motion.div className="mt-16 sm:mt-20" variants={itemVariants}>
+                    <div className="rounded-3xl border border-gray-200 bg-white/80 backdrop-blur p-8 sm:p-10 shadow-xl overflow-hidden relative">
+                        <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[#008A8A]/10 blur-3xl" />
+                        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                            <div>
+                                <div className="text-sm font-semibold text-[#006666]">Ready when you are</div>
+                                <h3 className="mt-2 text-2xl sm:text-3xl font-bold text-gray-900">Tell us what you’re building.</h3>
+                                <p className="mt-3 text-gray-600 leading-relaxed">
+                                    We’ll respond with a clear plan, timeline, and next steps—no fluff.
+                                </p>
+                            </div>
+                            <div className="flex flex-col sm:flex-row gap-3 lg:justify-end">
+                                <Button variant="outline" className="rounded-xl border-gray-200 bg-white hover:border-[#008A8A]/35">
+                                    See services
                                 </Button>
-                            </motion.div>
+                                <Button className="rounded-xl bg-[#008A8A] hover:bg-[#006666] text-white shadow-lg shadow-[#008A8A]/20">
+                                    Contact us <ArrowRight className="ml-2 h-4 w-4" />
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </motion.div>

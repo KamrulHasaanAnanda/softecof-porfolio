@@ -30,9 +30,11 @@ const ContactUs = () => {
     };
 
     return (
-        <section id="contact" className="min-h-screen relative overflow-hidden py-32 bg-white">
-            <div className="absolute inset-0 softecof-pattern opacity-4"></div>
-
+        <section id="contact" className="min-h-screen relative overflow-hidden py-24 sm:py-28 md:py-32 bg-white">
+            <div className="absolute inset-0">
+                <div className="absolute -top-40 right-0 h-[520px] w-[520px] rounded-full bg-[#008A8A]/10 blur-3xl" />
+                <div className="absolute -bottom-40 left-0 h-[520px] w-[520px] rounded-full bg-[#008A8A]/8 blur-3xl" />
+            </div>
             <motion.div
                 className="container mx-auto px-6 relative z-10"
                 variants={containerVariants}
@@ -41,16 +43,26 @@ const ContactUs = () => {
                 viewport={{ once: true }}
             >
                 <motion.div
-                    className="text-center mb-16"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end mb-12 sm:mb-16"
                     variants={itemVariants}
                 >
-                    <h2 className="text-5xl md:text-6xl font-bold mb-8 text-gray-900">
-                        Get in <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#008A8A] via-[#007777] to-[#006666]">Touch</span>
-                    </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-                        Ready to start your next project? Connect with our team and discover
-                        how we can help bring your vision to life with world-class solutions.
-                    </p>
+                    <div>
+                        <div className="inline-flex items-center gap-2 rounded-full border border-[#008A8A]/25 bg-white/70 px-3 py-1.5 text-sm text-gray-700 backdrop-blur">
+                            <span className="h-2 w-2 rounded-full bg-[#008A8A]" />
+                            Contact
+                        </div>
+                        <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                            Tell us what you’re building.
+                        </h2>
+                        <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl">
+                            Share a quick overview and we’ll respond with a plan, timeline, and the best next step.
+                        </p>
+                    </div>
+                    <div className="lg:text-right">
+                        <div className="inline-flex items-center gap-2 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur px-4 py-3 text-sm text-gray-700">
+                            Typical response time: <span className="font-semibold text-gray-900">within 24 hours</span>
+                        </div>
+                    </div>
                 </motion.div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -59,7 +71,7 @@ const ContactUs = () => {
                         variants={itemVariants}
                     >
                         <motion.div
-                            className="bg-white border border-[#008A8A]/20 rounded-lg p-8 shadow-sm hover:shadow-md"
+                            className="bg-white/85 backdrop-blur border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md"
                             whileHover={{ scale: 1.02, y: -5 }}
                             transition={{ duration: 0.2 }}
                         >
@@ -120,7 +132,7 @@ const ContactUs = () => {
 
                         {/* Quick Contact Options */}
                         <motion.div
-                            className="bg-[#F0FBFB] border border-[#008A8A]/20 rounded-lg p-8 shadow-sm hover:shadow-md"
+                            className="bg-white/85 backdrop-blur border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md"
                             whileHover={{ scale: 1.02, y: -5 }}
                             transition={{ duration: 0.2 }}
                         >
@@ -128,7 +140,7 @@ const ContactUs = () => {
                             <div className="space-y-4">
                                 <motion.a
                                     href="tel:+8801626889072"
-                                    className="w-full flex items-center justify-center space-x-3 bg-[#008A8A] hover:bg-[#006666] text-white py-3 px-6 rounded-lg transition-all duration-300"
+                                    className="w-full flex items-center justify-center space-x-3 bg-[#008A8A] hover:bg-[#006666] text-white py-3 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-[#008A8A]/15"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
@@ -139,7 +151,7 @@ const ContactUs = () => {
                                     href="https://wa.me/8801626889072"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-full flex items-center justify-center space-x-3 bg-[#00A38A] hover:bg-[#008A8A] text-white py-3 px-6 rounded-lg transition-all duration-300"
+                                    className="w-full flex items-center justify-center space-x-3 bg-white text-[#006666] border border-[#008A8A]/25 hover:bg-[#F0FBFB] py-3 px-6 rounded-xl transition-all duration-300"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
@@ -152,8 +164,8 @@ const ContactUs = () => {
 
                         <motion.div
                             variants={itemVariants}
-                            className="bg-white border border-[#008A8A]/20 rounded-lg p-8 shadow-sm hover:shadow-md"
-                    >
+                            className="bg-white/85 backdrop-blur border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md"
+                        >
                         <h3 className="text-2xl font-bold mb-6 text-gray-900">Send Us a Message</h3>
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -239,7 +251,7 @@ const ContactUs = () => {
                             >
                                 <a
                                     href="mailto:contact@softecof.com?subject=Project Inquiry from Portfolio Website&body=Hello,%0D%0A%0D%0AI would like to discuss a project with your team.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0ABest regards,"
-                                    className="w-full flex items-center justify-center bg-[#008A8A] hover:bg-[#006666] text-white py-6 px-10 rounded-lg transition-all duration-300 text-xl font-bold"
+                                    className="w-full flex items-center justify-center bg-[#008A8A] hover:bg-[#006666] text-white py-6 px-10 rounded-xl transition-all duration-300 text-xl font-bold shadow-xl shadow-[#008A8A]/20"
                                 >
                                     Send Message
                                 </a>

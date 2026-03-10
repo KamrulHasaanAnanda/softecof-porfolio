@@ -44,8 +44,8 @@ const Header = () => {
     return (
         <motion.header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
-                : "bg-white/90 backdrop-blur-sm"
+                ? "bg-white/80 backdrop-blur-xl shadow-lg border-b border-gray-200"
+                : "bg-white/60 backdrop-blur-xl"
                 }`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
@@ -70,7 +70,7 @@ const Header = () => {
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className="text-xl md:text-2xl font-bold text-[#008A8A]">
+                            <span className="text-xl md:text-2xl font-bold text-gray-900">
                                 SOFTECOF
                             </span>
                             <span className="text-xs text-gray-500 hidden sm:block">
@@ -105,7 +105,7 @@ const Header = () => {
                         </div>
                         <Button
                             onClick={() => handleNavigation("/#contact")}
-                            className="bg-[#008A8A] hover:bg-[#006666] text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-[#008A8A]/30"
+                            className="bg-[#008A8A] hover:bg-[#006666] text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg shadow-[#008A8A]/20"
                         >
                             Get Quote
                         </Button>

@@ -52,23 +52,22 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="text-gray-900 relative bg-white border-t border-[#008A8A]/15">
+        <footer className="text-gray-900 relative bg-white border-t border-gray-200">
             <motion.div
                 className="container mx-auto px-4 sm:px-6 relative z-10 py-8 md:py-16"
                 variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
+                initial="visible"
+                animate="visible"
             >
+
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                     {/* Company Info */}
                     <motion.div variants={itemVariants} className="space-y-4 md:space-y-6">
                         <div className="flex items-center space-x-2">
                             <Image src="/softecof.png" alt="Softecof Logo" width={32} height={32} className="h-6 w-6 md:h-8 md:w-8" />
                             <div>
-                                <h3 className="text-xl md:text-2xl font-bold text-[#008A8A]">
-                                    Softecof
-                                </h3>
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-900">Softecof</h3>
                                 <p className="text-xs text-gray-500">Global Software Solutions</p>
                             </div>
                         </div>
@@ -146,7 +145,7 @@ const Footer = () => {
                                 <motion.a
                                     key={index}
                                     href={social.href}
-                                    className="bg-[#F0FBFB] hover:bg-[#E1F7F7] p-2 md:p-3 rounded-full transition-colors duration-300 border border-[#008A8A]/20"
+                                    className="bg-white hover:bg-[#F0FBFB] p-2 md:p-3 rounded-full transition-colors duration-300 border border-gray-200 hover:border-[#008A8A]/35"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}
                                     aria-label={social.label}
@@ -180,7 +179,7 @@ const Footer = () => {
                 {/* Copyright */}
                 <motion.div
                     variants={itemVariants}
-                    className="border-t border-[#008A8A]/15 mt-8 md:mt-12 pt-6 md:pt-8 text-center text-gray-500"
+                    className="border-t border-gray-200 mt-8 md:mt-12 pt-6 md:pt-8 text-center text-gray-500"
                 >
                     <p className="text-sm md:text-base">
                         © {new Date().getFullYear()} Softecof. All rights reserved.

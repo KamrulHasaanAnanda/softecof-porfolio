@@ -101,8 +101,11 @@ const Services = () => {
     };
 
     return (
-        <section id="services" className="min-h-screen relative overflow-hidden py-16 sm:py-24 md:py-32 bg-white">
-            <div className="absolute inset-0 softecof-pattern opacity-4"></div>
+        <section id="services" className="min-h-screen relative overflow-hidden py-20 sm:py-24 md:py-28 bg-white">
+            <div className="absolute inset-0">
+                <div className="absolute -top-40 right-0 h-[420px] w-[420px] rounded-full bg-[#008A8A]/10 blur-3xl" />
+                <div className="absolute -bottom-40 left-0 h-[520px] w-[520px] rounded-full bg-[#008A8A]/8 blur-3xl" />
+            </div>
 
             <motion.div
                 className="container mx-auto px-4 sm:px-6 relative z-10"
@@ -113,15 +116,18 @@ const Services = () => {
             >
                 {/* Header */}
                 <motion.div
-                    className="text-center mb-12 sm:mb-16 md:mb-24"
+                    className="text-left max-w-3xl mb-12 sm:mb-16"
                     variants={itemVariants}
                 >
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-gray-900">
-                        What We <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#008A8A] via-[#007777] to-[#006666]">Build</span>
+                    <div className="inline-flex items-center gap-2 rounded-full border border-[#008A8A]/25 bg-white/70 px-3 py-1.5 text-sm text-gray-700 backdrop-blur">
+                        <span className="h-2 w-2 rounded-full bg-[#008A8A]" />
+                        Services
+                    </div>
+                    <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                        Design, build, and scale with one team.
                     </h2>
-                    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto font-light px-4">
-                        We specialize in creating custom software solutions that solve real business problems
-                        and drive growth for our clients across various industries.
+                    <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
+                        We cover product design to production engineering—so you can ship faster with fewer handoffs.
                     </p>
                 </motion.div>
 
@@ -137,12 +143,12 @@ const Services = () => {
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <Card className="bg-white border border-[#008A8A]/20 rounded-xl overflow-hidden group hover:border-[#008A8A]/40 transition-all duration-300 shadow-sm hover:shadow-md">
+                            <Card className="bg-white/80 backdrop-blur border border-gray-200 rounded-2xl overflow-hidden group hover:border-[#008A8A]/35 transition-all duration-300 shadow-sm hover:shadow-md">
                                 <CardContent className="p-3 sm:p-4 md:p-6 text-center">
                                     <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-r ${stat.color} flex items-center justify-center mb-3 sm:mb-4 mx-auto transform group-hover:scale-110 transition-transform duration-300`}>
                                         <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-white" />
                                     </div>
-                                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 bg-clip-text text-transparent bg-gradient-to-r from-[#008A8A] to-[#006666]">{stat.value}</h3>
+                                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-gray-900">{stat.value}</h3>
                                     <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">{stat.label}</p>
                                 </CardContent>
                             </Card>
@@ -162,13 +168,13 @@ const Services = () => {
                             whileHover={{ scale: 1.02, y: -5 }}
                             transition={{ duration: 0.2 }}
                         >
-                            <Card className="bg-white border border-[#008A8A]/20 rounded-xl overflow-hidden group hover:border-[#008A8A]/40 transition-all duration-300 h-full shadow-sm hover:shadow-md">
+                            <Card className="bg-white/85 backdrop-blur border border-gray-200 rounded-2xl overflow-hidden group hover:border-[#008A8A]/35 transition-all duration-300 h-full shadow-sm hover:shadow-md">
                                 <CardContent className="p-4 sm:p-6 md:p-8">
                                     <div className="flex items-center justify-between mb-3 sm:mb-4">
                                         <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
                                             <service.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
                                         </div>
-                                        <span className="text-xs font-medium text-gray-600 bg-[#F0FBFB] px-2 sm:px-3 py-1 rounded-full border border-[#008A8A]/20">
+                                        <span className="text-xs font-semibold text-[#006666] bg-[#F0FBFB] px-2 sm:px-3 py-1 rounded-full border border-[#008A8A]/20">
                                             {service.category}
                                         </span>
                                     </div>

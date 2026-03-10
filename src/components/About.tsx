@@ -35,9 +35,7 @@ const About = () => {
     };
 
     return (
-        <section id="about" className="min-h-screen relative overflow-hidden bg-white">
-            <div className="absolute inset-0 softecof-pattern opacity-4"></div>
-
+        <section id="about" className="min-h-screen bg-gray-50 border-b border-gray-200">
             <motion.div
                 className="container mx-auto px-4 sm:px-6 relative z-10 py-16 sm:py-24 md:py-32"
                 variants={containerVariants}
@@ -51,16 +49,12 @@ const About = () => {
                         className="space-y-4 md:space-y-8"
                         variants={itemVariants}
                     >
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-gray-900">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#008A8A] via-[#007777] to-[#006666]">
-                                Bridging Local
-                            </span>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-gray-900">
+                            <span className="text-[#008A8A]">About Softecof</span>
                             <br />
-                            <span className="text-gray-900">Expertise with</span>
+                            <span className="text-gray-900">Bridging local expertise with</span>
                             <br />
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#33A3A3] via-[#008A8A] to-[#006666]">
-                                Global Standards
-                            </span>
+                            <span className="text-gray-900">proven global standards</span>
                         </h1>
                         <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
                             We&apos;re not just developers; we&apos;re architects of digital transformation.
@@ -137,57 +131,61 @@ const About = () => {
 
                 {/* Mission Section */}
                 <motion.div
-                    className="relative"
+                    className="relative mt-4"
                     variants={itemVariants}
                 >
-                    <div className="absolute inset-0 bg-[#008A8A]/5 rounded-3xl blur-xl"></div>
-                    <div className="relative bg-white rounded-3xl p-4 sm:p-6 md:p-12 border border-[#008A8A]/20 shadow-lg">
-                        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+                    <div className="absolute inset-0 bg-[#008A8A]/6 rounded-3xl blur-2xl" />
+                    <div className="relative bg-white/90 backdrop-blur rounded-3xl p-4 sm:p-6 md:p-10 border border-gray-200 shadow-lg overflow-hidden">
+                        <div className="grid lg:grid-cols-2 gap-8 md:gap-14 items-center">
                             <motion.div
-                                className="space-y-4 sm:space-y-6 md:space-y-8"
+                                className="space-y-4 sm:space-y-6 md:space-y-7"
                                 variants={containerVariants}
                             >
-                                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#008A8A] via-[#007777] to-[#006666] bg-clip-text text-transparent">
-                                    Our Mission
+                                <div className="inline-flex items-center gap-2 rounded-full border border-[#008A8A]/25 bg-white/80 px-3 py-1.5 text-sm text-gray-700">
+                                    <span className="h-2 w-2 rounded-full bg-[#008A8A]" />
+                                    Our mission
+                                </div>
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                                    Build software that feels thoughtful—and works in production.
                                 </h2>
-                                <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
-                                    At Softecof, we don&apos;t just build software; we create digital experiences
-                                    that transform businesses and empower people across the globe.
+                                <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                                    We exist to bridge the gap between strategy and execution. From idea to launch, we care
+                                    about details, reliability, and how the product actually feels to your users.
                                 </p>
-                                <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     {[
-                                        "Strategic technology consulting and roadmap development",
-                                        "Enterprise-grade software architecture and development",
-                                        "Agile delivery methodology with transparent communication",
-                                        "Post-deployment support and continuous optimization"
+                                        "Translate business goals into clear roadmaps",
+                                        "Design and build scalable, maintainable systems",
+                                        "Communicate openly with transparent progress",
+                                        "Stay after launch with support and iteration"
                                     ].map((item, index) => (
                                         <motion.div
                                             key={index}
-                                            className="flex items-center group"
+                                            className="flex items-start gap-3"
                                             variants={itemVariants}
-                                            whileHover={{ x: 10 }}
+                                            whileHover={{ x: 6 }}
                                             transition={{ duration: 0.2 }}
                                         >
-                                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#008A8A] rounded-full mr-3 sm:mr-4 transform group-hover:scale-150 transition-transform duration-300"></div>
-                                            <span className="text-sm sm:text-base md:text-lg text-gray-600 font-medium group-hover:text-gray-900 transition-colors duration-300">{item}</span>
+                                            <div className="mt-1 h-2 w-2 rounded-full bg-[#008A8A]" />
+                                            <span className="text-sm sm:text-base text-gray-700">{item}</span>
                                         </motion.div>
                                     ))}
                                 </div>
                             </motion.div>
                             <motion.div
-                                className="relative mt-8 lg:mt-0"
+                                className="relative mt-4 lg:mt-0"
                                 variants={itemVariants}
                                 whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.2 }}
+                                transition={{ duration: 0.25 }}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-r from-gray-100/15 to-gray-200/15 rounded-2xl blur-xl"></div>
-                                <div className="relative bg-white rounded-2xl p-3 sm:p-4 border border-[#008A8A]/20 shadow-lg">
+                                <div className="absolute inset-0 bg-gradient-to-tr from-[#008A8A]/15 via-transparent to-transparent rounded-2xl blur-xl" />
+                                <div className="relative bg-white rounded-2xl p-3 sm:p-4 border border-gray-200 shadow-md">
                                     <Image
                                         src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop"
                                         alt="Team collaboration"
                                         width={600}
                                         height={400}
-                                        className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] object-cover rounded-xl"
+                                        className="w-full h-[220px] sm:h-[260px] md:h-[320px] lg:h-[360px] object-cover rounded-xl"
                                     />
                                 </div>
                             </motion.div>
