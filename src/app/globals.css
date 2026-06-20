@@ -1,332 +1,277 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --background: 40 25% 98%;
+    --foreground: 220 25% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    /* Brand primary based on #008A8A */
-    --primary: 180 100% 27%;
+    --card-foreground: 220 25% 10%;
+    --primary: 172 66% 38%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 180 100% 27%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 180 100% 27%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 180 100% 27%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 180 100% 27%;
-
-    /* Softecof Brand Colors (teal scale around #008A8A) */
-    --softecof-indigo: 180 100% 27%;
-    --softecof-indigo-light: 180 100% 35%;
-    --softecof-indigo-dark: 180 100% 22%;
-    --softecof-indigo-50: 180 40% 96%;
-    --softecof-indigo-100: 180 45% 90%;
-    --softecof-indigo-200: 180 50% 82%;
-    --softecof-indigo-300: 180 55% 70%;
-    --softecof-indigo-400: 180 70% 50%;
-    --softecof-indigo-500: 180 90% 35%;
-    --softecof-indigo-600: 180 100% 27%;
-    --softecof-indigo-700: 180 100% 22%;
-    --softecof-indigo-800: 180 100% 16%;
-    --softecof-indigo-900: 180 100% 12%;
+    --ink: 220 28% 8%;
+    --ink-light: 220 22% 14%;
+    --accent: 172 66% 38%;
+    --accent-soft: 172 40% 94%;
+    --gold: 43 96% 56%;
+    /* Softecof logo brand palette — 5 colors */
+    --brand-1: 172 66% 38%;
+    --brand-2: 28 72% 72%;
+    --brand-3: 217 91% 55%;
+    --brand-4: 262 70% 58%;
+    --brand-5: 38 92% 50%;
+    --muted: 40 15% 94%;
+    --muted-foreground: 220 10% 46%;
+    --border: 220 14% 90%;
+    --input: 220 14% 90%;
+    --ring: 172 66% 38%;
+    --radius: 0.875rem;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 180 100% 35%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 180 100% 35%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 180 100% 35%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 180 100% 35%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 180 100% 35%;
-
-    /* Softecof Brand Colors for Dark Mode (teal scale) */
-    --softecof-indigo: 180 100% 35%;
-    --softecof-indigo-light: 180 100% 45%;
-    --softecof-indigo-dark: 180 100% 27%;
-    --softecof-indigo-50: 180 25% 14%;
-    --softecof-indigo-100: 180 30% 18%;
-    --softecof-indigo-200: 180 35% 22%;
-    --softecof-indigo-300: 180 40% 26%;
-    --softecof-indigo-400: 180 60% 32%;
-    --softecof-indigo-500: 180 80% 40%;
-    --softecof-indigo-600: 180 90% 50%;
-    --softecof-indigo-700: 180 80% 65%;
-    --softecof-indigo-800: 180 70% 78%;
-    --softecof-indigo-900: 180 60% 88%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
 
   body {
-    @apply bg-white text-gray-900;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-    line-height: 1.6;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.25);
+    color: hsl(var(--ink));
   }
 }
 
-/* Professional animations */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@layer components {
+  .container-site {
+    @apply mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-sm px-7 py-3.5 transition-all duration-300;
+    background: hsl(var(--ink));
+    color: white;
   }
-}
-
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
+  .btn-primary:hover {
+    background: hsl(var(--ink-light));
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px -8px hsl(var(--ink) / 0.45);
   }
 
-  50% {
-    transform: translateY(-10px);
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-sm px-7 py-3.5 transition-all duration-300;
+    background: hsl(var(--accent));
+    color: white;
   }
-}
-
-@keyframes pulse-bd {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.7;
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
-}
-
-.animate-slide-up {
-  animation: slide-up 0.8s ease-out forwards;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-bd {
-  animation: pulse-bd 2s ease-in-out infinite;
-}
-
-.delay-300 {
-  animation-delay: 0.3s;
-}
-
-.delay-500 {
-  animation-delay: 0.5s;
-}
-
-.delay-700 {
-  animation-delay: 0.7s;
-}
-
-.delay-1000 {
-  animation-delay: 1s;
-}
-
-/* Custom animations for Portfolio */
-@keyframes spin-slow {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
+  .btn-accent:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px -8px hsl(var(--accent) / 0.5);
   }
 
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-@keyframes gradient {
-
-  0%,
-  100% {
-    background-position: 0% 50%;
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/25 text-white font-semibold text-sm px-7 py-3.5 transition-all duration-300 hover:bg-white/10 hover:border-white/40;
   }
 
-  50% {
-    background-position: 100% 50%;
+  .btn-outline-dark {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-foreground/12 text-foreground font-semibold text-sm px-7 py-3.5 transition-all duration-300 hover:bg-white hover:border-foreground/20 hover:shadow-sm;
   }
-}
 
-.animate-spin-slow {
-  animation: spin-slow 20s linear infinite;
-}
+  .badge {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em];
+    background: hsl(var(--accent-soft));
+    color: hsl(var(--accent));
+  }
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient 3s ease infinite;
-}
+  .badge-dark {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/85 backdrop-blur-sm;
+  }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
+  .section-eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.22em] mb-5;
+    color: hsl(var(--brand-1));
+  }
 
-/* Professional hover effects */
-.hover-lift {
-  transition: all 0.3s ease;
-}
+  .section-eyebrow-light {
+    @apply text-xs font-bold uppercase tracking-[0.22em] mb-5;
+    color: hsl(var(--brand-2));
+  }
 
-.hover-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
+  .text-brand-1 { color: hsl(var(--brand-1)); }
+  .text-brand-2 { color: hsl(var(--brand-2)); }
+  .text-brand-3 { color: hsl(var(--brand-3)); }
+  .text-brand-4 { color: hsl(var(--brand-4)); }
+  .text-brand-5 { color: hsl(var(--brand-5)); }
 
-/* Softecof gradient backgrounds */
-.bg-gradient-softecof {
-  background: linear-gradient(135deg, hsl(var(--softecof-green)) 0%, hsl(var(--softecof-green-dark)) 100%);
-}
+  .ring-brand-1 { --tw-ring-color: hsl(var(--brand-1)); }
+  .ring-brand-2 { --tw-ring-color: hsl(var(--brand-2)); }
+  .ring-brand-3 { --tw-ring-color: hsl(var(--brand-3)); }
+  .ring-brand-4 { --tw-ring-color: hsl(var(--brand-4)); }
+  .ring-brand-5 { --tw-ring-color: hsl(var(--brand-5)); }
 
-.bg-gradient-softecof-light {
-  background: linear-gradient(135deg, hsl(var(--softecof-green-100)) 0%, hsl(var(--softecof-green-200)) 100%);
-}
+  .hover\:bg-brand-1:hover { background-color: hsl(var(--brand-1)); }
 
-.bg-gradient-softecof-subtle {
-  background: linear-gradient(135deg, hsl(var(--softecof-green-50)) 0%, hsl(var(--softecof-green-100)) 100%);
-}
+  .heading-xl {
+    @apply text-[2.75rem] sm:text-5xl lg:text-[3.75rem] font-extrabold leading-[1.06] tracking-[-0.03em];
+  }
 
-/* Enhanced professional styling */
-.professional-shadow {
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
+  .heading-lg {
+    @apply text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-[1.1] tracking-[-0.025em];
+  }
 
-.text-shadow {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+  .heading-md {
+    @apply text-xl sm:text-2xl font-bold leading-snug tracking-[-0.02em];
+  }
 
-/* Softecof specific styles */
-.softecof-pattern {
-  background-image:
-    radial-gradient(circle at 25% 25%, hsl(var(--softecof-indigo) / 0.005) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, hsl(var(--softecof-indigo) / 0.003) 0%, transparent 50%);
-}
+  .surface-ink {
+    background: hsl(var(--ink));
+    color: white;
+  }
 
-.softecof-border-gradient {
-  border: 2px solid transparent;
-  background: linear-gradient(white, white) padding-box,
-    linear-gradient(135deg, hsl(var(--softecof-indigo)), hsl(var(--softecof-indigo-dark))) border-box;
+  .surface-dark {
+    background: linear-gradient(165deg, hsl(var(--ink)) 0%, hsl(220 28% 11%) 100%);
+    color: white;
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-2xl border border-black/[0.06];
+    box-shadow: 0 1px 2px hsl(var(--ink) / 0.04), 0 16px 48px -12px hsl(var(--ink) / 0.12);
+  }
+
+  .card-glass {
+    @apply rounded-2xl border border-white/12 backdrop-blur-xl;
+    background: hsl(0 0% 100% / 0.07);
+  }
+
+  .card-hover {
+    @apply transition-all duration-500;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 64px -16px hsl(var(--ink) / 0.18);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--brand-1)) 0%, hsl(var(--brand-3)) 50%, hsl(var(--brand-4)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(hsl(var(--ink) / 0.07) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .line-accent {
+    @apply h-1 w-16 rounded-full;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--brand-1)),
+      hsl(var(--brand-2)),
+      hsl(var(--brand-3)),
+      hsl(var(--brand-4)),
+      hsl(var(--brand-5))
+    );
+  }
+
+  .brand-num-1 { background: hsl(var(--brand-1)); color: white; }
+  .brand-num-2 { background: hsl(var(--brand-2)); color: hsl(var(--ink)); }
+  .brand-num-3 { background: hsl(var(--brand-3)); color: white; }
+  .brand-num-4 { background: hsl(var(--brand-4)); color: white; }
+  .brand-num-5 { background: hsl(var(--brand-5)); color: hsl(var(--ink)); }
+
+  .brand-icon-1 { background: hsl(var(--brand-1) / 0.15); color: hsl(var(--brand-1)); }
+  .brand-icon-2 { background: hsl(var(--brand-2) / 0.35); color: hsl(28 60% 35%); }
+  .brand-icon-3 { background: hsl(var(--brand-3) / 0.15); color: hsl(var(--brand-3)); }
+  .brand-icon-4 { background: hsl(var(--brand-4) / 0.15); color: hsl(var(--brand-4)); }
+  .brand-icon-5 { background: hsl(var(--brand-5) / 0.2); color: hsl(38 80% 32%); }
+
+  .brand-bar {
+    @apply flex h-1.5 w-full rounded-full overflow-hidden;
+  }
+  .brand-bar span { @apply flex-1; }
+  .brand-bar span:nth-child(1) { background: hsl(var(--brand-1)); }
+  .brand-bar span:nth-child(2) { background: hsl(var(--brand-2)); }
+  .brand-bar span:nth-child(3) { background: hsl(var(--brand-3)); }
+  .brand-bar span:nth-child(4) { background: hsl(var(--brand-4)); }
+  .brand-bar span:nth-child(5) { background: hsl(var(--brand-5)); }
+
+  .service-card {
+    @apply relative overflow-hidden rounded-2xl border border-black/[0.06] bg-white transition-all duration-500;
+  }
+  .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 56px -20px hsl(var(--ink) / 0.16);
+  }
+
+  .service-card-dark {
+    @apply rounded-2xl border border-white/10 transition-all duration-500;
+    background: linear-gradient(145deg, hsl(var(--ink)) 0%, hsl(220 28% 14%) 100%);
+    color: white;
+  }
+  .service-card-dark:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 56px -16px hsl(var(--accent) / 0.25);
+  }
+
+  .project-tile {
+    @apply relative overflow-hidden rounded-2xl;
+    min-height: 320px;
+  }
+
+  .team-member {
+    @apply rounded-2xl border border-black/[0.06] bg-white overflow-hidden transition-all duration-500;
+  }
+  .team-member:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 48px -16px hsl(var(--ink) / 0.14);
+  }
+
+  .contact-shell {
+    @apply rounded-3xl overflow-hidden border border-black/[0.06];
+    box-shadow: 0 24px 80px -24px hsl(var(--ink) / 0.18);
+  }
+
+  .cta-panel {
+    background: linear-gradient(135deg, hsl(var(--ink)) 0%, hsl(220 30% 16%) 50%, hsl(172 40% 22%) 100%);
+  }
+
+  .nav-glass {
+    @apply backdrop-blur-xl border border-white/10;
+    background: hsl(0 0% 100% / 0.08);
+  }
+
+  .nav-solid {
+    @apply bg-white/90 backdrop-blur-xl border-b border-black/[0.06];
+    box-shadow: 0 1px 0 hsl(var(--ink) / 0.04), 0 8px 32px -8px hsl(var(--ink) / 0.08);
+  }
+
+  .input-field {
+    @apply w-full h-12 rounded-xl border border-black/[0.08] bg-white px-4 text-sm transition-colors outline-none focus:border-transparent;
+  }
+  .input-field:focus {
+    box-shadow: 0 0 0 2px hsl(var(--accent) / 0.35);
+  }
 }
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-softecof-indigo: var(--softecof-indigo);
-  --color-softecof-indigo-light: var(--softecof-indigo-light);
-  --color-softecof-indigo-dark: var(--softecof-indigo-dark);
-  --color-softecof-indigo-50: var(--softecof-indigo-50);
-  --color-softecof-indigo-100: var(--softecof-indigo-100);
-  --color-softecof-indigo-200: var(--softecof-indigo-200);
-  --color-softecof-indigo-300: var(--softecof-indigo-300);
-  --color-softecof-indigo-400: var(--softecof-indigo-400);
-  --color-softecof-indigo-500: var(--softecof-indigo-500);
-  --color-softecof-indigo-600: var(--softecof-indigo-600);
-  --color-softecof-indigo-700: var(--softecof-indigo-700);
-  --color-softecof-indigo-800: var(--softecof-indigo-800);
-  --color-softecof-indigo-900: var(--softecof-indigo-900);
+  --font-sans: var(--font-jakarta);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-ink: hsl(var(--ink));
+  --color-accent: hsl(var(--accent));
+  --color-accent-soft: hsl(var(--accent-soft));
+  --color-brand-1: hsl(var(--brand-1));
+  --color-brand-2: hsl(var(--brand-2));
+  --color-brand-3: hsl(var(--brand-3));
+  --color-brand-4: hsl(var(--brand-4));
+  --color-brand-5: hsl(var(--brand-5));
 }
+
+html { scroll-behavior: smooth; }

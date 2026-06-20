@@ -1,177 +1,107 @@
 "use client"
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Mail, Globe } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
+const links = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "Work", href: "/portfolio" },
+    { name: "About", href: "/#about" },
+    { name: "Contact", href: "/#contact" },
+];
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        const fn = () => setScrolled(window.scrollY > 40);
+        window.addEventListener("scroll", fn);
+        fn();
+        return () => window.removeEventListener("scroll", fn);
     }, []);
 
-    const navigationItems = [
-        { name: "Home", href: "/" },
-        { name: "About", href: "/#about" },
-        { name: "Services", href: "/services" },
-        { name: "Portfolio", href: "/portfolio" },
-        { name: "Team", href: "/#team" },
-        { name: "Contact", href: "/#contact" },
-    ];
-
-    const handleNavigation = (href: string) => {
-        if (href.startsWith('/')) {
-            // Page navigation
-            window.location.href = href;
-        } else {
-            // Anchor link navigation
-            const element = document.querySelector(href);
-            if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
+    const go = (href: string) => {
+        setOpen(false);
+        if (href.startsWith("/#")) {
+            if (window.location.pathname !== "/") {
+                window.location.href = `/${href.slice(1)}`;
+            } else {
+                document.querySelector(href.slice(1))?.scrollIntoView({ behavior: "smooth" });
             }
+        } else {
+            window.location.href = href;
         }
-        setIsMenuOpen(false);
     };
 
+    const onDarkHero = !scrolled;
+
     return (
-        <motion.header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                ? "bg-white/80 backdrop-blur-xl shadow-lg border-b border-gray-200"
-                : "bg-white/60 backdrop-blur-xl"
-                }`}
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-        >
-            <div className="container mx-auto px-4 sm:px-6">
-                <div className="flex items-center justify-between h-16 md:h-20">
-                    {/* Logo */}
-                    <motion.div
-                        className="flex items-center space-x-3"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                    >
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-gray-200/20 rounded-full blur-sm"></div>
-                            <Image
-                                src="/softecof.png"
-                                alt="Softecof Logo"
-                                width={40}
-                                height={40}
-                                className="h-8 w-8 md:h-10 md:w-10 relative z-10"
-                            />
-                        </div>
-                        <div className="flex flex-col">
-                            <span className="text-xl md:text-2xl font-bold text-gray-900">
-                                SOFTECOF
-                            </span>
-                            <span className="text-xs text-gray-500 hidden sm:block">
-                                Global Software Solutions
-                            </span>
-                        </div>
-                    </motion.div>
-
-                    {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center space-x-8">
-                        {navigationItems.map((item, index) => (
-                            <motion.button
-                                key={item.name}
-                                onClick={() => handleNavigation(item.href)}
-                                className="text-gray-700 hover:text-gray-900 font-medium transition-colors duration-300 relative group"
-                                whileHover={{ y: -2 }}
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                            >
-                                {item.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-gray-500 to-gray-600 group-hover:w-full transition-all duration-300"></span>
-                            </motion.button>
-                        ))}
-                    </nav>
-
-                    {/* Contact Info & CTA */}
-                    <div className="hidden lg:flex items-center space-x-4">
-                        <div className="flex items-center space-x-2 text-gray-600">
-                            <Phone className="h-4 w-4 text-gray-600" />
-                            <span className="text-sm">+8801626889072</span>
-                        </div>
-                        <Button
-                            onClick={() => handleNavigation("/#contact")}
-                            className="bg-[#008A8A] hover:bg-[#006666] text-white px-6 py-2 rounded-xl font-semibold transition-all duration-300 shadow-lg shadow-[#008A8A]/20"
-                        >
-                            Get Quote
-                        </Button>
+        <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "nav-solid py-0" : "py-4"}`}>
+            <div className={`container-site flex items-center justify-between transition-all duration-500 ${scrolled ? "h-[68px]" : "h-[56px] rounded-2xl nav-glass px-6 sm:px-8"}`}>
+                <Link href="/" className="flex items-center gap-3">
+                    <div className={`relative flex h-10 w-10 items-center justify-center rounded-xl ${onDarkHero && !scrolled ? "bg-white/10" : "bg-accent-soft"}`}>
+                        <Image src="/softecof.png" alt="Softecof" width={28} height={28} className="h-7 w-7" />
                     </div>
+                    <span className={`font-bold text-[17px] tracking-tight ${onDarkHero && !scrolled ? "text-white" : "text-ink"}`}>
+                        Softecof
+                    </span>
+                </Link>
 
-                    {/* Mobile Menu Button */}
-                    <motion.button
-                        className="lg:hidden p-2 rounded-lg text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors duration-300"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        whileTap={{ scale: 0.95 }}
+                <nav className="hidden lg:flex items-center gap-1">
+                    {links.map((l) => (
+                        <button
+                            key={l.name}
+                            onClick={() => go(l.href)}
+                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                                onDarkHero && !scrolled
+                                    ? "text-white/80 hover:text-white hover:bg-white/10"
+                                    : "text-ink/75 hover:text-ink hover:bg-muted"
+                            }`}
+                        >
+                            {l.name}
+                        </button>
+                    ))}
+                </nav>
+
+                <div className="hidden lg:flex items-center gap-3">
+                    <button
+                        onClick={() => go("/#contact")}
+                        className={`inline-flex items-center gap-2 rounded-xl font-semibold text-sm px-5 py-2.5 transition-all duration-300 ${
+                            onDarkHero && !scrolled
+                                ? "bg-white text-ink hover:bg-white/90"
+                                : "btn-accent !py-2.5 !px-5"
+                        }`}
                     >
-                        {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                    </motion.button>
+                        Get a quote
+                        <ArrowUpRight className="h-4 w-4" />
+                    </button>
                 </div>
 
-                {/* Mobile Navigation */}
-                <AnimatePresence>
-                    {isMenuOpen && (
-                        <motion.div
-                            className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md"
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <div className="py-4 space-y-4">
-                                {navigationItems.map((item, index) => (
-                                    <motion.button
-                                        key={item.name}
-                                        onClick={() => handleNavigation(item.href)}
-                                        className="block w-full text-left px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-lg font-medium transition-colors duration-300"
-                                        initial={{ opacity: 0, x: -20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: index * 0.1 }}
-                                    >
-                                        {item.name}
-                                    </motion.button>
-                                ))}
-
-                                {/* Mobile Contact Info */}
-                                <div className="px-4 py-4 border-t border-gray-200 space-y-3">
-                                    <div className="flex items-center space-x-3 text-gray-600">
-                                        <Phone className="h-4 w-4 text-gray-600" />
-                                        <span className="text-sm">+8801626889072</span>
-                                    </div>
-                                    <div className="flex items-center space-x-3 text-gray-600">
-                                        <Mail className="h-4 w-4 text-gray-600" />
-                                        <span className="text-sm">contact@softecof.com</span>
-                                    </div>
-                                    <div className="flex items-center space-x-3 text-gray-600">
-                                        <Globe className="h-4 w-4 text-gray-600" />
-                                        <span className="text-sm">Dhaka, Bangladesh</span>
-                                    </div>
-                                    <Button
-                                        onClick={() => handleNavigation("/#contact")}
-                                        className="w-full bg-[#008A8A] hover:bg-[#006666] text-white py-3 rounded-lg font-semibold transition-all duration-300"
-                                    >
-                                        Get Quote
-                                    </Button>
-                                </div>
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
+                <button
+                    className={`lg:hidden p-2 rounded-lg ${onDarkHero && !scrolled ? "text-white" : "text-ink"}`}
+                    onClick={() => setOpen(!open)}
+                    aria-label="Menu"
+                >
+                    {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </button>
             </div>
-        </motion.header>
+
+            {open && (
+                <div className="lg:hidden mx-5 mt-2 rounded-2xl border border-border bg-white p-4 shadow-xl">
+                    {links.map((l) => (
+                        <button key={l.name} onClick={() => go(l.href)} className="block w-full text-left py-3 px-2 text-sm font-medium rounded-lg hover:bg-muted">
+                            {l.name}
+                        </button>
+                    ))}
+                    <button onClick={() => go("/#contact")} className="btn-accent w-full mt-2">
+                        Get a quote
+                    </button>
+                </div>
+            )}
+        </header>
     );
 };
 

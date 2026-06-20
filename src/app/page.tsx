@@ -1,23 +1,27 @@
 import Hero from "@/components/Hero";
-import About from "@/components/About";
 import Services from "@/components/Services";
+import WhySoftecof from "@/components/WhySoftecof";
+import About from "@/components/About";
+import Process from "@/components/Process";
 import Portfolio from "@/components/Portfolio";
+import CtaBanner from "@/components/CtaBanner";
 import Team from "@/components/Team";
 import Contact from "@/components/ContactUs";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+export default function Home() {
     return (
-        <div className="min-h-screen">
+        <>
             <Hero />
-            <About />
             <Services />
+            <WhySoftecof />
+            <About />
+            <Process />
             <Portfolio />
+            <CtaBanner />
             <Team />
             <Contact />
             <Footer />
-        </div>
+        </>
     );
-};
-
-export default Index; 
+}

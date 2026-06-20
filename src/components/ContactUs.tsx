@@ -1,267 +1,122 @@
 "use client"
-import { Building2, Clock, Mail, Phone, MessageCircle, Globe } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Phone, Mail, MessageCircle, MapPin, ArrowUpRight, Clock, Shield } from "lucide-react";
 import { motion } from "framer-motion";
 
 const ContactUs = () => {
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.3,
-            },
-        },
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-            },
-        },
-    };
-
     return (
-        <section id="contact" className="min-h-screen relative overflow-hidden py-24 sm:py-28 md:py-32 bg-white">
-            <div className="absolute inset-0">
-                <div className="absolute -top-40 right-0 h-[520px] w-[520px] rounded-full bg-[#008A8A]/10 blur-3xl" />
-                <div className="absolute -bottom-40 left-0 h-[520px] w-[520px] rounded-full bg-[#008A8A]/8 blur-3xl" />
-            </div>
-            <motion.div
-                className="container mx-auto px-6 relative z-10"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-            >
+        <section id="contact" className="py-20 md:py-28 bg-background">
+            <div className="container-site">
+                <div className="text-center max-w-2xl mx-auto mb-12">
+                    <div className="line-accent mx-auto mb-6" />
+                    <p className="section-eyebrow !mb-3">Contact</p>
+                    <h2 className="heading-lg">Let&apos;s build something together</h2>
+                    <p className="mt-4 text-muted-foreground text-lg">
+                        Tell us about your tech needs. We respond within 24 hours.
+                    </p>
+                </div>
+
                 <motion.div
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end mb-12 sm:mb-16"
-                    variants={itemVariants}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="contact-shell grid lg:grid-cols-5"
                 >
-                    <div>
-                        <div className="inline-flex items-center gap-2 rounded-full border border-[#008A8A]/25 bg-white/70 px-3 py-1.5 text-sm text-gray-700 backdrop-blur">
-                            <span className="h-2 w-2 rounded-full bg-[#008A8A]" />
-                            Contact
+                    {/* Left panel */}
+                    <div className="lg:col-span-2 surface-dark p-8 sm:p-10 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-accent/15 blur-[50px]" />
+                        <div className="relative">
+                            <h3 className="font-bold text-xl text-white mb-2">Get in touch</h3>
+                            <p className="text-white/50 text-sm leading-relaxed mb-8">
+                                Reach out directly or fill out the form—we&apos;ll get back to you with a clear next step.
+                            </p>
+
+                            <div className="space-y-5">
+                                {[
+                                    { icon: MapPin, label: "Global HQ", text: "GEC, Chittagong, Bangladesh" },
+                                    { icon: Phone, label: "Phone", text: "+880 1626 889072" },
+                                    { icon: Mail, label: "Email", text: "contact@softecof.com" },
+                                ].map(({ icon: Icon, label, text }) => (
+                                    <div key={text} className="flex items-start gap-4">
+                                        <div className="h-10 w-10 rounded-xl bg-white/10 flex items-center justify-center text-brand-1 shrink-0">
+                                            <Icon className="h-4 w-4" />
+                                        </div>
+                                        <div>
+                                            <p className="text-[11px] font-bold uppercase tracking-wider text-white/35">{label}</p>
+                                            <p className="text-sm text-white mt-0.5">{text}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="mt-8 flex flex-wrap gap-3">
+                                <a href="tel:+8801626889072" className="btn-accent text-sm !py-2.5 !px-5">
+                                    <Phone className="h-4 w-4" /> Call
+                                </a>
+                                <a href="https://wa.me/8801626889072" target="_blank" rel="noopener noreferrer" className="btn-outline-light text-sm !py-2.5 !px-5">
+                                    <MessageCircle className="h-4 w-4" /> WhatsApp
+                                </a>
+                            </div>
+
+                            <div className="mt-10 pt-8 border-t border-white/10 grid grid-cols-2 gap-4">
+                                <div className="flex items-center gap-3">
+                                    <Clock className="h-4 w-4 text-brand-2 shrink-0" />
+                                    <span className="text-xs text-white/50">Reply within 24h</span>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <Shield className="h-4 w-4 text-brand-3 shrink-0" />
+                                    <span className="text-xs text-white/50">Free consultation</span>
+                                </div>
+                            </div>
                         </div>
-                        <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-                            Tell us what you’re building.
-                        </h2>
-                        <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl">
-                            Share a quick overview and we’ll respond with a plan, timeline, and the best next step.
-                        </p>
                     </div>
-                    <div className="lg:text-right">
-                        <div className="inline-flex items-center gap-2 rounded-2xl border border-gray-200 bg-white/80 backdrop-blur px-4 py-3 text-sm text-gray-700">
-                            Typical response time: <span className="font-semibold text-gray-900">within 24 hours</span>
-                        </div>
+
+                    {/* Form panel */}
+                    <div className="lg:col-span-3 bg-white p-8 sm:p-10">
+                        <form className="space-y-5">
+                            <div className="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label className="text-sm font-semibold mb-2 block">First name</label>
+                                    <input placeholder="John" className="input-field bg-muted/40 border-0" />
+                                </div>
+                                <div>
+                                    <label className="text-sm font-semibold mb-2 block">Last name</label>
+                                    <input placeholder="Doe" className="input-field bg-muted/40 border-0" />
+                                </div>
+                            </div>
+                            <div className="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label className="text-sm font-semibold mb-2 block">Email</label>
+                                    <input type="email" placeholder="you@company.com" className="input-field bg-muted/40 border-0" />
+                                </div>
+                                <div>
+                                    <label className="text-sm font-semibold mb-2 block">Company</label>
+                                    <input placeholder="Your business" className="input-field bg-muted/40 border-0" />
+                                </div>
+                            </div>
+                            <div>
+                                <label className="text-sm font-semibold mb-2 block">Service needed</label>
+                                <select className="input-field bg-muted/40 border-0 appearance-none">
+                                    <option value="">Select a service</option>
+                                    <option>IT & Tech Support</option>
+                                    <option>Custom Software</option>
+                                    <option>SaaS Services</option>
+                                    <option>Web & Digital</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label className="text-sm font-semibold mb-2 block">Message</label>
+                                <textarea placeholder="Tell us about your project or tech challenge..." className="input-field min-h-[140px] py-3 resize-none bg-muted/40 border-0" />
+                            </div>
+                            <a href="mailto:contact@softecof.com" className="btn-primary w-full">
+                                Send message <ArrowUpRight className="h-4 w-4" />
+                            </a>
+                        </form>
                     </div>
                 </motion.div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <motion.div
-                        className="space-y-8"
-                        variants={itemVariants}
-                    >
-                        <motion.div
-                            className="bg-white/85 backdrop-blur border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md"
-                            whileHover={{ scale: 1.02, y: -5 }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            <h3 className="text-2xl font-bold mb-6 text-gray-900">Contact Information</h3>
-                            <div className="space-y-6">
-                                <motion.div
-                                    className="flex items-start space-x-4"
-                                    whileHover={{ x: 5 }}
-                                >
-                                    <Building2 className="h-6 w-6 text-[#008A8A] mt-1" />
-                                    <div>
-                                        <h4 className="font-semibold text-gray-900">Headquarters</h4>
-                                        <p className="text-gray-600">GEC, Gorib Ullah Shah Mazar, Chittagong, Bangladesh</p>
-                                    </div>
-                                </motion.div>
-                                <motion.div
-                                    className="flex items-start space-x-4"
-                                    whileHover={{ x: 5 }}
-                                >
-                                    <Phone className="h-6 w-6 text-[#008A8A] mt-1" />
-                                    <div>
-                                        <h4 className="font-semibold text-gray-900">Phone</h4>
-                                        <p className="text-gray-600">+8801626889072</p>
-                                    </div>
-                                </motion.div>
-                                <motion.div
-                                    className="flex items-start space-x-4"
-                                    whileHover={{ x: 5 }}
-                                >
-                                    <Mail className="h-6 w-6 text-[#008A8A] mt-1" />
-                                    <div>
-                                        <h4 className="font-semibold text-gray-900">Email</h4>
-                                        <p className="text-gray-600">contact@softecof.com</p>
-                                    </div>
-                                </motion.div>
-                                <motion.div
-                                    className="flex items-start space-x-4"
-                                    whileHover={{ x: 5 }}
-                                >
-                                    <Clock className="h-6 w-6 text-[#008A8A] mt-1" />
-                                    <div>
-                                        <h4 className="font-semibold text-gray-900">Business Hours</h4>
-                                        <p className="text-gray-600">Sunday - Thursday: 9:00 AM - 6:00 PM (GMT+6)</p>
-                                    </div>
-                                </motion.div>
-                                <motion.div
-                                    className="flex items-start space-x-4"
-                                    whileHover={{ x: 5 }}
-                                >
-                                    <Globe className="h-6 w-6 text-[#008A8A] mt-1" />
-                                    <div>
-                                        <h4 className="font-semibold text-gray-900">Website</h4>
-                                        <p className="text-gray-600">www.softecof.com</p>
-                                    </div>
-                                </motion.div>
-                            </div>
-                        </motion.div>
-
-                        {/* Quick Contact Options */}
-                        <motion.div
-                            className="bg-white/85 backdrop-blur border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md"
-                            whileHover={{ scale: 1.02, y: -5 }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            <h3 className="text-xl font-bold mb-6 text-gray-900">Quick Contact</h3>
-                            <div className="space-y-4">
-                                <motion.a
-                                    href="tel:+8801626889072"
-                                    className="w-full flex items-center justify-center space-x-3 bg-[#008A8A] hover:bg-[#006666] text-white py-3 px-6 rounded-xl transition-all duration-300 shadow-lg shadow-[#008A8A]/15"
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                >
-                                    <Phone className="h-5 w-5" />
-                                    <span>Call Now</span>
-                                </motion.a>
-                                <motion.a
-                                    href="https://wa.me/8801626889072"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full flex items-center justify-center space-x-3 bg-white text-[#006666] border border-[#008A8A]/25 hover:bg-[#F0FBFB] py-3 px-6 rounded-xl transition-all duration-300"
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                >
-                                    <MessageCircle className="h-5 w-5" />
-                                    <span>WhatsApp Message</span>
-                                </motion.a>
-                            </div>
-                        </motion.div>
-                    </motion.div>
-
-                        <motion.div
-                            variants={itemVariants}
-                            className="bg-white/85 backdrop-blur border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-md"
-                        >
-                        <h3 className="text-2xl font-bold mb-6 text-gray-900">Send Us a Message</h3>
-                        <form className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <motion.div
-                                    whileHover={{ scale: 1.02 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <Label htmlFor="firstName" className="text-gray-700 mb-2 block">First Name</Label>
-                                    <Input
-                                        id="firstName"
-                                        className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-[#008A8A]"
-                                        placeholder="Your first name"
-                                    />
-                                </motion.div>
-                                <motion.div
-                                    whileHover={{ scale: 1.02 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <Label htmlFor="lastName" className="text-gray-700 mb-2 block">Last Name</Label>
-                                    <Input
-                                        id="lastName"
-                                        className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-[#008A8A]"
-                                        placeholder="Your last name"
-                                    />
-                                </motion.div>
-                            </div>
-                            <motion.div
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.2 }}
-                            >
-                                <Label htmlFor="email" className="text-gray-700 mb-2 block">Email Address</Label>
-                                <Input
-                                    id="email"
-                                    type="email"
-                                        className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-[#008A8A]"
-                                    placeholder="your.email@example.com"
-                                />
-                            </motion.div>
-                            <motion.div
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.2 }}
-                            >
-                                <Label htmlFor="company" className="text-gray-700 mb-2 block">Company Name</Label>
-                                <Input
-                                    id="company"
-                                    className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-green-500"
-                                    placeholder="Your company name"
-                                />
-                            </motion.div>
-                            <motion.div
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.2 }}
-                            >
-                                <Label htmlFor="projectType" className="text-gray-700 mb-2 block">Project Type</Label>
-                                <Select>
-                                    <SelectTrigger className="bg-white border-gray-300 text-gray-900">
-                                        <SelectValue placeholder="Select project type" />
-                                    </SelectTrigger>
-                                    <SelectContent className="bg-white border-gray-300">
-                                        <SelectItem value="web">Web Development</SelectItem>
-                                        <SelectItem value="mobile">Mobile App</SelectItem>
-                                        <SelectItem value="ai">AI/ML Solutions</SelectItem>
-                                        <SelectItem value="cloud">Cloud Services</SelectItem>
-                                        <SelectItem value="erp">ERP System</SelectItem>
-                                        <SelectItem value="other">Other</SelectItem>
-                                    </SelectContent>
-                                </Select>
-                            </motion.div>
-                            <motion.div
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.2 }}
-                            >
-                                <Label htmlFor="message" className="text-gray-700 mb-2 block">Project Description</Label>
-                                <Textarea
-                                    id="message"
-                                        className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:border-[#008A8A] min-h-[150px]"
-                                    placeholder="Tell us about your project..."
-                                />
-                            </motion.div>
-                            <motion.div
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                <a
-                                    href="mailto:contact@softecof.com?subject=Project Inquiry from Portfolio Website&body=Hello,%0D%0A%0D%0AI would like to discuss a project with your team.%0D%0A%0D%0APlease contact me at your earliest convenience.%0D%0A%0D%0ABest regards,"
-                                    className="w-full flex items-center justify-center bg-[#008A8A] hover:bg-[#006666] text-white py-6 px-10 rounded-xl transition-all duration-300 text-xl font-bold shadow-xl shadow-[#008A8A]/20"
-                                >
-                                    Send Message
-                                </a>
-                            </motion.div>
-                        </form>
-                    </motion.div>
-                </div>
-            </motion.div>
+            </div>
         </section>
     );
 };
 
-export default ContactUs; 
+export default ContactUs;

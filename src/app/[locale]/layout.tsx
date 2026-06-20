@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Softecof - Enterprise Software Development",
-    description: "Leading enterprise software development company specializing in digital transformation solutions.",
+    title: "Softecof - Tech Support & Software for Small Businesses",
+    description: "Softecof helps SMEs with IT support, custom software solutions, and SaaS services—practical technology for growing businesses.",
     icons: {
         icon: [
             {

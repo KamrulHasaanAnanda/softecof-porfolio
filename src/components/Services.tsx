@@ -1,233 +1,169 @@
 "use client"
-import { Globe, Building, Users, Shield, Zap, Code, Cloud, Monitor, FileText, Smartphone as Mobile } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Headphones, Layers, Cloud, Globe, Building, Wrench, ArrowUpRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-const Services = () => {
-    const services = [
-        {
-            icon: Globe,
-            title: "Web Development",
-            description: "Custom websites and web applications built with modern technologies to establish your online presence and drive business growth.",
-            features: ["Responsive Design", "E-commerce Websites", "Corporate Websites", "Web Applications", "CMS Integration", "SEO Optimization"],
-            color: "from-blue-500 to-blue-600",
-            category: "Web Development"
-        },
-        {
-            icon: Mobile,
-            title: "App Development",
-            description: "Native and cross-platform mobile applications that provide seamless user experiences across iOS and Android platforms.",
-            features: ["iOS Development", "Android Development", "Cross-platform Apps", "App Store Optimization", "Push Notifications", "Offline Functionality"],
-            color: "from-[#008A8A] to-[#006666]",
-            category: "Mobile Development"
-        },
-        {
-            icon: Building,
-            title: "Office Software",
-            description: "Custom office management software solutions designed to streamline business operations and improve productivity.",
-            features: ["Document Management", "Project Management", "HR Management", "Accounting Software", "Inventory Systems", "Workflow Automation"],
-            color: "from-purple-500 to-purple-600",
-            category: "Business Software"
-        },
-        {
-            icon: Monitor,
-            title: "Desktop Applications",
-            description: "Professional desktop software applications built for Windows, macOS, and Linux to meet specific business requirements.",
-            features: ["Windows Applications", "macOS Applications", "Linux Applications", "Cross-platform Desktop Apps", "System Integration", "Data Processing"],
-            color: "from-orange-500 to-orange-600",
-            category: "Desktop Development"
-        },
-        // {
-        //     icon: Database,
-        //     title: "Database Solutions",
-        //     description: "Custom database design and management systems to organize, store, and retrieve your business data efficiently.",
-        //     features: ["Database Design", "Data Migration", "Performance Optimization", "Backup Solutions", "Data Analytics", "API Development"],
-        //     color: "from-red-500 to-red-600",
-        //     category: "Database"
-        // },
-        {
-            icon: Cloud,
-            title: "Cloud Solutions",
-            description: "Cloud-based applications and infrastructure solutions to scale your business operations and reduce IT costs.",
-            features: ["Cloud Migration", "SaaS Applications", "Cloud Infrastructure", "DevOps Services", "Scalability Solutions", "Security Implementation"],
-            color: "from-indigo-500 to-indigo-600",
-            category: "Cloud Services"
-        },
-        // {
-        //     icon: Settings,
-        //     title: "System Integration",
-        //     description: "Seamless integration of different software systems and APIs to create unified business workflows and data flow.",
-        //     features: ["API Integration", "Third-party Integrations", "Legacy System Integration", "Data Synchronization", "Workflow Automation", "Real-time Updates"],
-        //     color: "from-teal-500 to-teal-600",
-        //     category: "Integration"
-        // },
-        {
-            icon: FileText,
-            title: "Custom Software",
-            description: "Tailor-made software solutions designed specifically for your business needs and industry requirements.",
-            features: ["Requirements Analysis", "Custom Development", "Testing & QA", "Deployment", "Training & Support", "Maintenance"],
-            color: "from-pink-500 to-pink-600",
-            category: "Custom Development"
-        }
-    ];
+const services = [
+    {
+        icon: Headphones,
+        title: "IT & Tech Support",
+        desc: "Keep your business running with reliable help when things break or slow down.",
+        features: ["Remote & on-site support", "Hardware & software troubleshooting", "Network setup & Wi-Fi", "Helpdesk & ticket tracking"],
+        featured: true,
+    },
+    {
+        icon: Layers,
+        title: "Custom Software",
+        desc: "Build tools that match how your business actually works—not generic off-the-shelf software.",
+        features: ["Web & mobile applications", "Business process automation", "API integrations", "Legacy modernization"],
+    },
+    {
+        icon: Cloud,
+        title: "SaaS Services",
+        desc: "Subscribe to ready-made platforms or let us host and manage software for you.",
+        features: ["Cloud-based business tools", "Subscription management", "Data backup & security", "Regular updates included"],
+    },
+    {
+        icon: Globe,
+        title: "Web & Digital",
+        desc: "Professional websites and online tools that help customers find and trust you.",
+        features: ["Business websites", "E-commerce stores", "Online booking systems", "SEO & performance"],
+    },
+    {
+        icon: Building,
+        title: "Business Software",
+        desc: "Inventory, HR, accounting, and document systems tailored for SMEs.",
+        features: ["Inventory management", "HR & payroll systems", "Accounting integration", "Document management"],
+    },
+    {
+        icon: Wrench,
+        title: "Maintenance & Care",
+        desc: "Proactive monitoring and support so problems are caught before they cost you money.",
+        features: ["System monitoring", "Security updates", "Performance optimization", "Priority support plans"],
+    },
+];
 
-    const stats = [
-        { icon: Users, label: "Happy Clients", value: "50+", color: "from-[#33A3A3] to-[#008A8A]" },
-        { icon: Zap, label: "Projects Delivered", value: "100+", color: "from-blue-400 to-blue-600" },
-        { icon: Shield, label: "Uptime Guarantee", value: "99.9%", color: "from-purple-400 to-purple-600" },
-        { icon: Code, label: "Technologies", value: "15+", color: "from-orange-400 to-orange-600" },
-    ];
+const numClass = ["brand-num-1", "brand-num-2", "brand-num-3", "brand-num-4", "brand-num-5"];
+const iconClass = ["brand-icon-1", "brand-icon-2", "brand-icon-3", "brand-icon-4", "brand-icon-5"];
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.3,
-            },
-        },
-    };
+interface ServicesProps {
+    showIntro?: boolean;
+}
 
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-            },
-        },
-    };
+const Services = ({ showIntro = true }: ServicesProps) => {
+    const featured = services[0];
+    const rest = services.slice(1);
 
     return (
-        <section id="services" className="min-h-screen relative overflow-hidden py-20 sm:py-24 md:py-28 bg-white">
-            <div className="absolute inset-0">
-                <div className="absolute -top-40 right-0 h-[420px] w-[420px] rounded-full bg-[#008A8A]/10 blur-3xl" />
-                <div className="absolute -bottom-40 left-0 h-[520px] w-[520px] rounded-full bg-[#008A8A]/8 blur-3xl" />
-            </div>
-
-            <motion.div
-                className="container mx-auto px-4 sm:px-6 relative z-10"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-            >
-                {/* Header */}
-                <motion.div
-                    className="text-left max-w-3xl mb-12 sm:mb-16"
-                    variants={itemVariants}
-                >
-                    <div className="inline-flex items-center gap-2 rounded-full border border-[#008A8A]/25 bg-white/70 px-3 py-1.5 text-sm text-gray-700 backdrop-blur">
-                        <span className="h-2 w-2 rounded-full bg-[#008A8A]" />
-                        Services
-                    </div>
-                    <h2 className="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
-                        Design, build, and scale with one team.
-                    </h2>
-                    <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
-                        We cover product design to production engineering—so you can ship faster with fewer handoffs.
-                    </p>
-                </motion.div>
-
-                {/* Stats */}
-                <motion.div
-                    className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-8 mb-12 sm:mb-16 md:mb-24"
-                    variants={containerVariants}
-                >
-                    {stats.map((stat, index) => (
-                        <motion.div
-                            key={index}
-                            variants={itemVariants}
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            <Card className="bg-white/80 backdrop-blur border border-gray-200 rounded-2xl overflow-hidden group hover:border-[#008A8A]/35 transition-all duration-300 shadow-sm hover:shadow-md">
-                                <CardContent className="p-3 sm:p-4 md:p-6 text-center">
-                                    <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-r ${stat.color} flex items-center justify-center mb-3 sm:mb-4 mx-auto transform group-hover:scale-110 transition-transform duration-300`}>
-                                        <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-white" />
-                                    </div>
-                                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 text-gray-900">{stat.value}</h3>
-                                    <p className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">{stat.label}</p>
-                                </CardContent>
-                            </Card>
-                        </motion.div>
-                    ))}
-                </motion.div>
-
-                {/* Services Grid */}
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
-                    variants={containerVariants}
-                >
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            variants={itemVariants}
-                            whileHover={{ scale: 1.02, y: -5 }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            <Card className="bg-white/85 backdrop-blur border border-gray-200 rounded-2xl overflow-hidden group hover:border-[#008A8A]/35 transition-all duration-300 h-full shadow-sm hover:shadow-md">
-                                <CardContent className="p-4 sm:p-6 md:p-8">
-                                    <div className="flex items-center justify-between mb-3 sm:mb-4">
-                                        <div className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
-                                            <service.icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
-                                        </div>
-                                        <span className="text-xs font-semibold text-[#006666] bg-[#F0FBFB] px-2 sm:px-3 py-1 rounded-full border border-[#008A8A]/20">
-                                            {service.category}
-                                        </span>
-                                    </div>
-                                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-gray-900">{service.title}</h3>
-                                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">{service.description}</p>
-                                    <div className="space-y-1 sm:space-y-2">
-                                        {service.features.map((feature, featureIndex) => (
-                                            <div key={featureIndex} className="flex items-center">
-                                                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#008A8A] rounded-full mr-2 sm:mr-3"></div>
-                                                <span className="text-xs sm:text-sm text-gray-600">{feature}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </motion.div>
-                    ))}
-                </motion.div>
-
-                {/* CTA Section */}
-                {/* <motion.div
-                    className="mt-16 md:mt-24 text-center"
-                    variants={itemVariants}
-                >
-                    <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-green-600/30 to-red-600/30 rounded-3xl blur-xl"></div>
-                        <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/10">
-                            <h3 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-                                Ready to Build Something Amazing?
-                            </h3>
-                            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                                Let's discuss your project requirements and create a custom solution that perfectly fits your business needs.
+        <section id="services" className="py-20 md:py-28 bg-background">
+            <div className="container-site">
+                {showIntro && (
+                    <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-14">
+                        <div className="lg:col-span-5">
+                            <div className="brand-bar mb-6"><span /><span /><span /><span /><span /></div>
+                            <p className="section-eyebrow !mb-3">Our services</p>
+                            <h2 className="heading-lg">
+                                Full-stack technology for{" "}
+                                <span className="text-gradient">growing businesses</span>
+                            </h2>
+                        </div>
+                        <div className="lg:col-span-7 flex items-end">
+                            <p className="text-muted-foreground text-lg leading-relaxed">
+                                From fixing a printer today to building the software that runs your business tomorrow—one partner, six core capabilities.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <motion.button
-                                    className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300"
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    Start Your Project
-                                </motion.button>
-                                <motion.button
-                                    className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold border border-white/20 transition-all duration-300"
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    View Case Studies
-                                </motion.button>
-                            </div>
                         </div>
                     </div>
-                </motion.div> */}
-            </motion.div>
+                )}
+
+                {!showIntro && (
+                    <div className="brand-bar mb-10 max-w-xs"><span /><span /><span /><span /><span /></div>
+                )}
+
+                <div className="grid lg:grid-cols-12 gap-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="lg:col-span-5 lg:row-span-2 service-card-dark p-8 sm:p-10 flex flex-col relative"
+                    >
+                        <div className={`absolute top-6 right-6 h-9 w-9 rounded-full flex items-center justify-center text-sm font-bold ${numClass[0]}`}>1</div>
+                        <div className="absolute top-0 right-0 w-48 h-48 rounded-full blur-[60px]" style={{ background: "hsl(var(--brand-1) / 0.25)" }} />
+                        <div className="relative">
+                            <div className={`h-14 w-14 rounded-2xl flex items-center justify-center mb-8 ${iconClass[0]}`} style={{ background: "hsl(var(--brand-1))", color: "white" }}>
+                                <featured.icon className="h-6 w-6" strokeWidth={1.75} />
+                            </div>
+                            <p className="text-xs font-bold uppercase tracking-[0.2em] mb-3" style={{ color: "hsl(var(--brand-2))" }}>Most popular</p>
+                            <h3 className="text-2xl sm:text-3xl font-bold text-white">{featured.title}</h3>
+                            <p className="mt-4 text-white/60 leading-relaxed">{featured.desc}</p>
+                            <ul className="mt-8 space-y-3 flex-grow">
+                                {featured.features.map((f) => (
+                                    <li key={f} className="flex items-center gap-3 text-sm text-white/75">
+                                        <span className="h-5 w-5 rounded-full flex items-center justify-center shrink-0 brand-num-1">
+                                            <Check className="h-3 w-3" />
+                                        </span>
+                                        {f}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </motion.div>
+
+                    {rest.slice(0, 2).map((s, i) => (
+                        <motion.div
+                            key={s.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.08 + i * 0.06 }}
+                            className="lg:col-span-7 service-card p-7 sm:p-8 relative"
+                        >
+                            <div className={`absolute top-5 right-5 h-8 w-8 rounded-full flex items-center justify-center text-xs font-bold ${numClass[i + 1]}`}>{i + 2}</div>
+                            <div className="flex items-start gap-5">
+                                <div className={`h-12 w-12 rounded-xl flex items-center justify-center shrink-0 ${iconClass[i + 1]}`}>
+                                    <s.icon className="h-5 w-5" strokeWidth={1.75} />
+                                </div>
+                                <div className="min-w-0">
+                                    <h3 className="font-bold text-lg">{s.title}</h3>
+                                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                                    <div className="mt-4 flex flex-wrap gap-2">
+                                        {s.features.slice(0, 3).map((f) => (
+                                            <span key={f} className="text-xs px-2.5 py-1 rounded-md bg-muted text-muted-foreground">{f}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+
+                    {rest.slice(2).map((s, i) => (
+                        <motion.div
+                            key={s.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.15 + i * 0.06 }}
+                            className="lg:col-span-4 service-card p-6 sm:p-7 flex flex-col relative"
+                        >
+                            <div className={`absolute top-5 right-5 h-8 w-8 rounded-full flex items-center justify-center text-xs font-bold ${numClass[(i + 3) % 5]}`}>{i + 4}</div>
+                            <div className={`h-11 w-11 rounded-xl flex items-center justify-center mb-5 ${iconClass[(i + 3) % 5]}`}>
+                                <s.icon className="h-5 w-5" strokeWidth={1.75} />
+                            </div>
+                            <h3 className="font-bold">{s.title}</h3>
+                            <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-grow">{s.desc}</p>
+                        </motion.div>
+                    ))}
+                </div>
+
+                <div className="mt-6 cta-panel rounded-2xl p-7 sm:p-9 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                    <div>
+                        <p className="font-bold text-lg text-white">Not sure which service fits?</p>
+                        <p className="text-white/55 mt-1 text-sm">We&apos;ll recommend the right approach in a free 30-minute call.</p>
+                    </div>
+                    <Link href="/#contact" className="btn-accent shrink-0">
+                        Talk to our team <ArrowUpRight className="h-4 w-4" />
+                    </Link>
+                </div>
+            </div>
         </section>
     );
 };
