@@ -1,4 +1,4 @@
-import DaylightHome from "@/components/daylight/DaylightHome";
+import ClassicHome from "@/components/classic/ClassicHome";
 import { CONTACT, SITE_DESCRIPTION, SITE_URL } from "@/lib/site-content";
 
 /** Structured data so search engines can show Softecof's contact details. */
@@ -21,12 +21,12 @@ const organizationJsonLd = {
     areaServed: ["BD", "Worldwide"],
 };
 
-// Option B is kept in src/components/midnight (MidnightHome); see src/components/Header.tsx to switch.
+// Earlier options are kept in src/components/daylight and src/components/midnight; see src/components/Header.tsx to switch.
 export default function Home() {
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
-            <DaylightHome />
+            <ClassicHome />
         </>
     );
 }

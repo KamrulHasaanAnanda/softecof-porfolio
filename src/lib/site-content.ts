@@ -5,7 +5,7 @@ import { Building2, Cloud, Clock, Globe, GraduationCap, Headphones, Heart, Layer
 export const SITE_URL = "https://softecof.com";
 
 export const SITE_DESCRIPTION =
-    "Softecof helps small and medium businesses in Bangladesh and worldwide with IT support, custom software, and SaaS platforms. Based in Chittagong.";
+    "Softecof is an AI-driven company helping SMEs in Bangladesh and worldwide with AI agents, custom software, SaaS platforms, and IT support. Based in Chittagong.";
 
 export const CONTACT = {
     phoneDisplay: "+880 1626 889072",
