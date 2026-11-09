@@ -56,6 +56,13 @@
     transform: translateY(-1px);
     box-shadow: 0 12px 32px -8px hsl(var(--ink) / 0.45);
   }
+  .btn-primary:disabled,
+  .btn-primary:disabled:hover {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
 
   .btn-accent {
     @apply inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-sm px-7 py-3.5 transition-all duration-300;
@@ -251,6 +258,9 @@
   }
   .input-field:focus {
     box-shadow: 0 0 0 2px hsl(var(--accent) / 0.35);
+  }
+  .input-field[aria-invalid="true"] {
+    box-shadow: 0 0 0 2px rgb(220 38 38 / 0.45);
   }
 }
 
