@@ -21,7 +21,7 @@ const Process = () => {
                     {processSteps.map((step, i) => {
                         const bar = bars[i % bars.length];
                         return (
-                            <li key={step.title} className={`rounded-[12px] p-6 min-[641px]:max-[1180px]:last:col-span-2 ${bar.surface} ${bar.height}`}>
+                            <li key={step.title} className={`c-reveal c-lift rounded-[12px] p-6 min-[641px]:max-[1180px]:last:col-span-2 ${bar.surface} ${bar.height}`}>
                                 <span className={`block text-[56px] font-semibold leading-none tracking-[-0.03em] ${bar.number}`}>{i + 1}</span>
                                 <h3 className="m-0 mt-4 text-[20px] font-semibold leading-[1.25]">{step.title}</h3>
                                 <p className={`m-0 mt-2 text-[16px] leading-[1.5] ${bar.desc}`}>{step.desc}</p>

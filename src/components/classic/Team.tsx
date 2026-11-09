@@ -13,7 +13,7 @@ const Team = () => {
                 </div>
                 <ul className="m-0 grid list-none grid-cols-2 gap-x-4 gap-y-8 p-0 min-[761px]:grid-cols-3">
                     {team.map((m) => (
-                        <li key={m.name} className="group">
+                        <li key={m.name} className="c-reveal group">
                             {/* Black-and-white photos multiplied onto one colour, so different backgrounds read as a set. */}
                             <div className="isolate overflow-hidden rounded-[12px] bg-c-peach">
                                 <Image

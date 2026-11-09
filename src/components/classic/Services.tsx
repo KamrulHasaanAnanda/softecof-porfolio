@@ -20,7 +20,7 @@ const Services = () => {
                         return (
                             <li
                                 key={s.title}
-                                className={`rounded-[12px] border p-6 transition-colors ${
+                                className={`c-reveal c-lift rounded-[12px] border p-6 ${
                                     featured ? "border-c-teal bg-c-teal text-white min-[641px]:col-span-2 min-[981px]:col-span-3" : "border-c-line bg-white hover:border-c-teal"
                                 }`}
                             >

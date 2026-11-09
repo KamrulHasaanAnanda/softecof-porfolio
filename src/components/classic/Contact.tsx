@@ -1,9 +1,10 @@
 "use client"
 import { Suspense, useEffect, useState, type ReactNode } from "react";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { ArrowRight, ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { contactFields, submitContactForm } from "@/lib/contact-form";
-import { CONTACT, heroAssurances, serviceOptions } from "./data";
+import { CONTACT, heroAssurances, serviceOptions, team } from "./data";
 
 const labelClass = "text-[15px] font-semibold text-c-ink";
 
@@ -24,12 +25,12 @@ function Channel({ href, external, icon, label, value }: { href: string; externa
         <a
             href={href}
             {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-            className="group flex min-h-[76px] items-center gap-4 border-t border-c-ink/20 py-3 transition-colors first:border-t-0"
+            className="c-lift group flex min-h-[76px] items-center gap-4 rounded-[14px] bg-white/55 p-3 hover:bg-white"
         >
             <span className="flex h-12 w-12 flex-none items-center justify-center rounded-[10px] bg-c-night text-c-peach">{icon}</span>
             <span className="flex min-w-0 flex-1 flex-col">
                 <span className="text-[14.5px] text-c-ink/80">{label}</span>
-                <span className="text-[length:clamp(18px,1.7vw,22px)] font-semibold leading-[1.25] tracking-[-0.01em] text-c-ink [overflow-wrap:anywhere] group-hover:underline group-hover:underline-offset-4">
+                <span className="text-[length:clamp(18px,1.7vw,22px)] font-semibold leading-[1.25] tracking-[-0.01em] text-c-ink [overflow-wrap:anywhere]">
                     {value}
                 </span>
             </span>
@@ -55,12 +56,12 @@ const Contact = () => {
                     </h2>
                     <p className="m-0 mt-4 max-w-[480px] text-[19px] leading-[1.5] text-c-ink text-pretty">We respond within 24 hours with a clear next step. Call, message, or use the form.</p>
 
-                    <div className="mt-6">
+                    <div className="mt-7 grid gap-2.5">
                         <Channel href={CONTACT.phoneHref} icon={<Phone size={20} aria-hidden="true" />} label="Call us" value={CONTACT.phoneDisplay} />
                         <Channel href={CONTACT.whatsapp} external icon={<MessageCircle size={20} aria-hidden="true" />} label="WhatsApp" value="Message us on WhatsApp" />
                         <Channel href={`mailto:${CONTACT.email}`} icon={<Mail size={20} aria-hidden="true" />} label="Email" value={CONTACT.email} />
                     </div>
-                    <p className="m-0 mt-3 flex items-center gap-2 border-t border-c-ink/20 pt-4 text-[16px] text-c-ink">
+                    <p className="m-0 mt-4 flex items-center gap-2 pl-3 text-[16px] text-c-ink">
                         <MapPin size={18} className="flex-none" aria-hidden="true" />
                         {CONTACT.address}
                     </p>
@@ -71,8 +72,19 @@ const Contact = () => {
                         submitContactForm(e);
                         setSent(true);
                     }}
-                    className="grid gap-x-4 gap-y-5 rounded-[16px] bg-white p-[clamp(20px,3vw,36px)] shadow-[0_24px_60px_-30px_rgba(11,31,29,0.55)] min-[561px]:grid-cols-2"
+                    className="c-reveal grid gap-x-4 gap-y-5 rounded-[20px] bg-white p-[clamp(20px,3vw,36px)] shadow-[0_30px_70px_-34px_rgba(11,31,29,0.6)] min-[561px]:grid-cols-2"
                 >
+                    <div className="col-span-full flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-b border-c-line pb-5">
+                        <div>
+                            <h3 className="m-0 text-[22px] font-semibold leading-[1.2] tracking-[-0.01em] text-c-ink">Send us a message</h3>
+                            <p className="m-0 mt-0.5 text-[15px] text-c-muted">A real person reads every one.</p>
+                        </div>
+                        <div aria-hidden="true" className="flex">
+                            {team.slice(0, 4).map((m, i) => (
+                                <Image key={m.name} src={m.image} alt="" width={88} height={88} className={`h-11 w-11 rounded-full border-2 border-white object-cover object-top ${i ? "-ml-2.5" : ""}`} />
+                            ))}
+                        </div>
+                    </div>
                     {contactFields.map((f) => (
                         <div key={f.id} className="flex min-w-0 flex-col gap-1.5">
                             <label htmlFor={f.id} className={labelClass}>
@@ -86,7 +98,7 @@ const Contact = () => {
                         <label htmlFor="contact-service" className={labelClass}>
                             What do you need?
                         </label>
-                        <select id="contact-service" name="service" value={service} onChange={(e) => setService(e.target.value)} className="c-input">
+                        <select id="contact-service" name="service" value={service} onChange={(e) => setService(e.target.value)} className="c-input c-select">
                             <option value="">Choose a service</option>
                             {serviceOptions.map((o) => (
                                 <option key={o} value={o}>
@@ -102,7 +114,7 @@ const Contact = () => {
                         <textarea id="contact-message" name="message" rows={5} required value={message} onChange={(e) => setMessage(e.target.value)} className="c-input resize-y py-2.5 leading-[1.5]" />
                     </div>
                     <div className="col-span-full">
-                        <button type="submit" className="c-btn w-full gap-2 border-c-night bg-c-night text-white hover:border-c-teal hover:bg-c-teal">
+                        <button type="submit" className="c-btn c-lift min-h-[54px] w-full gap-2 rounded-[10px] border-c-night bg-c-night text-white hover:border-c-teal hover:bg-c-teal">
                             Send message
                             <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
                         </button>

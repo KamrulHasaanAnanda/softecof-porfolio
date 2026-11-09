@@ -18,7 +18,7 @@ const WhySoftecof = () => {
                     {whyItems.map((item) => {
                         const Icon = item.icon;
                         return (
-                            <li key={item.title} className="flex gap-4 border-t border-white/15 py-5">
+                            <li key={item.title} className="c-reveal flex gap-4 border-t border-white/15 py-5">
                                 <span className="flex h-11 w-11 flex-none items-center justify-center rounded-[8px] bg-c-night-raised text-c-mint">
                                     <Icon size={21} aria-hidden="true" />
                                 </span>
