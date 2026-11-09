@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { CONTACT, navLinks } from "./data";
@@ -40,16 +40,21 @@ const Header = () => {
                     </a>
                 </div>
 
-                <button
-                    type="button"
-                    onClick={() => setOpen((o) => !o)}
-                    aria-expanded={open}
-                    aria-controls="mobile-menu"
-                    aria-label={open ? "Close menu" : "Open menu"}
-                    className="-mr-2 flex h-11 w-11 cursor-pointer items-center justify-center text-white min-[901px]:hidden"
-                >
-                    {open ? <X size={22} /> : <Menu size={22} />}
-                </button>
+                <div className="-mr-2 flex items-center gap-1 min-[901px]:hidden">
+                    <a href={CONTACT.phoneHref} aria-label={`Call ${CONTACT.phoneDisplay}`} className="flex h-11 w-11 items-center justify-center rounded-full text-c-peach">
+                        <Phone size={20} aria-hidden="true" />
+                    </a>
+                    <button
+                        type="button"
+                        onClick={() => setOpen((o) => !o)}
+                        aria-expanded={open}
+                        aria-controls="mobile-menu"
+                        aria-label={open ? "Close menu" : "Open menu"}
+                        className="flex h-11 w-11 cursor-pointer items-center justify-center text-white"
+                    >
+                        {open ? <X size={22} /> : <Menu size={22} />}
+                    </button>
+                </div>
             </div>
 
             {open && (

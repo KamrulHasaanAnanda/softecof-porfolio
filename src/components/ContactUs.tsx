@@ -33,7 +33,7 @@ const ContactUs = () => {
                             <div className="space-y-5">
                                 {[
                                     { icon: MapPin, label: "Global HQ", text: "GEC, Chittagong, Bangladesh" },
-                                    { icon: Phone, label: "Phone", text: "+880 1626 889072" },
+                                    { icon: Phone, label: "Phone", text: "+880 1300 021529" },
                                     { icon: Mail, label: "Email", text: "contact@softecof.com" },
                                 ].map(({ icon: Icon, label, text }) => (
                                     <div key={text} className="flex items-start gap-4">
@@ -49,10 +49,10 @@ const ContactUs = () => {
                             </div>
 
                             <div className="mt-8 flex flex-wrap gap-3">
-                                <a href="tel:+8801626889072" className="btn-accent text-sm !py-2.5 !px-5">
+                                <a href="tel:+8801300021529" className="btn-accent text-sm !py-2.5 !px-5">
                                     <Phone className="h-4 w-4" /> Call
                                 </a>
-                                <a href="https://wa.me/8801626889072" target="_blank" rel="noopener noreferrer" className="btn-outline-light text-sm !py-2.5 !px-5">
+                                <a href="https://wa.me/8801300021529" target="_blank" rel="noopener noreferrer" className="btn-outline-light text-sm !py-2.5 !px-5">
                                     <MessageCircle className="h-4 w-4" /> WhatsApp
                                 </a>
                             </div>

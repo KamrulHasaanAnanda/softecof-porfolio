@@ -6,7 +6,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
     return (
         <ul className="m-0 list-none border-b border-c-line p-0">
             {projects.map((p) => (
-                <li key={p.title} className="c-reveal grid gap-x-10 gap-y-1.5 border-t border-c-line py-6 transition-colors hover:bg-c-tint min-[761px]:grid-cols-[1fr_2fr_auto] min-[761px]:px-3">
+                <li key={p.title} className="c-reveal grid gap-x-10 gap-y-1.5 border-t border-c-line py-4 transition-colors min-[641px]:py-6 hover:bg-c-tint min-[761px]:grid-cols-[1fr_2fr_auto] min-[761px]:px-3">
                     <h3 className="c-h3">
                         {p.href ? (
                             <a href={p.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-c-teal underline decoration-c-teal/30 underline-offset-4 transition-colors hover:decoration-c-teal">

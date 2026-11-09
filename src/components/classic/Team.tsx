@@ -9,9 +9,9 @@ const Team = () => {
                     <h2 id="team-title" className="c-h2 !text-white">
                         The people behind Softecof
                     </h2>
-                    <p className="m-0 mt-4 max-w-[360px] text-[19px] leading-[1.5] text-c-on-night text-pretty">Real people on your account, not a faceless ticket queue.</p>
+                    <p className="m-0 mt-4 max-w-[360px] text-[19px] leading-[1.5] text-c-on-night text-pretty max-[640px]:text-[17px]">Real people on your account, not a faceless ticket queue.</p>
                 </div>
-                <ul className="m-0 grid list-none grid-cols-2 gap-x-4 gap-y-8 p-0 min-[761px]:grid-cols-3">
+                <ul className="c-swipe m-0 grid list-none grid-cols-2 gap-x-4 gap-y-8 p-0 [--swipe-card:58%] min-[761px]:grid-cols-3">
                     {team.map((m) => (
                         <li key={m.name} className="c-reveal group">
                             {/* Black-and-white photos multiplied onto one colour, so different backgrounds read as a set. */}
@@ -21,7 +21,7 @@ const Team = () => {
                                     alt={`Portrait of ${m.name}`}
                                     width={520}
                                     height={650}
-                                    sizes="(max-width: 760px) 50vw, (max-width: 1020px) 33vw, 300px"
+                                    sizes="(max-width: 640px) 58vw, (max-width: 760px) 50vw, (max-width: 1020px) 33vw, 300px"
                                     className="block aspect-[4/5] w-full object-cover mix-blend-multiply brightness-[1.18] contrast-[1.04] grayscale transition duration-300 group-hover:mix-blend-normal group-hover:brightness-100 group-hover:contrast-100 group-hover:grayscale-0 motion-reduce:transition-none"
                                 />
                             </div>

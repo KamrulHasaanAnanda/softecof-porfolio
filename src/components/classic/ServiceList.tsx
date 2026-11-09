@@ -1,13 +1,14 @@
 import Link from "next/link";
+import { slugify } from "@/lib/seo";
 import { contactHref, services } from "./data";
 
-/** All six services written out in full for /services. */
+/** Every service written out in full for /services. */
 export default function ServiceList() {
     return (
         <section aria-label="Our services" className="c-wrap c-section">
             <ul className="m-0 list-none border-b border-c-line p-0">
                 {services.map((s) => (
-                    <li key={s.title} className="grid gap-x-14 gap-y-4 border-t border-c-line py-8 min-[861px]:grid-cols-2">
+                    <li id={slugify(s.title)} key={s.title} className="grid scroll-mt-24 gap-x-14 gap-y-4 border-t border-c-line py-8 min-[861px]:grid-cols-2">
                         <div>
                             <h2 className="c-h2 !text-[24px]">{s.title}</h2>
                             <p className="m-0 mt-2 max-w-[480px]">{s.desc}</p>

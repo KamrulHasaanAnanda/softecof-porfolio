@@ -419,6 +419,7 @@ body:has(.theme-midnight-page) {
   --color-c-peach: #F4CDA5;
   --color-c-mint: #7FE3D3;
   --color-c-on-night: #BCCBC8;
+  --color-c-on-teal: #DCEBE7;
   --color-c-on-footer: #B9C5C2;
 }
 
@@ -548,6 +549,42 @@ body:has(.theme-midnight-page) {
   }
   .c-on-dark :focus-visible {
     outline-color: #fff;
+  }
+}
+
+/* Phone layout. Unlayered on purpose, so it can override the grid utilities on the same element. */
+@media (max-width: 640px) {
+  .theme-classic {
+    font-size: 16px;
+  }
+
+  .c-section {
+    padding-block: 44px;
+  }
+
+  .c-hero-bg {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  /* Swipeable row, bleeding to the screen edges so the next card peeks in */
+  .c-swipe {
+    display: flex;
+    gap: 12px;
+    margin-inline: calc(-1 * var(--spacing-gutter));
+    padding-inline: var(--spacing-gutter);
+    scroll-padding-inline: var(--spacing-gutter);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .c-swipe::-webkit-scrollbar {
+    display: none;
+  }
+  .c-swipe > * {
+    flex: 0 0 var(--swipe-card, 78%);
+    scroll-snap-align: start;
+    animation: none;
   }
 }
 

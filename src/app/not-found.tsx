@@ -2,7 +2,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import { CONTACT } from "@/lib/site-content";
 
-export const metadata = { title: "Page not found" };
+export const metadata = { title: "Page not found", robots: { index: false, follow: true } };
 
 export default function NotFound() {
     return (

@@ -13,20 +13,20 @@ const Services = () => {
                         All services
                     </Link>
                 </div>
-                <ul className="m-0 mt-9 grid list-none gap-4 p-0 min-[641px]:grid-cols-2 min-[981px]:grid-cols-3">
+                <ul className="m-0 mt-7 grid list-none grid-cols-2 gap-3 p-0 min-[641px]:mt-9 min-[641px]:gap-4 min-[981px]:grid-cols-3">
                     {services.map((s) => {
                         const Icon = s.icon;
                         const featured = s.title === AI_SERVICE;
                         return (
                             <li
                                 key={s.title}
-                                className={`c-reveal c-lift rounded-[12px] border p-6 ${
-                                    featured ? "border-c-teal bg-c-teal text-white min-[641px]:col-span-2 min-[981px]:col-span-3" : "border-c-line bg-white hover:border-c-teal"
+                                className={`c-reveal c-lift rounded-[12px] border p-4 max-[360px]:p-3 min-[641px]:p-6 ${
+                                    featured ? "col-span-2 border-c-teal bg-c-teal text-white min-[981px]:col-span-3" : "border-c-line bg-white hover:border-c-teal"
                                 }`}
                             >
                                 <Icon size={24} className={featured ? "text-c-peach" : "text-c-teal"} aria-hidden="true" />
-                                <h3 className={`c-h3 mt-3 ${featured ? "!text-[24px] !text-white" : ""}`}>{s.title}</h3>
-                                <p className={`m-0 mt-1.5 ${featured ? "max-w-[640px] text-white" : ""}`}>{s.desc}</p>
+                                <h3 className={`c-h3 mt-3 ${featured ? "!text-[22px] !text-white min-[641px]:!text-[24px]" : "max-[640px]:!text-[16.5px] max-[360px]:!text-[15px]"}`}>{s.title}</h3>
+                                <p className={`m-0 mt-1.5 ${featured ? "max-w-[640px] text-white" : "max-[640px]:hidden"}`}>{s.desc}</p>
                             </li>
                         );
                     })}

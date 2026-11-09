@@ -5,6 +5,7 @@ import WhySoftecof from "./WhySoftecof";
 import Work from "./Work";
 import Process from "./Process";
 import Team from "./Team";
+import Faq from "./Faq";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import MobileActionBar from "./MobileActionBar";
@@ -20,6 +21,7 @@ export default function ClassicHome() {
             <Work />
             <Process />
             <Team />
+            <Faq />
             <Contact />
             <Footer />
             <MobileActionBar />

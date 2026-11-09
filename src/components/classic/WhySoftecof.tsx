@@ -9,8 +9,8 @@ const WhySoftecof = () => {
                     <h2 id="why-title" className="c-h2 !text-white">
                         Why SMEs choose Softecof
                     </h2>
-                    <p className="m-0 mt-4 max-w-[420px] text-[19px] leading-[1.5] text-c-on-night text-pretty">AI-driven work at a price that suits an SME, from a team you can reach when you need them.</p>
-                    <Link href="/#contact" className="c-btn c-btn-accent mt-7">
+                    <p className="m-0 mt-4 max-w-[420px] text-[19px] leading-[1.5] text-c-on-night text-pretty max-[640px]:text-[17px]">AI-driven work at a price that suits an SME, from a team you can reach when you need them.</p>
+                    <Link href="/#contact" className="c-btn c-btn-accent mt-6 max-[640px]:hidden">
                         Get a free quote
                     </Link>
                 </div>
@@ -18,8 +18,8 @@ const WhySoftecof = () => {
                     {whyItems.map((item) => {
                         const Icon = item.icon;
                         return (
-                            <li key={item.title} className="c-reveal flex gap-4 border-t border-white/15 py-5">
-                                <span className="flex h-11 w-11 flex-none items-center justify-center rounded-[8px] bg-c-night-raised text-c-mint">
+                            <li key={item.title} className="c-reveal flex gap-3.5 border-t border-white/15 py-4 min-[641px]:gap-4 min-[641px]:py-5">
+                                <span className="flex h-10 w-10 flex-none items-center min-[641px]:h-11 min-[641px]:w-11 justify-center rounded-[8px] bg-c-night-raised text-c-mint">
                                     <Icon size={21} aria-hidden="true" />
                                 </span>
                                 <div className="min-w-0">

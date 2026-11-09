@@ -16,7 +16,7 @@ const AgentDriven = () => {
                 </div>
             </div>
 
-            <ul className="m-0 mt-9 grid list-none gap-x-8 gap-y-7 p-0 min-[641px]:grid-cols-2 min-[1021px]:grid-cols-4">
+            <ul className="c-swipe m-0 mt-7 grid list-none gap-x-8 gap-y-7 p-0 min-[641px]:mt-9 min-[641px]:grid-cols-2 min-[1021px]:grid-cols-4">
                 {agentTypes.map((a) => (
                     <li key={a.title} className="c-reveal border-t-2 border-c-teal pt-4">
                         <h3 className="c-h3">{a.title}</h3>
@@ -25,7 +25,7 @@ const AgentDriven = () => {
                 ))}
             </ul>
 
-            <div className="c-reveal c-on-dark mt-10 rounded-[12px] bg-c-night p-[clamp(20px,3vw,36px)] text-white">
+            <div className="c-reveal c-on-dark mt-7 rounded-[12px] min-[641px]:mt-10 bg-c-night p-[clamp(20px,3vw,36px)] text-white">
                 <p className="c-mono m-0 text-[14px] text-c-mint">How an agent handles a task</p>
                 <ol className="m-0 mt-5 grid list-none gap-x-6 gap-y-5 p-0 min-[641px]:grid-cols-2 min-[1021px]:grid-cols-4">
                     {agentFlow.map((step, i) => (

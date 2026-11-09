@@ -7,7 +7,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // trailingSlash is enabled in next.config.ts, so URLs end with "/"
     return [
         { url: `${SITE_URL}/`, changeFrequency: "monthly", priority: 1 },
-        { url: `${SITE_URL}/services/`, changeFrequency: "monthly", priority: 0.8 },
+        { url: `${SITE_URL}/services/`, changeFrequency: "monthly", priority: 0.9 },
         { url: `${SITE_URL}/portfolio/`, changeFrequency: "monthly", priority: 0.8 },
+        { url: `${SITE_URL}/faq/`, changeFrequency: "monthly", priority: 0.9 },
     ];
 }

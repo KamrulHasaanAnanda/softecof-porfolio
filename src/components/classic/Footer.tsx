@@ -21,6 +21,9 @@ const Footer = () => {
                                     {l.label}
                                 </Link>
                             ))}
+                            <Link href="/faq" className={link}>
+                                FAQ
+                            </Link>
                         </nav>
                         <div>
                             <p className={heading}>Get in touch</p>
@@ -34,7 +37,12 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <p className="m-0 mt-10 border-t border-white/15 pt-5 text-[14.5px]">© {new Date().getFullYear()} Softecof. All rights reserved.</p>
+                <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-white/15 pt-5 text-[14.5px]">
+                    <p className="m-0">© {new Date().getFullYear()} Softecof. All rights reserved.</p>
+                    <a href="/llms.txt" className="text-c-on-footer hover:text-white">
+                        For AI assistants
+                    </a>
+                </div>
             </div>
         </footer>
     );

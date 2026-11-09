@@ -1,31 +1,69 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
+import JsonLd from "@/components/JsonLd";
 import { classicFonts } from "@/components/classic/fonts";
-import { SITE_DESCRIPTION, SITE_URL } from "@/lib/site-content";
+import { SITE_URL } from "@/lib/site-content";
+import { organizationJsonLd, rootMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
     metadataBase: new URL(SITE_URL),
     title: {
-        default: "Softecof - AI-Driven Company Helping SMEs Grow",
+        default: rootMetadata.title,
         template: "%s | Softecof",
     },
-    description: SITE_DESCRIPTION,
-    alternates: { canonical: "/" },
+    description: rootMetadata.description,
+    applicationName: "Softecof",
+    authors: [{ name: "Softecof", url: SITE_URL }],
+    creator: "Softecof",
+    publisher: "Softecof",
+    category: "Software company",
+    keywords: [
+        "Softecof",
+        "AI agents for small business",
+        "custom software development Bangladesh",
+        "software company Chittagong",
+        "software company Chattogram",
+        "IT support for SMEs",
+        "SaaS development company",
+        "business website Bangladesh",
+        "SME software partner",
+    ],
+    alternates: { canonical: "/", types: rootMetadata.aiAlternateTypes },
+    robots: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+        },
+    },
     openGraph: {
         type: "website",
         url: "/",
         siteName: "Softecof",
-        title: "Softecof - AI-Driven Company Helping SMEs Grow",
-        description: SITE_DESCRIPTION,
+        title: rootMetadata.title,
+        description: rootMetadata.description,
         locale: "en_US",
-        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Softecof - AI-driven company helping SMEs grow" }],
+        images: [rootMetadata.shareImage],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Softecof - AI-Driven Company Helping SMEs Grow",
-        description: SITE_DESCRIPTION,
-        images: ["/og-image.png"],
+        title: rootMetadata.title,
+        description: rootMetadata.description,
+        images: [rootMetadata.shareImage.url],
+    },
+    other: {
+        "geo.region": "BD-B",
+        "geo.placename": "Chittagong",
+        "geo.position": "22.3594;91.8216",
+        ICBM: "22.3594, 91.8216",
     },
     icons: {
         icon: [{ url: "/softecof.png", type: "image/png" }],
@@ -43,6 +81,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={classicFonts}>
             <body className="theme-classic">
+                <JsonLd data={organizationJsonLd} />
                 <a
                     href="#main"
                     className="sr-only z-[60] rounded-[4px] bg-c-teal px-5 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
