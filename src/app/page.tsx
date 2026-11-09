@@ -1,27 +1,32 @@
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import WhySoftecof from "@/components/WhySoftecof";
-import About from "@/components/About";
-import Process from "@/components/Process";
-import Portfolio from "@/components/Portfolio";
-import CtaBanner from "@/components/CtaBanner";
-import Team from "@/components/Team";
-import Contact from "@/components/ContactUs";
-import Footer from "@/components/Footer";
+import DaylightHome from "@/components/daylight/DaylightHome";
+import { CONTACT, SITE_DESCRIPTION, SITE_URL } from "@/lib/site-content";
 
+/** Structured data so search engines can show Softecof's contact details. */
+const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Softecof",
+    url: SITE_URL,
+    logo: `${SITE_URL}/images/softecof-mark.png`,
+    image: `${SITE_URL}/images/about-team-working.jpg`,
+    description: SITE_DESCRIPTION,
+    telephone: CONTACT.phoneHref.replace("tel:", ""),
+    email: CONTACT.email,
+    address: {
+        "@type": "PostalAddress",
+        streetAddress: "GEC",
+        addressLocality: "Chittagong",
+        addressCountry: "BD",
+    },
+    areaServed: ["BD", "Worldwide"],
+};
+
+// Option B is kept in src/components/midnight (MidnightHome); see src/components/Header.tsx to switch.
 export default function Home() {
     return (
         <>
-            <Hero />
-            <Services />
-            <WhySoftecof />
-            <About />
-            <Process />
-            <Portfolio />
-            <CtaBanner />
-            <Team />
-            <Contact />
-            <Footer />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
+            <DaylightHome />
         </>
     );
 }
